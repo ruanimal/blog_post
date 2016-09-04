@@ -1,7 +1,7 @@
 title: python包导入再谈
 date: June 22, 2016 7:26 PM
 categories: 编程
-tags: 
+tags:
 ----
 
 ### python包、模块导入的顺序
@@ -56,6 +56,8 @@ if __name__ == '__main__':
 
 此时只能在脚本前部同时添加`os.chdir('/home/code/taskman/task')`和`sys.path.append('/home/code/taskman')`，这样在这个脚本包的导入正常，同时可以通过`os.system('python -m task.models')`运行项目内其他模块，而不用管当前工作目录在那里。
 
-总之，**如果`sys.path[0]`是一个具体的脚本路径，`os.chdir()`是不能对脚本内部包模块的导入产生影响，但是如果`sys.path[0]`是`''`，`os.chdir`可以影响包的导入。**当然直接把想要的目录添加到sys.path最直接，但是不干净，不推荐使用。
+总之，**如果`sys.path[0]`是一个具体的脚本路径，`os.chdir()`是不能对脚本内部包模块的导入产生影响，但是如果`sys.path[0]`是`''`，`os.chdir`可以影响包的导入。**
 
 还有一个霸道的解决方法是，通过`export PYTHONPATH="/home/code/taskman"`将项目路径，添加到python环境变量里，这样当解释器启动时项目路径就会直接添加到sys.path中。不过这样会影响整个python环境，可能出现包重名。
+
+当然还可以在Python的site-packages目录下新建一个`some.pth`文件，把需要的路径往里面写，这样每一个Python解释器进程的sys.path都会包含这个目录。可能会影响其他用户的程序，不推荐使用。

@@ -1,7 +1,7 @@
 title: Git 常用命令备忘录
 date: January 21, 2016 5:03 PM
 categories: 编程
-tags: 
+tags:
 
 ---
 
@@ -90,4 +90,5 @@ HEAD：一个指向当前版本号的指针
 ### 其他
 `git gc`      压缩历史信息来节约磁盘和内存空间
 `git <command> --abort`   一般用于中断某次操作
-
+`git cherry-pick <commit_id>`       捡取某一个commit到当前分支（包含commit变更的内容和注释）
+`git filter-branch --tree-filter 'rm -f testme.txt' HEAD`       从git仓库中永久删除某个文件的历史
