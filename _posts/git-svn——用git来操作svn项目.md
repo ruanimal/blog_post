@@ -1,13 +1,13 @@
 title: git-svn：通过git来管理svn代码
-date: 2016-09-10 12:00
 categories: 编程
+date: 2016-09-10 12:00:00
 tags:
-
-----
+---
 
 ## 简介
 svn和git都是常用的版本管理软件，但是git无论在理念或是功能上都比svn更为先进。但是有的公司是以svn作为中央仓库，这时git与svn代码的同步就可以通过 git-svn这个软件进行，从而用git管理svn代码。最后的效果相当于把svn仓库当作git的一个remote（远程仓库），而你本地的代码都是通过git来管理，只有push到svn时才会把你本地的commit同步到svn。
 
+<!--more-->
 ## 从svn克隆
 首先看一看用于测试的svn项目结构，svn的仓库路径是`file:///d/Projects/svn_repo`，可以用`svnadmin create svn_repo`命令新建。该仓库有2个分支，1个tag，属于svn标准布局。
 
@@ -52,6 +52,7 @@ SVN项目结构：
 说明：其中2为svn版本号，HEAD代表最新版本号，就是只下载svn服务器上版本2到最新的版本的代码.
 
 ## 工作流程
+简单来说就是，首次新建分支会记录和svn远程对应分支的追踪关系，之后你的所有commit都是在本地的；并且和纯git管理的项目没有区别，只是在`git svn rebase`和`git svn dcommit`的时候才会和svn仓库发生关系
 ### 一般工作流程（推荐）
 1. 新建分支`git checkout -b <本地分支名称> <远程分支名称>`
 示例：`git checkout -b a svn/a`
@@ -64,11 +65,8 @@ SVN项目结构：
 1. `git chechout -b a svn/a` 此处新建了一个本地分支a，与svn的a分支对应。
 2. `git checkout -b feature1` 在a分支的基础上，开一个本地feture1分支
 3. 在feture1分支进行开发，有了多次commit
-4. `git checkout a` 回到a分支
-5. `git feture1 dev a` 将feature1的代码rebase到本地分支a
-6. `git svn rebase` 从svn上更新代码
-7. `git svn dcommit` 提交代码到svn
-8. `git branch -d feature1` 删除废弃的feature1分支
+4. 在feture1分支上进行`git svn rebase` 和 `git svn dcommit`，这样feature1的commit也会提交到svn的a分支上。
+   需要注意的是要记住feture1是从哪个分支checkout的，它的svn远程分支就与哪个相同。比如此处是a分支，那么svn分支就是svn/a，commit就会提交到svn的a分支。
 
 ## SVN分支管理
 ### 新建分支到svn
