@@ -92,3 +92,4 @@ HEAD：一个指向当前版本号的指针
 `git <command> --abort`   一般用于中断某次操作
 `git cherry-pick <commit_id>`       捡取某一个commit到当前分支（包含commit变更的内容和注释）
 `git filter-branch --tree-filter 'rm -f testme.txt' HEAD`       从git仓库中永久删除某个文件的历史
+`git config --global core.editor vim`     设置默认编辑器为vim
