@@ -20,11 +20,15 @@ HEAD：一个指向当前版本号的指针
 
 <!--more-->
 
+### 环境配置
+`git config --global user.name yourname`   设置用户名，如果不加`--global`则只对当前项目生效
+`git config --global user.email youremail`    设置邮箱
+`git config --global core.editor vim`     设置默认编辑器为vim，可替换为你自己喜欢的
+`git config --global core.quotepath false`   显示中文路径名
+
 ### 开始项目
 `git init`    初始化git仓库
 `git clone <repository> [<directory>]`    复制项目
-`git config user.name yourname`   设置用户名
-`git config user.email youremail`    设置邮箱
 
 ### 管理修改
 `git status`  查看当前仓库状态，绿色为未commit的stage内容，红色为未stage、为添加到版本库内容
@@ -92,4 +96,3 @@ HEAD：一个指向当前版本号的指针
 `git <command> --abort`   一般用于中断某次操作
 `git cherry-pick <commit_id>`       捡取某一个commit到当前分支（包含commit变更的内容和注释）
 `git filter-branch --tree-filter 'rm -f testme.txt' HEAD`       从git仓库中永久删除某个文件的历史
-`git config --global core.editor vim`     设置默认编辑器为vim
