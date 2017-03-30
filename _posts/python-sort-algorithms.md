@@ -1,10 +1,9 @@
-title: 排序算法总结
+title: Python排序算法总结
 date: January 20, 2016 5:03 PM
 categories: 编程
 tags: 
 
 ----
-
 ## 一、冒泡排序 BubbleSort
 ### 介绍
 遍历序列，比较两个元素，如果前面的大于后面的就交换两者的位置。其实称之为冒泡排序不如加沉底排序，因为每一轮比较，这一轮轮最大都会被排到序列末尾，其实沉底更为贴切。
@@ -15,6 +14,7 @@ tags:
 3. 共遍历n-1次
 
 ### 代码
+1. 原始版本
 ```python
 def bubble_sort(arry):
     n = len(arry)
@@ -23,6 +23,21 @@ def bubble_sort(arry):
         for x in range(n):
             if arry[x] > arry[x+1]:
                 arry[x], arry[x+1] = arry[x+1], arry[x]
+    return arry
+```
+2. 改进版本
+```python
+def bubble_sort(arry):
+    n = len(arry)
+    while n > 1:
+        n -= 1
+        swap_flag = False  # 增加一个标记，当排好序后直接退出
+        for x in range(n):
+            if arry[x] > arry[x+1]:
+                arry[x], arry[x+1] = arry[x+1], arry[x]
+                swap_flag = True
+        if not swap_flag:
+            break
     return arry
 ```
 
@@ -175,3 +190,79 @@ def qsort(arry, left, right):
     qsort(arry, r+1, right)
     return arry
 ```
+
+## 七、桶排序 BucketSort
+### 介绍
+桶排序（Bucket sort）或所谓的箱排序，是一个排序算法，工作的原理是将数组分到有限数量的桶里。每个桶再个别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排序）。桶排序是鸽巢排序的一种归纳结果。当要被排序的数组内的数值是均匀分配的时候，桶排序使用线性时间（Θ(n)）。但桶排序并不是比较排序，他不受到O(n log n)下限的影响。
+
+### 步骤
+1. 根据数据的分布范围建桶，比如年龄，就可以建1-100号的桶。
+2. 根据每个数据的值，将它放到对应的桶中
+3. 从1号到100号桶中，依次将数据倒出
+
+### 代码
+```python
+def bucket_sort(array):
+    buckets = {i:0 for i in range(1, 101)}  # 100 bucket
+    for i in array:
+        buckets[i] += 1
+    result = []
+    for i in xrange(1,101):
+        result.extend([i] * buckets[i])
+    return result
+```
+
+## 堆排序
+### 介绍
+堆排序在 top K 问题中使用比较频繁。堆排序是采用二叉堆的数据结构来实现的，虽然实质上还是一维数组。二叉堆是一个近似完全二叉树 。
+
+二叉堆具有以下性质：
+
+父节点的键值总是大于或等于（小于或等于）任何一个子节点的键值。
+每个节点的左右子树都是一个二叉堆（都是最大堆或最小堆）。
+
+### 步骤
+1. 构造最大堆：若数组下标范围为1~n，考虑到单独一个元素是大根堆，则从下标n/2+1开始的元素均为大根堆。于是只要从n/2开始，向前依次构造大根堆，这样就能保证，构造到某个节点时，它的左右子树都已经是大根堆。
+
+2. 堆排序（HeapSort）：由于堆是用数组模拟的。得到一个大根堆后，数组内部并不是有序的。因此需要将堆化数组有序化。思想是移除根节点，并做最大堆调整的递归运算。第一次将heap[1]与heap[n]交换，再对heap[1...n-1]做最大堆调整。第二次将heap[1]与heap[n-1]交换，再对heap[1...n-2]做最大堆调整。重复该操作直至heap[1]和heap[2]交换。由于每次都是将最大的数并入到后面的有序区间，故操作完后整个数组就是有序的了。
+
+3. 最大堆调整（sink）：该方法是提供给上述两个过程调用的。目的是将堆的末端子节点作调整，使得子节点永远小于父节点 。
+
+### 代码
+```python
+def heap_sort(array):
+    # 此处用最大堆
+    n = len(array)
+    pq = [None] + array
+    def sink(k):  # 下沉
+        while 2*k <= n:
+            j = 2*k 
+            if j < n and pq[j] < pq[j+1]:
+                j += 1
+            if pq[k] >= pq[j]:
+                break
+            pq[k], pq[j] = pq[j], pq[k]
+            k = j
+    
+    for k in xrange(n/2, 0, -1):
+        sink(k)
+    while n > 1:
+        pq[1], pq[n] = pq[n], pq[1]
+        n -= 1
+        sink(1)
+    return pq[1:]
+```
+
+## 总结
+下面为以上八种排序算法指标对比情况：
+
+| 排序方法 | 平均情况            | 最好情况    | 最坏情况    | 辅助空间         | 稳定性 |
+|----------|---------------------|-------------|-------------|------------------|--------|
+| 冒泡排序 | 〇(n^2)             | 〇(n)       | 〇(n^2)     | 〇(1)            | 稳定   |
+| 选择排序 | 〇(n^2)             | 〇(n^2)     | 〇(n^2)     | 〇(1)            | 不稳定 |
+| 插入排序 | 〇(n^2)             | 〇(n)       | 〇(n^2)     | 〇(1)            | 稳定   |
+| 希尔排序 | 〇(nlog(n))~〇(n^2) | 〇(n^1.3)   | 〇(n^2)     | 〇(1)            | 不稳定 |
+| 堆排序   | 〇(nlog(n))         | 〇(nlog(n)) | 〇(nlog(n)) | 〇(1)            | 不稳定 |
+| 归并排序 | 〇(nlog(n))         | 〇(nlog(n)) | 〇(nlog(n)) | 〇(n)            | 稳定   |
+| 快速排序 | 〇(nlog(n))         | 〇(nlog(n)) | 〇(n^2)     | 〇(log(n))~〇(n) | 不稳定 |
+| 桶排序   | 〇(n+k)             | 〇(n+k)     | 〇(n^2)     | 〇(n)            | 稳定   |
