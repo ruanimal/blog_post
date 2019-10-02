@@ -39,6 +39,7 @@ tags:
 **也可以看MS的官方教程**[WSL install guide](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
 
 ## 替换WSL终端
+
 可以用`mintty`作为WSL的终端，替换命令提示符，获得更类似linux的体验。github中已经有人做好了，下载使用即可[goreliu/wsl-terminal](https://github.com/goreliu/wsl-terminal/releases)
 解压运行open-wsl.exe，你就得到了一个漂亮的linux终端。
 ![](http://image.runjf.com/17-1-8/57114153-file_1483889057173_a2dd.png)

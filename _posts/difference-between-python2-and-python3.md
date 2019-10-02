@@ -14,6 +14,7 @@ Python2
 - unicode，其实等于python3中的字符串（str）
 - 在python2中unicode才是真正的字符串
 
+<!--more-->
 
 ```python
 >>> '膜法'

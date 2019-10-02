@@ -1,0 +1,10 @@
+{
+  "name" : "source",
+  "fileExtension" : ".md",
+  "autoUploadInsertedImageKey" : "ponder-https:\/\/upload.qiniup.com",
+  "autoUploadInsertedImage" : false,
+  "folderType" : 10,
+  "mediaFloder" : "media",
+  "orderBy" : 0,
+  "newlinesToBR" : 0
+}
