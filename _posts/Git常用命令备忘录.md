@@ -1,7 +1,7 @@
 title: Git 常用命令备忘录
 date: January 21, 2016 5:03 PM
 categories: 编程
-tags:
+tags: [Git, ]
 
 ---
 

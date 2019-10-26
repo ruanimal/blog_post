@@ -1,7 +1,9 @@
 title: Python中的类变量与实例变量
 date: May 10, 2016 10:27 PM
 categories: 编程
-tags: 
+tags: [Python]
+
+
 ----
 
 　　对于初学者来说，python的类变量（也就是java中的静态变量）和实例变量（也就是属性）有一些很容易混淆的地方，同时对这些特性深入了解有助于理解python的面向对象思想。

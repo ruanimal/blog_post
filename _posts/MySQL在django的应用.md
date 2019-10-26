@@ -1,7 +1,7 @@
 title: MySQL在django的应用与设置
 date: 9, 10, 2015 4:32 PM
 categories: 编程
-tags: 
+tags: [Python, Django, MySQL]
 
 ---
 

@@ -1,7 +1,9 @@
 title: Python2中UnicodeDecodeError的几种解决办法
 date: April 16, 2016 9:45 PM
 categories: 编程
-tags: 
+tags: [Python, 编码]
+
+
 ----
 
 ### 原理
