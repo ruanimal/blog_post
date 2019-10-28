@@ -14,12 +14,15 @@ engine = create_engine('sqlite:///test.sqlite3', echo=True)
 
 ### 表结构定义
 ```python
-from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey
+from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, Index
 metadata = MetaData()
 users = Table('users', metadata,
     Column('id', Integer, primary_key=True),
     Column('name', String),
     Column('fullname', String),
+    
+    # place an index on col1, col2
+    Index('idx_col12', 'name', 'fullname'),   # 添加索引
 )
 
 addresses = Table('addresses', metadata,
