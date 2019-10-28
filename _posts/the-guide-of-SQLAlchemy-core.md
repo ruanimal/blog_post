@@ -4,8 +4,11 @@ categories: 编程
 tags: [SQLAlchemy, Python, ORM]
 
 --- 
+SQLAlchemy core 是SQLAlchemy的核心部件，主要负责生成sql查询和具体的数据库操作，SQLAlchemy 就是构建在core之上的。
 
-## 关系映射
+在不需要对象映射的时候，使用core而不是orm，可以降低数据库操作成本，提高性能。
+
+## Table映射
 ### 创建数据库连接
 ```python
 from sqlalchemy import create_engine
@@ -31,6 +34,7 @@ addresses = Table('addresses', metadata,
     Column('email_address', String, nullable=False)
 )
 ```
+<!--more-->
 
 ### 映射已存在的数据表
 ```python
