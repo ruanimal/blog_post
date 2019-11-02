@@ -1,7 +1,7 @@
 title: SublimeText3 快捷键列表
 date: 2016-07-16 3:00 PM
 categories: 编程
-tags: 
+tags: [编辑器,]
 
 ----
 
