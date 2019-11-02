@@ -1,7 +1,7 @@
 title: git-svn：通过git来管理svn代码
 categories: 编程
 date: 2016-09-10 12:00:00
-tags:
+tags: [git, svn]
 ---
 
 ## 简介

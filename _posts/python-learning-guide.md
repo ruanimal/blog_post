@@ -1,7 +1,8 @@
 title: Python不完全指北
 date: 2018-03-31 9:48 PM
 categories: 编程
-tags:
+tags: [Python,]
+
 ----
 
 ## 缘起

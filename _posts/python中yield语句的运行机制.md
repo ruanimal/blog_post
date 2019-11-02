@@ -1,7 +1,8 @@
 title: Python中yield语句的运行机制
 date: April 16, 2016 8:17 PM
 categories: 编程
-tags: 
+tags: [Python, ]
+
 ----
 
 如果一个在函数中存在yield关键字，那么这个函数就构成了生成器。生成器是一个函数，它生成一个序列，以便在迭代中使用。

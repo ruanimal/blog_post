@@ -1,7 +1,8 @@
 title: Python中的装饰器（decorator）
 date: April 27, 2016 8:37 PM
 categories: 编程
-tags: 
+tags:  [Python, ]
+
 ----
 
 

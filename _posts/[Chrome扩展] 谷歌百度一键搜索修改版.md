@@ -1,7 +1,7 @@
 title: 【Chrome扩展】谷歌百度一键搜索修改版
 date: November 25, 2015 8:57 PM
 categories: 编程
-tags:
+tags: [浏览器扩展, ]
 
 ---
 

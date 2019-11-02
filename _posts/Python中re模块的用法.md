@@ -1,7 +1,7 @@
 title: Python中re模块的用法
 date: May 8, 2016 9:37 PM
 categories: 编程
-tags: [Python]
+tags: [Python, 正则表达式]
 
 
 ----

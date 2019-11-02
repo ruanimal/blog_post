@@ -1,7 +1,7 @@
 title: django-admin过滤foreignkey值
 date: November 25, 2015 8:57 PM 
 categories: 编程
-tags: 
+tags: [Python, Django]
 
 ---
 

@@ -1,7 +1,7 @@
 title: django 登录后的跳转到之前的页面
 date: November 25, 2015 8:57 PM 
 categories: 编程
-tags: 
+tags: [Python, Django]
 
 ---
 

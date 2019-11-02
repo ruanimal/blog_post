@@ -1,7 +1,7 @@
 title: python赋值语句小坑
 date: January 10, 2016 5:03 PM
 categories: 编程
-tags: 
+tags:  [Python, ]
 
 ---
 	说到python赋值语句，大家想必一个念头——so easy，不是`lz = 'dashabi'`吗。

@@ -1,7 +1,8 @@
 title: 从windows资源管理器启动Python脚本
 date: 2018-02-04 10:40 AM
 categories: 编程
-tags:
+tags:  [Python, ]
+
 ----
 
 有时想给windows的资源管理器增加一些自定义的功能，比如创建目录联接到某个目录。

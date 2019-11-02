@@ -1,7 +1,8 @@
 title: git代码自动同步
 date: April 16, 2016 8:01 PM
 categories: 编程
-tags: 
+tags: [git,]
+
 ----
 
 ### 需求

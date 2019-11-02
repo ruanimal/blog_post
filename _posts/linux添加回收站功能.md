@@ -1,7 +1,8 @@
 title: linux添加回收站功能
 date: June 12, 2016 9:48 PM
 categories: 编程
-tags: 
+tags: [linux,]
+
 ----
 
 在linux服务器上工作，常常和`rm`打交道，难免手滑删除了重要的东西。而且linux又没有回收站功能，一旦删错东西真是欲哭无泪。别问我为什么知道，说多了都是泪。

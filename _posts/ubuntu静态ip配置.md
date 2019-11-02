@@ -1,7 +1,8 @@
 title: ubuntu静态ip配置
 date: April 16, 2016 8:52 PM
 categories: 编程
-tags: 
+tags: [ubuntu, ]
+
 ----
 
 以vmware虚拟机为例  

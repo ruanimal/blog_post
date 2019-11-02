@@ -1,7 +1,8 @@
 title: 关于Python的继承
 date: February 28, 2016 11:26 AM
 categories: 编程
-tags:
+tags:  [Python, ]
+
 ----
 
 ### 引子
