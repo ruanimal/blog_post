@@ -21,6 +21,7 @@ tags: [git,]
 #### 一、初始化中转仓库
 ```shell
 mkdir git-transfer
+cd git-transfer
 git --bare init
 ```
 
