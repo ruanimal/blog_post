@@ -34,6 +34,8 @@ ZeroDivisionError: division by zero
 1. `logging.getLogger` 获取一个记录器, 一般以模块名称命名
 2. 调用日志记录器的相应方法记录日志
 
+<!--more-->
+
 ### 记录器 (logger)
 ![](http://image.runjf.com/mweb/2019-11-02-15441717816714.jpg)
 
