@@ -212,7 +212,7 @@ def running(*running_args, system='mac', **running_kwargs):
     else:
         return decorator
 
-@running('linux')
+@running(system='linux')
 def hello(who='nobody'):
     return "hello, %s!" % who
 
@@ -227,11 +227,11 @@ print(hello2('bar'))
 output
 
 ```
-`hello` is running at mac
-run `hello` takes 4.00543212890625e-05 seconds
+`hello` is running at linux
+run `hello` takes 2.5033950805664062e-05 seconds
 hello, foo!
 `hello2` is running at mac
-run `hello2` takes 5.0067901611328125e-06 seconds
+run `hello2` takes 3.814697265625e-06 seconds
 hello, bar!
 ```
 
