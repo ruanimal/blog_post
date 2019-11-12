@@ -11,5 +11,4 @@ comments: false
 ##### <center> 爱好：胡思乱想 </center>
 ##### <center> 工作：半路出家的程序员 </center>
 ##### <center> 邮箱：admin#ponder.work </center>
-##### <center> QQ: 19o1277o1 </center>
 
