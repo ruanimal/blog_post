@@ -65,7 +65,7 @@ enum是一个枚举类型的第三方库，在Python3.4以后就作为官方库�
 0
 ```
 
-很明显可以看到，`Weekday.Sun`的行为在两个环境不一致。
+很明显可以看到，`Weekday.Sun`的行为在两个环境不一致（其实第一个库用法不对）。
 - 正式环境：`Weekday.Sun`的类型是`int`
 - 我的开发环境: `Weekday.Sun`的类型是`<enum 'Weekday'>`
 
