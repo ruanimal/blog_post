@@ -2,6 +2,7 @@ title: 通过适配器模式优化Python代码
 date: June 19, 2016 10:40 PM
 categories: 编程
 tags: 
+
 ----
 
 
