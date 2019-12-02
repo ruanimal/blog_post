@@ -101,4 +101,3 @@ get _result_dict
 ## 参考
 - https://help.semmle.com/wiki/display/PYTHON/Property+in+old-style+class
 - https://stackoverflow.com/questions/9962037/pythons-property-decorator-does-not-work-as-expected
-
