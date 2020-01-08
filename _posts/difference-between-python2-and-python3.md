@@ -8,29 +8,28 @@ tags: [Python,]
 ## 速查表
 Python2 vs Python3
 
-| name          | Python2                | Python3           |                                            |
-|---------------|------------------------|-------------------|--------------------------------------------|
-| try | try except ValueError, e | try except ValueError as e | 
-| exception | ValueError('aa').message | - | python3中可用ValueError('aa').args[0] 替代 |  |
-| \_\_import\_\_ | \_\_import\_\_ | - | 可以用importlib.import_module替代 |
-| print         | 关键字                    | 函数                |                                            |
-| unicode       | unicode                | str               |     python2默认的string是bytes， Python3中是unicode                                       |
-| bytes         | str                    | bytes             |                                            |
-| division      | 1 / 2                  | 1 // 2            |                                            |
-| division      | 1 / 2.0                | 1 / 2              |                                            |
-| round         | round(0.5) == 1.0      | round(0.5) == 0   | Python3内建的 round 是四舍六入五成双的机制               |
-| xrange        | xrange                 | range             |                                            |
-| range         | range(1,2)             | list(range(1,2))  |                                            |
-| reduce	 | reduce | - | Python使用functools.reduce替代 | 
-| dict.keys     | dict.keys()            | list(dict.keys()) | python的dict遍历不保证顺序, 同一个字典py2和py3的遍历顺序可能不一样 |
-| dict.iterkeys | dict.iterkeys()        | dict.keys()       |                                            |
-| dict.items     | dict.items()            | list(dict.items()) |  |
-| dict.iteritems | dict.iteritems()        | dict.items()       |                                            |
-| 内置库           | commands               | -                 |   用subprocess替代                                         |
-| 内置库           | sys.setdefaultencoding | -                 |                                            |
-| 内置库           | Queue                  | queue             |                                                                                  |
-| 内置库           | ConfigParser           | configparser      |  |
-
+| Name | Python2 | Python3 | Addtion Info |
+| --- | --- | --- | --- |
+| try | try except ValueError, e | try except ValueError as e |  |
+| exception | ValueError('aa').message | - | python3中可用ValueError('aa').args[0] 替代 |
+| `__import__` | `__import__` | - | 可以用importlib.import_module替代 |
+| print | 关键字 | 函数 |  |
+| unicode | unicode | str | python2默认的string是bytes， Python3中是unicode |
+| bytes | str | bytes |  |
+| division | 1 / 2 | 1 // 2 |  |
+| division | 1 / 2.0 | 1 / 2 |  |
+| round | round(0.5) == 1.0 | round(0.5) == 0 | Python3内建的 round 是四舍六入五成双的机制 |
+| xrange | xrange | range |  |
+| range | range(1,2) | list(range(1,2)) |  |
+| reduce | reduce | - | Python使用functools.reduce替代 |
+| dict.keys | dict.keys() | list(dict.keys()) | python的dict遍历不保证顺序, 同一个字典py2和py3的遍历顺序可能不一样 |
+| dict.iterkeys | dict.iterkeys() | dict.keys() |  |
+| dict.items | dict.items() | list(dict.items()) |  |
+| dict.iteritems | dict.iteritems() | dict.items() |  |
+| 内置库 | commands | - | 用subprocess替代 |
+| 内置库 | sys.setdefaultencoding | - |  |
+| 内置库 | Queue | queue |  |
+| 内置库 | ConfigParser | configparser |  |
 
 ## 详细对比
 ### unicode
