@@ -1,10 +1,38 @@
-title: Python2 与 Python3 的一些区别（未完待续）
+title: Python2 与 Python3 区别
 date: 2017-08-30 5:03 PM
 categories: 编程
-tags:
+tags:[Python,]
 
 ---
 
+## 速查表
+Python2 vs Python3
+
+| name          | Python2                | Python3           |                                            |
+|---------------|------------------------|-------------------|--------------------------------------------|
+| try | try except ValueError, e | try except ValueError as e | 
+| exception | ValueError('aa').message | - | python3中可用ValueError('aa').args[0] 替代 |
+| \_\_import\_\_ | \_\_import\_\_ | - | 可以用importlib.import_module替代 |
+| print         | 关键字                    | 函数                |                                            |
+| unicode       | unicode                | str               |     python2默认的string是bytes， Python3中是unicode                                       |
+| bytes         | str                    | bytes             |                                            |
+| division      | 1 / 2                  | 1 // 2            |                                            |
+| division      | 1 / 2.0                | 1 / 2              |                                            |
+| round         | round(0.5) == 1.0      | round(0.5) == 0   | Python3内建的 round 是四舍六入五成双的机制               |
+| xrange        | xrange                 | range             |                                            |
+| range         | range(1,2)             | list(range(1,2))  |                                            |
+| reduce	 | reduce | - | Python使用functools.reduce替代 | 
+| dict.keys     | dict.keys()            | list(dict.keys()) | python的dict遍历不保证顺序, 同一个字典py2和py3的遍历顺序可能不一样 |
+| dict.iterkeys | dict.iterkeys()        | dict.keys()       |                                            |
+| dict.items     | dict.items()            | list(dict.items()) |  |
+| dict.iteritems | dict.iteritems()        | dict.items()       |                                            |
+| 内置库           | commands               | -                 |   用subprocess替代                                         |
+| 内置库           | sys.setdefaultencoding | -                 |                                            |
+| 内置库           | Queue                  | queue             |                                                                                  |
+| 内置库           | ConfigParser           | configparser      |  
+
+
+## 详细对比
 ### unicode
 Python2
 - 字符串分 str('') 和 unicode(u'')
@@ -68,10 +96,6 @@ b'\xe8\x86\x9c\xe6\xb3\x95'
 python2
 
 ```python
->>> subprocess.check_output(['ls', '/mnt/d'])
-'11\n11.txt\n1C63638E19E9\n360\xe6\x9e\x81\xe9\x80\x9f\xe6\xb5\x8f\xe8\xa7\x88\xe5\x99\xa8\xe4\xb8\x8                                                                                                                                          b\xe8\xbd\xbd\nBaiduNetdiskDownload\nBOOTICEx64.exe\nChrome\nDesktop.tar.gz\nDriverGenius\nGames\nJav                                                                                                                                          a\nModOrganizer\nmsys64\nmsys64.7z\nMy Documents\nMyDrivers\nNexus Mod Manager\nnodejs\nNVIDIA\npagef                                                                                                                                          ile.sys\nPortableApps\nProgram Files (x86)\nProjects\nreadme.png\n$RECYCLE.BIN\nSystem Volume Informa                                                                                                                                          tion\ntables.zip\nubuntu\nUsers\nVirtualBox VMs\n\xe6\x96\xb0\xe5\xbb\xba\xe6\x96\x87\xe4\xbb\xb6\xe5                                                                                                                                          \xa4\xb9\n\xe8\xbf\x85\xe9\x9b\xb7\xe4\xb8\x8b\xe8\xbd\xbd\n'
->>> _.decode('utf8')
-u'11\n11.txt\n1C63638E19E9\n360\u6781\u901f\u6d4f\u89c8\u5668\u4e0b\u8f7d\nBaiduNetdiskDownload\nBOOT                                                                                                                                          ICEx64.exe\nChrome\nDesktop.tar.gz\nDriverGenius\nGames\nJava\nModOrganizer\nmsys64\nmsys64.7z\nMy Do                                                                                                                                          cuments\nMyDrivers\nNexus Mod Manager\nnodejs\nNVIDIA\npagefile.sys\nPortableApps\nProgram Files (x86                                                                                                                                          )\nProjects\nreadme.png\n$RECYCLE.BIN\nSystem Volume Information\ntables.zip\nubuntu\nUsers\nVirtualB                                                                                                                                          ox VMs\n\u65b0\u5efa\u6587\u4ef6\u5939\n\u8fc5\u96f7\u4e0b\u8f7d\n'
 >>> aa = open('/mnt/d/11.txt', 'r')
 >>> aa.readline()
 ' \xe9\xa9\xb1\xe5\x8a\xa8\xe5\x99\xa8 F \xe4\xb8\xad\xe7\x9a\x84\xe5\x8d\xb7\xe6\x98\xaf 20090108_171210\r\n'
@@ -107,18 +131,3 @@ Traceback (most recent call last):
     (result, consumed) = self._buffer_decode(data, self.errors, final)
 UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc7 in position 1: invalid continuation byte
 ```
-
-### 语法上区别
-#### print
-print 由内置关键字转变为print函数
-
-### 一些库的区别
-#### commands 
-
-commands是python2中用来执行shell命令的一个内置库
-
-python3 中已移除
-
-#### supervisor
-
-用于进程管理，只支持Python2
