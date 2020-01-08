@@ -93,6 +93,10 @@ b'\xe8\x86\x9c\xe6\xb3\x95'
 ```
 
 ### 文件读写
+open函数，与unicode的问题是相关联的
+- python2的文件读写都是操作bytes的
+- python3的文件读写，默认是`t`(文本)模式的，操作的是unicode，并以utf8作为默认编码
+
 python2
 
 ```python
