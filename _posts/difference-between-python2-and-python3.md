@@ -1,7 +1,7 @@
 title: Python2 与 Python3 区别
 date: 2017-08-30 5:03 PM
 categories: 编程
-tags:[Python,]
+tags: [Python,]
 
 ---
 
