@@ -11,7 +11,7 @@ Python2 vs Python3
 | name          | Python2                | Python3           |                                            |
 |---------------|------------------------|-------------------|--------------------------------------------|
 | try | try except ValueError, e | try except ValueError as e | 
-| exception | ValueError('aa').message | - | python3中可用ValueError('aa').args[0] 替代 |
+| exception | ValueError('aa').message | - | python3中可用ValueError('aa').args[0] 替代 |  |
 | \_\_import\_\_ | \_\_import\_\_ | - | 可以用importlib.import_module替代 |
 | print         | 关键字                    | 函数                |                                            |
 | unicode       | unicode                | str               |     python2默认的string是bytes， Python3中是unicode                                       |
@@ -29,7 +29,7 @@ Python2 vs Python3
 | 内置库           | commands               | -                 |   用subprocess替代                                         |
 | 内置库           | sys.setdefaultencoding | -                 |                                            |
 | 内置库           | Queue                  | queue             |                                                                                  |
-| 内置库           | ConfigParser           | configparser      |  
+| 内置库           | ConfigParser           | configparser      |  |
 
 
 ## 详细对比
