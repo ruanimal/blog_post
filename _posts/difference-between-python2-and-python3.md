@@ -34,9 +34,9 @@ Python2 vs Python3
 ## 详细对比
 ### unicode
 Python2
-- 字符串分 str('') 和 unicode(u'')
-- str，就是以'xxx'形式输入的字符，实际储存的值是xxx经过系统默认字符集encode过的字节串（bytes），如'\xe8\x86\x9c'
-- unicode，就是以u'xxx'形式输入的字符，实际储存的值是xxx对应的unicode码， 如u'\u819c'
+- 字符串分 `str('')` 和 `unicode(u'')`
+- str，就是以`'xxx'`形式输入的字符，实际储存的值是`xxx`经过系统默认字符集encode过的字节串（bytes），如'\xe8\x86\x9c'
+- unicode，就是以`u'xxx'`形式输入的字符，实际储存的值是`xxx`对应的unicode码， 如`u'\u819c'`
 - str，其实等于python3中的字节串（bytes）
 - unicode，其实等于python3中的字符串（str）
 - 在python2中unicode才是真正的字符串
