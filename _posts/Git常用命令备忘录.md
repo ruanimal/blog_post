@@ -78,8 +78,7 @@ HEAD：一个指向当前版本号的指针
 ### 子模块
 `git submodule add -b branch {url} [module_name]`.  已有仓库，添加子模块
 `git submodule set-branch --branch master module_name`   子模块切换追踪分支到master
-`git submodule update`  更新子模块代码, 分支和代码与.gitmodules中的配置同步
-`git submodule update --remote` 更新子模块代码, 分支和代码与远程仓库的默认分支同步
+`git submodule update --remote` 更新子模块代码, 分支和代码与.gitmodules中的配置同步
 `git clone --recursive {url}`. clone代码时，拉取子模块代码
 `git rm {submodule_folder}`   删除子模块
 
