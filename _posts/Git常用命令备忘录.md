@@ -75,6 +75,13 @@ HEAD：一个指向当前版本号的指针
 `git push`    如果当前分支只有一个追踪分支，那么主机名都可以省略。
 `git push -f`     强制提交
 
+### 子模块
+`git submodule add -b branch {url} [module_name]`.  已有仓库，添加子模块
+`git submodule set-branch --branch master module_name`   子模块切换追踪分支到master
+`git submodule update`  更新子模块代码, 分支和代码与.gitmodules中的配置同步
+`git submodule update --remote` 更新子模块代码, 分支和代码与远程仓库的默认分支同步
+`git clone --recursive {url}`. clone代码时，拉取子模块代码
+`git rm {submodule_folder}`   删除子模块
 
 ### 怎么吃后悔药
 `git log`     查看commit的历史
@@ -82,14 +89,15 @@ HEAD：一个指向当前版本号的指针
 `git log -p -2`   查看最近2次的更新内容
 `git log --graph`     命令可以看到分支合并图。
 `git whatchanged filename`    显示文件更改的相关commit
-`git checkout [commit id] -- file`      丢弃工作区文件修改，其实是切换文件版本到commit 版本
-`git reset HEAD filename`    可以把暂存区的修改撤销掉（unstage），重新放回工作区：
+`git checkout [commit id] -- file`      丢弃工作区文件修改
+`git restore filename`  丢弃工作区文件修改
+`git reset HEAD filename`    可以把暂存区的修改撤销掉（unstage），重新放回工作区
+`git restore --staged filename`    可以把暂存区的修改撤销掉（unstage），重新放回工作区
 `git reset –mixed`      此为默认方式，不带任何参数的git reset，即时这种方式，它回退到某个版本，只保留源码，回退commit和index信息
 `git reset –soft`       回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可
 `git reset –hard`       彻底回退到某个版本，本地的源码也会变为上一个版本的内容，若无版本号则回退到最新的版本。
 `git reset [commit-id] -- filename`   以commit的版本替换stage的文件
 `git revert [commit-id]`      是用一次新的commit来逆向操作之前的commit
-
 
 ### 其他
 `git gc`      压缩历史信息来节约磁盘和内存空间
