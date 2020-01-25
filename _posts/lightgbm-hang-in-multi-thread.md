@@ -21,7 +21,7 @@ Thread 8 (Thread 0x7f8eb7900700 (LWP 1859)):
 
 发现,github上的一个[issue](https://github.com/microsoft/LightGBM/issues/2217#issuecomment-501233873), 顺着发现官网文档上早就记录里这个问题, 并且提供了解决办法.
 
-![](media/15799334551032.jpg)
+![](http://image.runjf.com/mweb/2020-01-25-15799334551032.jpg)
 
 意思是说,OpenMP这个库在多线程fork的时候, 存在bug, 对于C/C++程序必须在fork完成之后再使用OpenMP的功能.
 
