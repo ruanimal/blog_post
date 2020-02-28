@@ -113,7 +113,7 @@ $ ulimit -u
 ### 重启进程问题依然存在
 但是问题依然存在, 不能解决. 
 
-再次查看进程的`RLIMIT_NPROC`, 发现并没有并变化.
+再次查看进程的`RLIMIT_NPROC`, 发现并没有变化.
 ```
 $ cat /proc/13839/limits   |grep 'Max processes'
 Max processes             1024                 516033               processes
