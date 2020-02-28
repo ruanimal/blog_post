@@ -1,4 +1,4 @@
-title: OpenBLAS blas_thread_init: pthread_create: Resource temporarily unavailable 问题分析与解决
+title: OpenBLAS blas_thread_init pthread_creat Resource temporarily unavailable 问题分析与解决
 date: 2020-02-28 9:48 AM
 categories: 编程
 tags: [Python, 机器学习] 
@@ -35,6 +35,8 @@ OpenBLAS blas_thread_init: RLIMIT_NPROC 1024 current, 516033 max
 在上面的错误输出里有一个关键词 `RLIMIT_NPROC`, 涉及到了linux的Resouce limit.
 
 在Linux系统中，Resouce limit指在一个进程的执行过程中，它所能得到的资源的限制，比如进程的core file的最大值，虚拟内存的最大值等。
+
+<!--more-->
 
 Resouce limit的大小可以直接影响进程的执行状况。其有两个最重要的概念：soft limit 和 hard limit。
 
