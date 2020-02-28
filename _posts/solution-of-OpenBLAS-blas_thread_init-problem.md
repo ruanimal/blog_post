@@ -95,13 +95,14 @@ Max realtime timeout      unlimited            unlimited            us
 显然1016已结接近Soft Limit了, 当程序尝试启动更多进程事就回出错, 所以我们需要增大Soft Limit.
 
 ### 增大RLIMIT_NPROC数值
+
 通过修改`/etc/security/limits.d/90-nproc.conf`配置文件
 
 增加以下内容, 将RLIMIT_NPROC设置为10240
+```
+*    soft    nproc    10240
 
 ```
-*          soft    nproc     10240
-``` 
 
 执行`ulimit -u`, 确认已经生效
 ```
@@ -142,7 +143,7 @@ $ ps -ef -T |grep sync360  | grep mid  | wc -l
 ### OpenBLAS
 OpenBLAS是高度优化的线性代数库, 很多机器学习的库都依赖了OpenBLAS.
 
-OpenBLAS通过多线程的方式来加速计算, 所以241一个进程很很好解释了.
+OpenBLAS通过多线程的方式来加速计算, 所以241个进程很很好解释了.
 由于我的服务器是24核心的, 一般多线程程序的默认线程数与cpu核心数一致.
 所以: `241 = 10 * 24 + 1` 
 
