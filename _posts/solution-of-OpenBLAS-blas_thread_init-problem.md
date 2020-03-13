@@ -92,7 +92,7 @@ Max realtime timeout      unlimited            unlimited            us
 
 通过`ps -ef -T |grep $(whoami) | wc -l`可以查得当前用户的总进程(线程)数目, 结果是`1016`.
 
-显然1016已结接近Soft Limit了, 当程序尝试启动更多进程事就回出错, 所以我们需要增大Soft Limit.
+显然1016已结接近Soft Limit了, 当程序尝试启动更多进程时就回出错, 所以我们需要增大Soft Limit.
 
 ### 增大RLIMIT_NPROC数值
 
@@ -129,14 +129,14 @@ Max processes             1024                 516033               processes
 最终, 将supervisord进程重启, 问题得到解决.
 
 ## 为什么1024的进程数不够用呢?
-这个服务是个多进程的tornado服务, 共10个工作进程. 但是最终用了241一个进程/线程.
+这个服务是个多进程的tornado服务, 共10个工作进程. 但是最终用了241个进程/线程(Linux进程和线程某种意义上是等价的).
 
 ```
 $ ps -ef -T |grep sync360  | grep mid  | wc -l   
 241  
 ```
 
-服务器上类似的服务又有三四个, 1024的量很快就用完了.
+这台服务器上类似的服务又有三四个, 1024的量很快就用完了.
 
 所以问题又回到了`OpenBLAS`身上
 
