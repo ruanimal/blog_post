@@ -529,9 +529,9 @@ pdb的使用需要预先在源码中引入，对于已经运行的程序无法�
 
 ## 学习资源
 ### 快速上手
-- [简明Python教程](https://www.gitbook.com/book/lenkimo/byte-of-python-chinese-edition/details)
+- [简明Python教程](https://bop.mol.uno/)
 - [廖雪峰Python教程](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
-- 官方Tutorial[英文](https://docs.python.org/3/tutorial/index.html)[中文](http://docspy3zh.readthedocs.io/en/latest/tutorial/)
+- [官方Tutorial](https://docs.python.org/zh-cn/3/tutorial/index.html)
 
 ### 体系化学习
 - [Python语言及其应用](https://book.douban.com/subject/26675127/)
