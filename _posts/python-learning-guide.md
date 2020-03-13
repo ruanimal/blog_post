@@ -536,6 +536,7 @@ pdb的使用需要预先在源码中引入，对于已经运行的程序无法�
 ### 体系化学习
 - [Python语言及其应用](https://book.douban.com/subject/26675127/)
 - [Python参考手册](https://book.douban.com/subject/5401851/)
+- [Python Cookbook](https://book.douban.com/subject/4828875/)
 
 ### 深入学习
 - [流畅的Python](https://book.douban.com/subject/27028517/)
