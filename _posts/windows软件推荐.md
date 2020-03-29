@@ -8,7 +8,13 @@ tags: 软件
 本人结合自己使用的感受，推荐以下几十款软件给大家使用，覆盖了日常的大部分使用场景。
 软件不追新，够用就好，因为软件随着不断更新过度开发的可能性是很大的。
 资源大部分来自互联网，请知悉相关风险。
+
+部分分享已经失效，这里补一下: https://pan.baidu.com/s/1ehg5VNksD7u-eWm1KFmPSw 
+*提取码: g2fx*
+
 **善用佳软，节约时间，提高效率。**
+
+<!--more-->
 
 ## 网页浏览
 ### Cent Browser
@@ -24,7 +30,6 @@ tags: 软件
 - 等等。。。
 <div style="max-width: 600px">![](http://image.runjf.com/16-7-31/99975896.jpg)</div>
 **下载地址** [官方网站](http://www.centbrowser.com/)
-<!--more-->
 
 ## 媒体播放
 ### AirPlay
