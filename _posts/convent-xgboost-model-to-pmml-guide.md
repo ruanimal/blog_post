@@ -74,7 +74,6 @@ fmap文件的每行的格式是: `特征索引\t特征名称\tq`
 ...
 ```
 
-
 #### 执行
 ```shell
 java -jar jpmml-xgboost-executable-1.3.15.jar \
