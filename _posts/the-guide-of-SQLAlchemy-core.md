@@ -5,7 +5,7 @@ tags: [SQLAlchemy, Python, ORM]
 
 ---
 
-SQLAlchemy core 是SQLAlchemy的核心部件，主要负责生成sql查询和具体的数据库操作，SQLAlchemy 就是构建在core之上的。
+SQLAlchemy core 是SQLAlchemy的核心部件，主要负责生成sql查询和具体的数据库操作，SQLAlchemy orm 就是构建在core之上的。
 
 在不需要对象映射的时候，使用core而不是orm，可以降低数据库操作成本，提高性能。
 
