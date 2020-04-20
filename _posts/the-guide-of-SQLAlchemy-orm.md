@@ -37,13 +37,13 @@ class SomeData(Base):
 SQLAlchemy使用类似`sqlite:///test.sqlite3`的URI来表示数据库连接
 格式为：`dialect+driver://username:password@host:port/database`, 具体查看[官方文档](https://docs.sqlalchemy.org/en/13/core/engines.html#database-urls)
 
-### 应用Model对应数据库表
+### 生成Model对应数据表
 ```python
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 engine = create_engine('sqlite:///test.sqlite3', echo=True)
-Base.metadata.create_all(engine)
+Base.metadata.create_all(engine)  # 如果表不存在，则生成
 ```
 
 ### 自动映射已存在的数据表
@@ -115,6 +115,10 @@ session.query(SomeData.status, SomeData.message).all()
 stmt = text("SELECT message, id, status FROM table11 Where status=:status")
 stmt = stmt.columns(SomeData.message, SomeData.id, SomeData.status,)
 session.query(SomeData).from_statement(stmt).params(status='1').all()
+
+## 遍历大表，每N条数据请求数据库一次
+for p in session.query(SomeData).yield_per(5):
+    print(p)
 ```
 
 多表join查询
