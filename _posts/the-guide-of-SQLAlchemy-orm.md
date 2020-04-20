@@ -1,4 +1,4 @@
-title: SQLAlchemy ORM 教程
+title: SQLAlchemy ORM 使用教程
 date: 2019-10-26 8:17 PM
 categories: 编程
 tags: [SQLAlchemy, Python, ORM]

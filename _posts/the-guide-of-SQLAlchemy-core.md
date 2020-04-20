@@ -1,4 +1,4 @@
-title: SQLAlchemy Core 教程
+title: SQLAlchemy Core 使用教程
 date: 2019-10-28 8:17 PM
 categories: 编程
 tags: [SQLAlchemy, Python, ORM]
