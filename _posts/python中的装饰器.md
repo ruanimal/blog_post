@@ -5,12 +5,12 @@ tags:  [Python, ]
 
 ----
 
-
+## 概述
 顾名思义，所谓装饰器就是对原有的对象做一些装饰，也就是给已有的对象添加一些功能。
 
 假如我现在想在函数运行时输出一些信息
 
-### 小学水平
+## 小学水平
 ```python
 def running(func):
     print '`%s` is running...' % func.__name__
@@ -31,7 +31,7 @@ I cat't sum right now!
 在这里的效果等效于running(my_sum)()，不过看起来有点别扭。
 **注意：一旦通过`@running`装饰了函数，不管被装饰函数是否运行，python解释器都会执行一遍`running`函数。**
 
-### 中学水平
+## 中学水平
 上一个装饰器用起来还行，但是有一个致命的问题，它不能装饰带参数的函数。所以我们在装饰器内部定义`_wrapper`函数，并返回它。这个函数接收所有位置参数`*args`，和关键字参数`*kwargs`，在`_wrapper`内部执行`func(*args, **kwargs)`。
 
 <!--more-->
@@ -71,7 +71,7 @@ def running(func):
     return _wrapper
 ```
 
-### 大学水平
+## 大学水平
 上一个装饰器也有一个问题，就是经过装饰的`my_sum.__name__`变成了`_wrapper`。
 这个问题可以通过python内置的`functools.wraps`解决，这个装饰器对原函数的一些属性进行了复制。
 

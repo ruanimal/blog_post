@@ -6,7 +6,7 @@ tags: [Web, Python, Django]
 
 ----
 
-## 一、HTTP协议
+## HTTP协议
 ### HTTP简介
 HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写。
 用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议。
@@ -148,7 +148,7 @@ OPTIONS  允许客户端查看服务器的性能。
 TRACE    回显服务器收到的请求，主要用于测试或诊断。
 ```
 
-## 二、Web的发展史
+## Web的发展史
 ### 静态页面
 在很久很久以前, 那时Web开发还比较简单，开发者经常会去操作web服务器，并且他会写一些HTML页面放到服务器指定的文件夹(/www)下。
 
@@ -166,7 +166,7 @@ TRACE    回显服务器收到的请求，主要用于测试或诊断。
 ### 动态页面
 ![](http://image.runjf.com/mweb/2019-09-28-15300005473401.jpg)
 
-## 三、CGI
+## CGI
 ### 什么是CGI
 `通用网关接口`（Common Gateway Interface/CGI）
 CGI是动态网页的第一种解决方案. CGI协议描述了服务器和请求处理程序之间传输数据的一种标准。
@@ -239,7 +239,7 @@ FastCGI像是一个常驻(long-live)型的CGI，它可以一直执行着，只�
 ![](http://image.runjf.com/mweb/2019-09-28-15300123292497.jpg)
 
 
-## 四、WSGI
+## WSGI
 WSGI：全称是`Web Server Gateway Interface`，WSGI不是服务器，python模块，框架，API或者任何软件，只是一种**规范**，描述`web server`如何与`web application`通信的规范。
 
 要实现WSGI协议，必须同时实现web server和web application，当前运行在WSGI协议之上的web框架有Torando, Flask, Django
@@ -292,7 +292,7 @@ def application (environ, start_response):
 
 middleware对服务器程序和应用是透明的，也就是说，服务器程序以为它就是应用程序，而应用程序以为它就是服务器。
 
-## 五、Django简介
+## Django简介
 Django是一个开放源代码的Web应用框架，由Python写成。采用了MVT的软件设计模式，即模型Model，视图View和模板Template。
 
 ### Django的MVT模型
@@ -371,11 +371,11 @@ class RemoteHostMiddleware(MiddlewareMixin):
 
 ```
 
-## 六、参考资料
-https://hit-alibaba.github.io/interview/basic/network/HTTP.html
-https://code.ziqiangxuetang.com/django/django-middleware.html
-http://blog.jobbole.com/45170/
-https://www.cnblogs.com/wanghetao/p/3934350.html
+## 参考资料
+1. https://hit-alibaba.github.io/interview/basic/network/HTTP.html
+2. https://code.ziqiangxuetang.com/django/django-middleware.html
+3. http://blog.jobbole.com/45170/
+4. https://www.cnblogs.com/wanghetao/p/3934350.html
 
 
 

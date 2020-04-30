@@ -1,36 +1,37 @@
-title: git代码自动同步
+title: 使用git的hooks自动同步代码
 date: April 16, 2016 8:01 PM
 categories: 编程
 tags: [git,]
 
 ----
 
-### 需求
+## 需求
 由于最近做Python的linux服务器脚本，经常要同步代码到测试服务器，又不想直接ssh登录到服务器，所以萌生了用git自动同步代码的想法。
 具体的要求是：测试机是服务器，需要本地一push代码，测试机能实时更新。
 查阅相关资料发现可以用git的hooks来实现。
 
 <!--more-->
-### 解决方案
+
+## 解决步骤
 说明：  
 1. 本地项目： git-test  
 2. 中转仓库： git-transfer  
 3. 目的项目： git-dest  
 4. 中转仓库与目的项目都在测试机上
 
-#### 一、初始化中转仓库
+### 初始化中转仓库
 ```shell
 mkdir git-transfer
 cd git-transfer
 git --bare init
 ```
 
-#### 二、将中转仓库添加到本地项目的remote
+### 将中转仓库添加到本地项目的remote
 `git remote add transfer ssh://r@192.168.157.129/home/r/git-transfer/`
 
 
 
-#### 三、给中转仓库添加hooks
+### 给中转仓库添加hooks
 ```shell
 cd /home/r/git-transfer/hooks/
 cp post-update.sample post-update
@@ -54,7 +55,7 @@ git add . -A && git stash
 git pull origin master
 ```
 
-#### 四、将中转仓库clone到目的项目
+### 将中转仓库clone到目的项目
 `git clone /home/r/git-transfer/ /home/r/git-dest/`
 
 或者

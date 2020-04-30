@@ -5,7 +5,7 @@ tags: [Python, ]
 
 ----
 
-### python包、模块导入的顺序
+## python包导入机制
 包是指含有`__init__.py`的文件夹，模块就是一个.py文件。
 **python的包和模块是先查找`buil-in moudle`然后是`sys.path`这个list里的所有路径。**
 - sys.path[0]是启动Python解释器的脚本所在路径，比如运行`python task/admin.py`，sys.path[0]是`'/home/code/taskman/task'`；如果启动的是是idle,ipython等，sys.path[0]是`''`。
@@ -45,6 +45,7 @@ if __name__ == '__main__':
     print 'something'
 ```
 
+## 工作路径的影响
 ### 当前路径是`/home/code/taskman`
 假如我们要直接运行`task/admin.py`这个文件，直接`python task/admin.py`，会抛出`ImportError`。
 

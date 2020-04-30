@@ -6,7 +6,7 @@ tags: [Python]
 
 ----
 
-### 例子
+## 例子
 ```
 taskman
 ├── db.sqlite3
@@ -24,7 +24,7 @@ taskman
     └── wsgi.py 
 ```
 
-### 说明
+## 说明
 上面的例子是一个Django项目，Python包的导入都是相对于`主程序`来说的。
 这个项目的主程序就是`manage.py`，跟manage.py同级的文件夹（含有`__init__.py`）如`task`,`man`就称之为包，若同级有文件就称之为顶级模块。
 在这个项目里所有Python包的导入，都应该写完整路径。

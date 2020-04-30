@@ -5,11 +5,11 @@ tags: [Git, ]
 
 ---
 
-### git 简介
+## git 简介
 git是一个分散式版本控制软件，最初由林纳斯·托瓦兹（Linus Torvalds）創作，於2005年以GPL釋出。最初目的是为更好地管理Linux内核开发而设计。
 初始版本由Linus大神在两个星期内写出来，之后基本一统文件版本控制的天下。
 
-### 名词解释
+## 名词解释
 工作区：就是你在电脑里能看到的目录。
 暂存区：英文叫stage, 或index。一般存放在"git目录"下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。
 版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
@@ -20,17 +20,17 @@ HEAD：一个指向当前版本号的指针
 
 <!--more-->
 
-### 环境配置
+## 环境配置
 `git config --global user.name yourname`   设置用户名，如果不加`--global`则只对当前项目生效
 `git config --global user.email youremail`    设置邮箱
 `git config --global core.editor vim`     设置默认编辑器为vim，可替换为你自己喜欢的
 `git config --global core.quotepath false`   显示中文路径名
 
-### 开始项目
+## 开始项目
 `git init`    初始化git仓库
 `git clone <repository> [<directory>]`    复制项目
 
-### 管理修改
+## 管理修改
 `git status`  查看当前仓库状态，绿色为未commit的stage内容，红色为未stage、为添加到版本库内容
 `git show <commit-hash-id|tag_name>`   查看某次commit的修改内容
 `git add filename`    保存文件修改到暂存区
@@ -45,7 +45,7 @@ HEAD：一个指向当前版本号的指针
 `git commit  --amend`     追加暂存区内容到当前分支的最近一个commit
 `git rebase -i HEAD~4`   合并最近4个commit
 
-### 分支与Tag
+## 分支与Tag
 `git branch -a`   查看所有分支信息
 `git branch new_branch_name`      新建分支
 `git branch -d branch_name`      删除分支
@@ -61,7 +61,7 @@ HEAD：一个指向当前版本号的指针
 `git tag -d tag_name`     删除tag
 
 
-### 仓库操作
+## 仓库操作
 `git remote -v`   查看远程仓库详细信息
 `git remote add <name> <url>`     添加远程仓库
 `git remote rename <old> <new>`   重命名远程仓库
@@ -75,14 +75,14 @@ HEAD：一个指向当前版本号的指针
 `git push`    如果当前分支只有一个追踪分支，那么主机名都可以省略。
 `git push -f`     强制提交
 
-### 子模块
+## 子模块
 `git submodule add -b branch {url} [module_name]`.  已有仓库，添加子模块
 `git submodule set-branch --branch master module_name`   子模块切换追踪分支到master
 `git submodule update --remote` 更新子模块代码, 分支和代码与.gitmodules中的配置同步
 `git clone --recursive {url}`. clone代码时，拉取子模块代码
 `git rm {submodule_folder}`   删除子模块
 
-### 怎么吃后悔药
+## 怎么吃后悔药
 `git log`     查看commit的历史
 `git log -p`      <filename>查看某个文件的修改历史
 `git log -p -2`   查看最近2次的更新内容
@@ -98,7 +98,7 @@ HEAD：一个指向当前版本号的指针
 `git reset [commit-id] -- filename`   以commit的版本替换stage的文件
 `git revert [commit-id]`      是用一次新的commit来逆向操作之前的commit
 
-### 其他
+## 其他
 `git gc`      压缩历史信息来节约磁盘和内存空间
 `git <command> --abort`   一般用于中断某次操作
 `git cherry-pick <commit_id>`       捡取某一个commit到当前分支（包含commit变更的内容和注释）

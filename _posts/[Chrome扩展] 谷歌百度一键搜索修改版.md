@@ -5,7 +5,7 @@ tags: [浏览器扩展, ]
 
 ---
 
-### 1. 简介
+## 简介
 
 谷歌百度一键搜索， 在百度页面上搜谷歌，在谷歌的页面上搜索百度，无需切换，无需重新输入搜索词。
 
@@ -18,25 +18,21 @@ tags: [浏览器扩展, ]
 反馈：190127701@qq.com
 forked from: raywill/BaiGoogleDu
 
-
 <!--more-->
-### 2. 安装方法
+
+## 安装方法
 
 下载crx文件：[github](https://github.com/ruanima/BaiGoogleDu/releases)
 拖入到 chrome://extensions/ 页面，即可完成安装。
 
-### 3. 更新日志
+## 更新日志
 2015年11月28日　　版本: 1.2.1
 - 改进百度首页判断逻辑。
 
 2016年12月12日　　版本: 1.2.2
 - 适应新版google首页。
 
-### 4. 截图
-
-![](http://i5.tietuku.com/e1a7dd1fb93c3487.png)
-![](http://i5.tietuku.com/ff31dda13801e426.png)
-![](http://i5.tietuku.com/2f63d95de731641e.png)
-
-
-
+## 截图
+![](http://image.runjf.com/mweb/2020-04-30-15882559454860.png)
+![](http://image.runjf.com/mweb/2020-04-30-15882559641017.png)
+![](http://image.runjf.com/mweb/2020-04-30-15882559823254.png)

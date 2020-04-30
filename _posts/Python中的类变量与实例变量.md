@@ -8,7 +8,7 @@ tags: [Python]
 
 　　对于初学者来说，python的类变量（也就是java中的静态变量）和实例变量（也就是属性）有一些很容易混淆的地方，同时对这些特性深入了解有助于理解python的面向对象思想。
 
-### 类变量与实例变量区分
+## 类变量与实例变量区分
 ```python
 >>> class ClassA(object):  # 1
 ...     num1 = 1  # 类变量
@@ -50,7 +50,7 @@ False
 以上这些，也适用于`staticmethod`和`classmethod`。
 
 
-### 如果ClassA还有父类
+## 如果ClassA还有父类
 <!--more-->
 
 ```python

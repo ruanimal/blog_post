@@ -7,7 +7,7 @@ tags: [UML, 软件架构]
 ----
 
 
-## 一、Plantuml 是什么？
+## Plantuml 是什么？
 首先得说一下UML，**统一建模语言**（英语：Unified Modeling Language，缩写 UML）是非专利的第三代和规约语言。
 
 UML涵盖了很多类型的图，主要都是应用于软件开发行业。
@@ -58,7 +58,7 @@ BaseClass <|-- net.unused.Person
 输出效果
 ![](http://image.runjf.com/mweb/15690347198367.jpg)
 
-## 二、环境搭建
+## 环境搭建
 我们需要一个编辑器/IDE来编辑和预览UML图表，这里使用[vscode](https://code.visualstudio.com/)
 
 ### 安装PlantUML插件
@@ -85,7 +85,7 @@ BaseClass <|-- net.unused.Person
 2. 预览图表
 ![-w1151](http://image.runjf.com/mweb/15690369832230.jpg)
 
-## 三、PlantUML基础语法
+## PlantUML基础语法
 由于PlantUML支持的图表类型比较多，每种图表的语法还不太一致，这里只简单介绍通用的语法，具体的图表还是建议查看官方文档。
 
 也建议大家，在使用过程中记录适合自己的每种图表的模板，作图效率大大提高。
@@ -140,7 +140,7 @@ You <--> World: Hololo
 ```
 ![-w260](http://image.runjf.com/mweb/15690396911033.jpg)
 
-## 四、一些例子
+## 一些例子
 ### 时序图
 ```
 @startuml

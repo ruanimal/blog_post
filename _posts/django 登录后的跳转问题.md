@@ -5,15 +5,19 @@ tags: [Python, Django]
 
 ---
 
-	在开发django网站时发现，用户登录后不能跳转到之前的页面，google了很多答案，讲得也不清楚。
-    自己琢磨解决了，以下干货。
 
-#### 1. 登录链接
+## 概述
+在开发django网站时发现，用户登录后不能跳转到之前的页面，google了很多答案，讲得也不清楚。
+
+其实就是渲染登陆表单时，将原链接带到action参数里，view函数接收到参数后进行重定向。
+
+## 实现
+### 登录链接
 ```xml
-<a  href="/account/login/?next={{request.path}}">登录</a>
+<a href="/account/login/?next={{request.path}}">登录</a>
 ```
 
-#### 2. view
+### view
 ```Python
 def login(request):
     next_url = request.REQUEST.get('next', '/')
@@ -25,7 +29,7 @@ def login(request):
     return redirect(next_url)
 ```
 
-#### 3. 登录表单
+### 登录表单
 ```xml
 <form action="/account/login/?next={{next_url}}" method="post" >
 {% csrf_token %}

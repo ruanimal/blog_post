@@ -1,15 +1,16 @@
 title: xubuntu自动登录root账户
 date: April 16, 2016 7:42 PM
 categories: 编程
-tags: linux
+tags: [linux, ]
+
 ----
 
 
-### 一、设置root密码
+## 设置root密码
 运行 `sudo passwd`
 根据提示输入root帐户密码。
 
-### 二、修改lightdm配置文件
+## 修改lightdm配置文件
 运行 `ls /usr/share/lightdm/lightdm.conf.d/ -al`
 -rw-r--r-- 1 root root   72 12月  3 03:57 50-greeter-wrapper.conf
 -rw-r--r-- 1 root root   68 12月  3 03:57 50-guest-wrapper.conf
@@ -27,7 +28,7 @@ greeter-show-manual-login=true
 all-guest=false
 ```
 
-### 三、修改 `/root/.profile`
+## 修改 `/root/.profile`
 在刚修改完root权限自动登录后，发现可能开机出现以下提示：
 
 ```

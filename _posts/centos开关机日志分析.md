@@ -2,8 +2,10 @@ title: centos开关机日志分析
 date: June 22, 2016 7:52 PM
 categories: 编程
 tags: [linux, ]
+
 ----
 
+## 缘起 
 在工作中发现有获取linux具体开关机时间和类型的需求，可以通过分析`/var/log/wtmp`日志文件得到。
 通过`last -x -F`可以将`/var/log/wtmp`输出以下格式。
 
@@ -35,6 +37,7 @@ root     pts/10       172.16.3.211     Sun Jun 12 08:46:06 2016 - crash         
 root     pts/9        172.16.3.30      Sun Jun 12 08:41:33 2016 - crash                     (00:25)       
 ```
 
+## 性空
 ### 具体一条记录
 
 | 用户 | 终端类型 | 登录ip | 开始时间 | 结束时间 | 持续时长 |

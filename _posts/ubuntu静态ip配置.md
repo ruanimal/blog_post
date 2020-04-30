@@ -7,7 +7,7 @@ tags: [ubuntu, linux]
 
 以vmware虚拟机为例  
 
-#### 设置IP
+## 设置IP
 运行 `sudo nano /etc/network/interfaces`
 将文件修改成如下：
 ```
@@ -18,7 +18,7 @@ gateway 192.168.157.2    # 网关
 netmask 255.255.255.0   # 掩码
 ```
 
-#### 修改DNS
+## 修改DNS
 运行 `sudo nano /etc/resolvconf/resolv.conf.d/base`
 把文件改成 `nameserver 192.168.157.2`
 把`192.168.157.2`改成你需要的dns，这里因为是vmware的NAT模式，所以dns和网关是一样的。

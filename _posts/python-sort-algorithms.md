@@ -5,7 +5,7 @@ tags: [Python]
 
 ----
 
-## 一、冒泡排序 BubbleSort
+## 冒泡排序 BubbleSort
 ### 介绍
 遍历序列，比较两个元素，如果前面的大于后面的就交换两者的位置。其实称之为冒泡排序不如加沉底排序，因为每一轮比较，这一轮轮最大都会被排到序列末尾，其实沉底更为贴切。
 
@@ -44,7 +44,7 @@ def bubble_sort(arry):
 
 <!--more-->
 
-## 二、选择排序 SelectionSort
+## 选择排序 SelectionSort
 ### 介绍
 还是先来看看选择排序的思想。选择排序的思想非常直接，不是要排序么？那好，我就从所有序列中先找到最小的，然后放到第一个位置。之后再看剩余元素中最小的，放到第二个位置……以此类推，就可以完成整个的排序工作了。
 
@@ -66,7 +66,7 @@ def selection_sort(arry):
     return arry
 ```
 
-## 三、插入排序 InsertionSort
+## 插入排序 InsertionSort
 ### 介绍
 插入排序（Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。
 
@@ -94,7 +94,7 @@ def Insertion_sort(arry):
         arry[index] = temp
     return arry
 ```
-## 四、希尔排序 ShellSort
+## 希尔排序 ShellSort
 ### 介绍
 希尔排序，也称递减增量排序算法，是插入排序的一种更高效的改进版本，我称之为`分组插入排序`。希尔排序是非稳定排序算法。
 希尔排序是基于插入排序的以下两点性质而提出改进方法的
@@ -125,7 +125,7 @@ def shell_sort(arry):
         step = int(round(step/2))
     return arry
 ```
-## 五、归并排序 MergeSort
+## 归并排序 MergeSort
 ### 介绍
 归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。
 
@@ -160,7 +160,8 @@ def merge(left, right):
     result += right[r:]
     return result
 ```
-## 六、快速排序 QuickSort
+
+## 快速排序 QuickSort
 ### 介绍
 快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。一个序列大于基准，一个小于基准。再对这两个序列进行同样的操作，以此类推直到所有元素都排列好。
 
@@ -192,7 +193,7 @@ def qsort(arry, left, right):
     return arry
 ```
 
-## 七、桶排序 BucketSort
+## 桶排序 BucketSort
 ### 介绍
 桶排序（Bucket sort）或所谓的箱排序，是一个排序算法，工作的原理是将数组分到有限数量的桶里。每个桶再个别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排序）。桶排序是鸽巢排序的一种归纳结果。当要被排序的数组内的数值是均匀分配的时候，桶排序使用线性时间（Θ(n)）。但桶排序并不是比较排序，他不受到O(n log n)下限的影响。
 
@@ -213,7 +214,7 @@ def bucket_sort(array):
     return result
 ```
 
-## 八、堆排序
+## 堆排序
 ### 介绍
 堆排序在 top K 问题中使用比较频繁。堆排序是采用二叉堆的数据结构来实现的，虽然实质上还是一维数组。二叉堆是一个近似完全二叉树 。
 

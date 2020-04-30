@@ -6,10 +6,12 @@ tags: [Python, 正则表达式]
 
 ----
 
-**re是python中的正则表达式处理模块，本文是为了总结re模块的用法。
-至于正则表达式的写法可以看[正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)**
+## 概述
+re是python中的正则表达式处理模块，本文是为了总结re模块的用法。
 
+至于正则表达式的写法可以看[正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
 
+## 用法
 ### re.compile
 `re.complie(pattern, flags=0)`
 把正则编译为`_sre.SRE_Pattern object`对象，在多次匹配的时候可提高运行效率。

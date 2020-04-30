@@ -13,7 +13,7 @@ gevent是一个使用完全同步编程模型的可扩展的异步I/O框架。
 
 <!--more-->
 
-## 一、一个简单的web server
+## 一个简单的web server
 这里使用flask写了web server 用于测试
 ```python
 # filename: flask_app.py
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     app.run()
 ```
 
-### 1.1 不使用gevent
+### 不使用gevent
 安装依赖：`pip install flask gunicorn gevent`
 
 启动服务器：`gunicorn -w 1 --bind 127.0.0.1:5000 flask_app:app`
@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
 由于只有一个worker进程，可以看到只有5qps，每个请求sleep 0.2秒，是符合预期的。
 
-### 1.2 使用gevent
+### 使用gevent
 启动服务器：`gunicorn -w 1 -k gevent --bind 127.0.0.1:5000 flask_app:app`
 
 测试性能：`siege -c 20 -r 1 'http://127.0.0.1:5000/test'` 
@@ -51,8 +51,8 @@ if __name__ == "__main__":
 
 可以看到，性能有接近20倍的提升
 
-## 二、C扩展阻塞io与gevent协作的问题
-### 2.1 加入阻塞io的C扩展
+## C扩展阻塞io与gevent协作的问题
+### 加入阻塞io的C扩展
 这个程序通过sleep 2s 来模拟阻塞的io操作，所以每次调用会阻塞2s
 
 ```c
@@ -94,8 +94,8 @@ def test():
 ![-w454](http://image.runjf.com/mweb/2019-11-07-15731339898524.jpg)
 
 
-### 2.2 解决方案
-#### 2.2.1 尝试thread
+### 解决方案
+#### 尝试thread
 使用线程, 基本没啥用, 不能解决问题
 
 ```python
@@ -125,7 +125,7 @@ HTTP/1.1 200    20.03 secs:       9 bytes ==> GET  /test
 HTTP/1.1 200    20.04 secs:       9 bytes ==> GET  /test
 ```
 
-#### 2.2.2 尝试multiprocess
+#### 尝试multiprocess
 问题解决
 
 ```python
@@ -150,7 +150,7 @@ HTTP/1.1 200     0.03 secs:       5 bytes ==> GET  /test
 HTTP/1.1 200     0.04 secs:       5 bytes ==> GET  /test
 ```
 
-### 2.3 总结
+### 总结
 webserver主体进程使用gevent, 将阻塞的c扩展网络io操作放到另一个进程中执行, 可以改造成一个服务
 
 具体可以用这下面两种实现
