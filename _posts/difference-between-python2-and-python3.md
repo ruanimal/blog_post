@@ -12,12 +12,13 @@ Python2 vs Python3
 | --- | --- | --- | --- |
 | try | try except ValueError, e | try except ValueError as e |  |
 | exception | ValueError('aa').message | - | python3中可用ValueError('aa').args[0] 替代 |
-| `__import__` | `__import__` | - | 可以用importlib.import_module替代 |
+| `__import__` | `__import__` | `__import__` | 推荐importlib.import_module替代，可移植性更好 |
 | print | 关键字 | 函数 |  |
 | unicode | unicode | str | python2默认的string是bytes， Python3中是unicode |
 | bytes | str | bytes |  |
 | division | 1 / 2 | 1 // 2 |  |
 | division | 1 / 2.0 | 1 / 2 |  |
+| 不等于操作符 | <> | != | 这个操作费在Python3中已废弃，使用!=替代 |
 | round | round(0.5) == 1.0 | round(0.5) == 0 | Python3内建的 round 是四舍六入五成双的机制 |
 | xrange | xrange | range |  |
 | range | range(1,2) | list(range(1,2)) |  |
