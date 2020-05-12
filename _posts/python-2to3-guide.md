@@ -146,6 +146,25 @@ tags: [2to3, Python]
 +     return res.decode('utf8') if res is not None else None
 ```
 
+### 为Python3添加unicode函数
+为了代码在Python2和Python3都正确运行，必须给Python增加unicode函数。
+
+如果后面代码不需要Python2支持，则这一步的改动可以去除，并且把所有的unicode调用改完str即可。
+
+实现
+```Python
+import six
+
+if six.PY2:
+    from __builtin__ import unicode
+else:
+    class unicode(str):
+        def __new__(cls, unicode_or_bytes=''):
+            if isinstance(unicode_or_bytes, bytes):
+                return str.__new__(cls, unicode_or_bytes, encoding='utf8')
+            return str.__new__(cls, unicode_or_bytes)
+```
+
 ## 修复于解释器版本相关的行为
 这一步用于测试的解释器是Python2
 
