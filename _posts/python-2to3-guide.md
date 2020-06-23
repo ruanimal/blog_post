@@ -115,7 +115,7 @@ tags: [2to3, Python]
 也就是：`外部数据（字节）-> decode -> unicode -> encode -> 输出数据（字节`
 
 ### 启用默认unicode支持
-启用默认unicode支持：`futurize --stage1 src tests -w`
+启用默认unicode支持：`futurize --stage1 --unicode-literals src tests -w`
 
 涉及的改动:
 ```Python
