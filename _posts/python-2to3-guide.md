@@ -70,7 +70,9 @@ tags: [2to3, Python]
 一般在升级过程中，不直接移除Python2支持，否则一旦发现问题难以回滚。
 也不方便确认，代码改动是否产生了非预期的变化。
 
-执行：`futurize --stage2 -w src tests`
+执行：`futurize --stage2 -x libfuturize.fixes.fix_unicode_keep_u -w src tests`
+
+**注意**：由于futurize关于unicode的处理存在一些bug，所以字符编码的我们自己单独处理（见后文）。这里的`-x libfuturize.fixes.fix_unicode_keep_u`参数，跳过对unicode的自动处理，不将代码中的unicode替换为str。同时，我们要逐一去除文件中自动添加的`from builtins import str`，避免类似`import unicode as str`的行为。
 
 可能涉及的改动:
 1. 迭代器对象相关改动
