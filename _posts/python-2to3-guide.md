@@ -168,7 +168,7 @@ else:
 ```
 
 ## 修复于解释器版本相关的行为
-这一步用于测试的解释器是Python2
+这一步用于测试的解释器是Python2和Python3
 
 ### 字典遍历顺序
 python的字典遍历是不保证顺序的，不同版本解释器遍历顺序可能不同。
@@ -220,3 +220,4 @@ def python3round(number, ndigits=None):
 
 ## 参考
 1. https://python-future.org/automatic_conversion.html
+2. https://github.com/PythonCharmers/python-future
