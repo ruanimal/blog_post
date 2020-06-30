@@ -163,7 +163,8 @@ Python 标准库的规模非常庞大, 可谓`自带军需`。
 ### 变量与赋值
 1. 变量的使用不用预先定义，在使用时赋值即可. 变量只是值的容器，没有类型的限制.
 2. 赋值：用等号连接左侧的变量和右侧的值，格式 `name = value`
-```
+
+```Python
 >>> a = 1
 >>> a
 1
@@ -194,7 +195,7 @@ Python 标准库的规模非常庞大, 可谓`自带军需`。
 ```
 
 2. while
-```
+```Python
 >>> i = 1
 >>> while i <= 3:
 ...     print(i)
@@ -205,7 +206,7 @@ Python 标准库的规模非常庞大, 可谓`自带军需`。
 ```
 
 3. break 结束循环
-```
+```Python
 >>> for i in [1, 2, 3]:
 ...     print(i)
 ...     if i > 1:
@@ -215,7 +216,7 @@ Python 标准库的规模非常庞大, 可谓`自带军需`。
 ```
 
 4. continue 跳过本次循环
-```
+```Python
 >>> for i in [1, 2, 3]:
 ...     if i == 2:
 ...         continue
@@ -227,7 +228,7 @@ Python 标准库的规模非常庞大, 可谓`自带军需`。
 #### 分支
 if/else, 其中else不是必须的
 
-```
+```Python
 >>> a = 1
 >>> if a > 0:
 ...     print(1)
@@ -252,13 +253,13 @@ Python内置了很多有用的函数，我们可以直接调用。
 
 要调用一个函数，需要知道函数的名称和参数，比如求绝对值的函数abs，只有一个参数。
 
-```
+```Python
 >>> abs(-1)
 1
 ```
 
 #### 定义函数
-```
+```Python
 >>> def my_abs(x):
 ...     if x >= 0:
 ...         return x
@@ -274,7 +275,7 @@ Python内置了很多有用的函数，我们可以直接调用。
 
 而实例是根据类创建出来的一个个具体的“对象”，每个对象都拥有相同的方法，但各自的数据可能不同, 实例是数据和方法的集合.
 
-```
+```Python
 >>> class Person(object):
 ...     total = 0
 ...     def __init__(self, name, age):
@@ -447,6 +448,8 @@ Python3还是Python2的问题，其实基本是每一个学习Python的人都会
 Python3还是Python2的区别主要在unicode的处理，以及一些内置库的命名上，具体可以看[这里](http://ponder.work/2017/08/30/difference-between-python2-and-python3/)
 
 ### 安装
+**强烈建议学习Python使用类unix系统（如macOS, Ubuntu），虚拟机也可以, 会减少很多疑难问题。**
+ 
 #### Windows
 访问 [](https://www.python.org/downloads/) 并下载最新版本的 Python 其安装过程与其它 Windows 平台的软件的安装过程无异。
 注意：请务必确认你勾选了 Add Python 3.x to PATH 选项。
@@ -463,6 +466,13 @@ Python3还是Python2的区别主要在unicode的处理，以及一些内置库�
 对于macOS，linux，bsd等类unix系统来说，最好的安装管理Python的方式是通过[pyenv](https://github.com/yyuu/pyenv)。
 
 pyenv 是 Python 版本管理工具。 pyenv 可以改变全局的 Python 版本，安装多个版本的 Python， 设置目录级别的 Python 版本，还能创建和管理 virtualenv 。所有的设置都是用户级别的操作，不需要 sudo 命令。
+
+#### conda(推荐)
+Conda是一个开源跨平台语言无关的包管理与环境管理系统。
+可以通过创建不同环境来管理Python版本，支持windows，mac，linux。可以解决一些由于系统库缺失或者版本不对导致的问题。
+
+这里推荐使用[miniconda](https://docs.conda.io/en/latest/miniconda.html)，体积较小，学习Python完全够用了。
+如果有机器学习相关需求的，可以选择安装[anaconda](https://docs.anaconda.com/anaconda/install/)
 
 ### 编辑器/IDE
 #### pycharm
@@ -557,3 +567,8 @@ pdb的使用需要预先在源码中引入，对于已经运行的程序无法�
 - [Flask Web开发](https://book.douban.com/subject/26274202/)
 - [利用Python进行数据分析](https://book.douban.com/subject/25779298/)
 - [Python Web开发：测试驱动方法](https://book.douban.com/subject/26640135/)
+
+### 微软Python教程视频
+* 炼气： https://www.bilibili.com/video/BV1nE41127zQ
+* 筑基： https://www.bilibili.com/video/BV1WT4y137cD
+* 金丹： https://www.bilibili.com/video/BV1qa4y1Y7CD
