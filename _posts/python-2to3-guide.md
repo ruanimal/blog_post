@@ -151,7 +151,7 @@ tags: [2to3, Python]
 ### 为Python3添加unicode函数
 为了代码在Python2和Python3都正确运行，必须给Python增加unicode函数。
 
-如果后面代码不需要Python2支持，则这一步的改动可以去除，并且把所有的unicode调用改完str即可。
+如果后面代码不需要Python2支持，则这一步的改动可以去除，并且把所有的unicode调用改为str即可。
 
 实现
 ```Python
@@ -170,7 +170,7 @@ else:
 ## 修复于解释器版本相关的行为
 这一步用于测试的解释器是Python2和Python3
 
-### 字典遍历顺序
+### 字典/集合遍历顺序
 python的字典遍历是不保证顺序的，不同版本解释器遍历顺序可能不同。
 如果你的代码对遍历顺序有依赖，建议固定遍历顺序，可以使用OrderedDict，或者遍历前排序，或者指定遍历的key。
 
@@ -183,34 +183,9 @@ def python2round(number, ndigits=0):
     if sys.version_info[0] == 2:
         return round(number, ndigits)
 
-    import math
-    eq = lambda a, b: math.isclose(a, b)   # pylint: disable=all
-    limit = 0.1 ** ndigits
-    if not eq(round(number + limit, ndigits) - round(number, ndigits), limit):
-        return number + abs(number) / number * 0.5 * limit
-    return float(round(number, ndigits))
-
-
-def python3round(number, ndigits=None):
-    if sys.version_info[0] >= 3:
-        if ndigits is not None:
-            return round(number, ndigits)
-        else:
-            return round(number)
-
-    intIt = True if ndigits is None else False
-    ndigits = ndigits if ndigits is not None else 0
-
-    f = number
-    if abs(round(f) - f) == 0.5:
-        retAmount = 2.0 * round(f / 2.0, ndigits);
-    else:
-        retAmount = round(f, ndigits)
-
-    if intIt:
-        return int(retAmount)
-    else:
-        return retAmount
+    from decimal import Decimal, ROUND_HALF_UP
+    res = Decimal.from_float(number).quantize(Decimal(10) ** -ndigits, rounding=ROUND_HALF_UP)
+    return float(res)
 ```
 
 ## 大功告成
