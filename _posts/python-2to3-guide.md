@@ -176,7 +176,7 @@ python的字典遍历是不保证顺序的，不同版本解释器遍历顺序�
 
 ### round
 Python2和Python3的四舍五入行为不一样。
-如果有数值处理相关的代码，建议做如下修复
+如果有数值处理相关的代码，建议做如下修复.
 
 ```Python
 def python2round(number, ndigits=0):
@@ -196,3 +196,4 @@ def python2round(number, ndigits=0):
 ## 参考
 1. https://python-future.org/automatic_conversion.html
 2. https://github.com/PythonCharmers/python-future
+3. https://stackoverflow.com/questions/10825926/python-3-x-rounding-behavior#answer-10826537
