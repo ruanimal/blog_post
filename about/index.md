@@ -5,9 +5,9 @@ comments: false
 
 ---
 
-### <center> 姓名：阮某人 </center >
-##### <center> 生年：挺久了吧 </center>
-##### <center> 家乡：村里面 </center>
-##### <center> 爱好：胡思乱想 </center>
-##### <center> 邮箱：admin#ponder.work </center>
+<center><font size="4">  姓名：阮某人 </font></center>
+<center><font size="4">  生年：挺久了吧 </font></center>
+<center><font size="4">  家乡：村里面 </font></center>
+<center><font size="4">  爱好：胡思乱想 </font></center>
+<center><font size="4">  邮箱：admin#ponder.work </font></center>
 
