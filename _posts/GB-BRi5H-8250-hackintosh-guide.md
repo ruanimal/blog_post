@@ -240,7 +240,7 @@ USB定制直接影响睡眠是否正常
 详细步骤参考[这个](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html#using-cpu-friend)
 
 #### 睡眠修复 
-如果上面的SSDT和驱动都做好了，睡眠的问题基本不大了
+如果上面的SSDT和驱动都做好了，睡眠的问题基本不大了，可能要设置下系统参数，禁止休眠到硬盘。
 
 详细步骤参考[这个](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html)
 
