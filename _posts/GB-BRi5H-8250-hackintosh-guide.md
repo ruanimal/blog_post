@@ -31,7 +31,7 @@ tags: [hackintosh, 电子产品]
 - 硬盘：Samsung 850 EVO M.2 SATA 250G
 - 无线网卡：DW1820A (08PKF4)
 
-## 黑苹果总体情况
+## 总体成果
 ### 正常工作项目
 - CPU，变频
 - 显卡，硬件加速
@@ -48,7 +48,6 @@ tags: [hackintosh, 电子产品]
 ### 不正常工作项目
 - 系统偏好设置-节能（错误识别为有电池）
     ![](http://image.runjf.com/mweb/2020-07-25-15956404046858.jpg)
-
 - HDMI睡眠唤醒，有时屏幕黑屏，需要按一下屏幕开关；DP睡眠正常
 - 显示器音响开机时不正常，拔插接口后或者开关屏幕电源后正常。
 
@@ -136,7 +135,7 @@ tags: [hackintosh, 电子产品]
 **注意**：配置文件中kext的顺序是有影响的，建议前两个是lilu和virtualsmc
     
 ### Bios设置
-如果bios没用相关设置项，可以跳过
+如果bios没有相关设置项，可以跳过
 
 #### 禁用项
 * Fast Boot
@@ -175,7 +174,7 @@ tags: [hackintosh, 电子产品]
 
 内置显卡的驱动，注意做的是以下几个点
 - 选择合适的缓冲帧`AAPL,ig-platform-id`，必要时仿冒设备id`device-id`
-- 定制正确的显示输出接口
+- 定制正确的显示输出接口，将物理接口和PCI设备正确对应
 - 显存，HDMI相关补丁
 
 这一步使用hackintool的应用补丁功能可以完成，详细步骤参考[这个](https://blog.daliansky.net/Tutorial-Using-Hackintool-to-open-the-correct-pose-of-the-8th-generation-core-display-HDMI-or-DVI-output.html)
@@ -184,7 +183,7 @@ tags: [hackintosh, 电子产品]
 
 #### 声卡驱动
 声卡驱动大部分工作由AppleALC自动完成，我们需要的是选择正确的layout-id.
-建议先去github的release日志上查看，是否在某次release添加了你主板的layout-id。如果没有相关记录，那就只能尝试wiki中对应声卡信号的所有可能的layout-id
+建议先去github的release日志上查看，是否在某次release添加了你主板的layout-id。如果没有相关记录，那就只能尝试wiki中对应声卡型号的所有可能的layout-id
 
 详细步骤参考[这个](https://dortania.github.io/OpenCore-Post-Install/universal/audio.html)
 
@@ -192,7 +191,7 @@ tags: [hackintosh, 电子产品]
 USB定制直接影响睡眠是否正常
 
 使用hackintool完成USB定制，主要过程
-1. SSDT-EC-USBX定制
+1. SSDT-EC-USBX定制（前面已经完成）
 2. 加载USBInjectAll.kext驱动，重启，注入所有接口。
 3. 分别使用USB2.0，USB3.0，Type-C设备拔插所有USB接口，找到物理接口和PCI设备的映射关系，并删除没有用到的USB接口。
 4. 生成USBPorts.kext驱动，加载。
@@ -241,7 +240,7 @@ USB定制直接影响睡眠是否正常
 详细步骤参考[这个](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html#using-cpu-friend)
 
 #### 睡眠修复 
-如果上面的SSDT和驱动都做好了，睡眠的问题基本不打了
+如果上面的SSDT和驱动都做好了，睡眠的问题基本不大了
 
 详细步骤参考[这个](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html)
 
@@ -253,11 +252,11 @@ USB定制直接影响睡眠是否正常
 ### 其他注意事项
 - 每个SSDT基本都可以用手动修改和自动修改，如果某种方法不生效建议尝试另外一种。
 - 如果不是配置完全一样，不要自己使用别人的EFI文件
-- FakePCIID相关驱动会改动PCI设备信息，可能导致USB定制失效
+- FakePCIID相关驱动会改动PCI设备信息，可能导致USB设备地址变化，导致USB定制失效，需要重新定制
 - 不同的SMBios机型会影响驱动成功率
 - 修改序列号会影响iCloud账户识别
 
-## 参考&感谢
+## 感谢
 - https://dortania.github.io
 - https://github.com/acidanthera
 - https://blog.daliansky.net
