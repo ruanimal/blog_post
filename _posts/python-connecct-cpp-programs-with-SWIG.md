@@ -14,7 +14,7 @@ tags: [SWIG, Python, c++]
 2. 生成C/C++和目标语言的包装代码
 3. 编译位置无关的C/C++包装代码和功能代码，并链接为动态库
 
-![Untitled Diagram](media/Untitled%20Diagram.svg)
+![](http://image.runjf.com/mweb/2020-08-06-Untitled%20Diagram.svg)
 
 ## c++示例代码
 下面用到的C++代码
@@ -36,7 +36,7 @@ class Utils {
 #endif
 ```
 
-实现代码
+具体实现代码
 ```c++
 /* utils.cpp */
 #include "utils.h"
@@ -78,7 +78,7 @@ g++ -shared utils.o example_wrap.o -o _example.so
 注意编译`example_wrap.cxx`时引入对应版本的python头文件，不同系统的路径可能有所不同。
 
 ## 使用
-```
+```python
 >>> import example
 >>> ul = example.Utils()
 >>> ul.Float2String(1.111)
