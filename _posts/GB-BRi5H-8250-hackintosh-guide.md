@@ -49,7 +49,7 @@ tags: [hackintosh, 电子产品]
 - 系统偏好设置-节能（错误识别为有电池）
     ![](http://image.runjf.com/mweb/2020-07-25-15956404046858.jpg)
 - HDMI睡眠唤醒，有时屏幕黑屏，需要按一下屏幕开关；DP睡眠正常
-- 显示器音响开机时不正常，拔插接口后或者开关屏幕电源后正常。
+- 显示器喇叭开机时不正常，拔插接口后或者开关屏幕电源后正常。
 
 ## 安装教程
 安装过程大部分参考[dortania](https://dortania.github.io/OpenCore-Install-Guide/)，这里采用的是双系统安装方法。
@@ -82,7 +82,7 @@ tags: [hackintosh, 电子产品]
 1. 制作Windows安装U盘
 2. 开机安装Delete键进入bios，选择从U盘启动
 3. 安装Windows系统，具体安装过程可以参考[这个教程](https://zhuanlan.zhihu.com/p/49181786)，注意安装时不要Windows分区不要占用所有空间，建议50G就好了。
-4. 安装完成后，新建一个分区，后续作为macOS的安装分区，建议预留100G意思
+4. 安装完成后，新建一个分区，后续作为macOS的安装分区，建议预留100G以上
 
 ### macOS安装U盘制作
 #### macOS准备
@@ -158,7 +158,7 @@ tags: [hackintosh, 电子产品]
 * SATA Mode: AHCI
 
 ### macOS安装
-注意，这时我们先不要替换无线网卡为DW1820A
+**注意**：这时我们先不要替换无线网卡为DW1820A，可能会导致系统安装失败或者卡死。
 
 1. 重启电脑，从macOS安装U盘启动
 2. 从OpenCore启动菜单选择macOS安装启动项
