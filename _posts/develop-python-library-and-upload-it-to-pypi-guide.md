@@ -9,6 +9,7 @@ tags: [PyPI, Python]
 [PyPI](https://pypi.org/)（英语：Python Package Index，简称PyPI）是一个用于存储Python写成的软件包的软件存储库，我们平时用pip安装的库就是来自于PyPI
 
 而且，通过PyPI我们可以把自己写的库代码分享给别人，这也是开源的乐趣之一。
+<!--more-->
 
 ## 用到的库代码
 
