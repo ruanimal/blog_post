@@ -11,6 +11,7 @@ tags: [Python, ]
 但是根本问题还没有找到，所以我请出了line_profiler来分析程序的具体耗时情况。
 
 [line_profiler](https://github.com/pyutils/line_profiler)是个代码耗时分析器，可以逐行分析代码的耗时情况。
+<!--more-->
 
 ## 使用
 line_profiler包含两个部分
@@ -35,7 +36,7 @@ def main(run_type):
     job.run(source, service, apply_no, info, run_type)
 ```
 
-然后，运行代码：`kernprof -l service.py`
+然后，运行代码：`kernprof -l service.py`, 统计耗时情况
 
 `@profile`装饰器不需要被import，kernprof在运行时会注入依赖，kernprof会记录被装饰函数的耗时情况，有多个函数也可以都加上装饰器。
 
@@ -94,17 +95,22 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     70                                               def run(self, apply_no, info, req_type, run_type):
     ... 省略部分逻辑
    112         1          2.0      2.0      0.0          if req_type == 'credit':
-   113         1    3370673.0 3370673.0     80.8              sql = db_utils.generate_sql_v5(info1, sql, val, columns)
+   113         1    3370673.0 3370673.0     80.8              sql = db_utils.generate_sql(info1, sql, val, columns)
    114                                                   else:
-   115                                                       sql = db_utils.generate_sql_v5(info1, sql, val, columns)
+   115                                                       sql = db_utils.generate_sql(info1, sql, val, columns)
    116         1       6948.0   6948.0      0.2          safe3_db.executor(sql)
 ```
 
-可以看到，生成SQL语句占用了80%的数据，SQL反倒不怎么耗时，显然是不正常的。
+可以看到，113行的生成SQL语句占用了80%的时间，SQL反倒不怎么耗时，显然是不正常的。
 
-看下`db_utils.generate_sql_v5`函数的具体代码
+再看下`db_utils.generate_sql`函数的具体代码
+可以发现遍历字段列表(item_list)的时候，调用了`get_json_value`，该函数每次都会调用`copy.deepcopy`。
+众所周知，对象的深拷贝是十分消耗cpu资源的，并且这里深拷贝的次数会随着字段数的增加而线性增长。
+
+把深拷贝行为去除后，服务耗时和cpu占用都回归到了正常水准。
+
 ```python
-def generate_sql_v5(info, sql, val, item_list):
+def generate_sql(info, sql, val, item_list):
     index = 0
     length = len(item_list)
     for item in item_list:
