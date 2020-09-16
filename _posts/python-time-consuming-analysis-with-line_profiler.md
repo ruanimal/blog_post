@@ -20,7 +20,7 @@ line_profiler包含两个部分
 
 首先，安装：`pip install line_profiler -U`
 
-给需要分析的代码加上`@profile`装饰器
+给需要分析的代码加上`@profile`装饰器, `@profile`装饰器不需要被import，kernprof在运行时会注入依赖，kernprof会记录被装饰函数的耗时情况，有多个函数也可以都加上装饰器。
 ```python
 @profile
 def main(run_type):
@@ -36,11 +36,7 @@ def main(run_type):
     job.run(source, service, apply_no, info, run_type)
 ```
 
-然后，运行代码：`kernprof -l service.py`, 统计耗时情况
-
-`@profile`装饰器不需要被import，kernprof在运行时会注入依赖，kernprof会记录被装饰函数的耗时情况，有多个函数也可以都加上装饰器。
-
-执行完成后生成耗时报告文件`service.py.lprof`
+然后，运行代码：`kernprof -l service.py`, 统计耗时情况, 执行完成后生成耗时报告文件`service.py.lprof`
 
 最后，耗时报告解析：`python -m line_profiler service.py.lprof`，会生成可阅读的耗时报告。
 
