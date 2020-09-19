@@ -133,7 +133,7 @@ tags: [hackintosh, 电子产品]
 4. 配置准确性校验 https://opencore.slowgeek.com/
 
 **注意**：配置文件中kext的顺序是有影响的，建议前两个是lilu和virtualsmc
-    
+   
 ### Bios设置
 如果bios没有相关设置项，可以跳过
 
@@ -248,6 +248,18 @@ USB定制直接影响睡眠是否正常
 到此黑苹果配置基本完成了，我们可以去除`boot-args`中的`-v`等debug启动参数，添加相关声音和图片资源，配置config.plist启动OpenCore图形界面。（在开机中启用声音，个人觉得不太不要）
 
 详细步骤参考[这个](https://dortania.github.io/OpenCore-Post-Install/cosmetic/gui.html#setting-up-opencore-s-gui)
+
+### 将OpenCore迁移到硬盘
+上面的OpenCore的各种配置都是在U盘上完成的，当配置完成没啥问题之后，我们就可以把OpenCore的文件迁移到硬盘了。
+这样就不需要每次都从U盘启动了，并且开启会默认进入macOS
+
+1. 在pe系统下，使用DiskGenius挂载硬盘ESP分区（右键ESP分区-指派新的驱动器号）
+	![-w1059](http://image.runjf.com/mweb/2020-09-19-16004770939670.jpg)
+2. 复制U盘的EFI文件夹到ESP分区根目录，和原有的文件夹合并
+3. 使用bootice，添加硬盘ESP分区的`\EFI\BOOT\BOOTx64.efi`文件到启动条目，并上移到第一位
+![-w446](http://image.runjf.com/mweb/2020-09-19-16004775381948.jpg)
+![-w548](http://image.runjf.com/mweb/2020-09-19-16004776841057.jpg)
+
 
 ### 其他注意事项
 - 每个SSDT基本都可以用手动修改和自动修改，如果某种方法不生效建议尝试另外一种。
