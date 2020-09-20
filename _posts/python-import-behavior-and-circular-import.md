@@ -89,9 +89,11 @@ logging.info('end load')
 [2020-06-20 10:57:03,663 foo.do_someting] end call
 ```
 
-可以发现几个问题
+这里已经用延迟导入，这个典型方法，解决了执行时报错的问题
+
+但是，还是可以发现几个问题
 1. run.py 被加载了两次
-2. 在run模块中的server实例和Server类，与foo模块中的id一样，也就是不是同一个对象。
+2. 在run模块中的server实例和Server类，与foo模块中的id一样，也就是不是同一个对象。（第8行和14行）
 
 ## 分析
 先复习下import机制
