@@ -32,6 +32,8 @@ tags: [hackintosh, 电子产品]
 - 无线网卡：DW1820A (08PKF4)
 
 ## 总体成果
+OpenCore配置文件我放到github了 https://github.com/ruanima/GB-BRi5H-8250-hackintosh
+
 ### 正常工作项目
 - CPU，变频
 - 显卡，硬件加速
@@ -272,3 +274,4 @@ USB定制直接影响睡眠是否正常
 - https://dortania.github.io
 - https://github.com/acidanthera
 - https://blog.daliansky.net
+- https://blog.skk.moe/post/hackintosh-fix-magenta-screen/
