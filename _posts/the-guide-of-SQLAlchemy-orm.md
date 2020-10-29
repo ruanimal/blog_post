@@ -150,3 +150,35 @@ session.commit()
 session.query(SomeData).filter_by(id=2).delete()
 session.commit()
 ```
+
+## seesion管理最佳实践
+```python
+from contextlib import contextmanager
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker 
+from sqlalchemy.orm import scoped_session  # 使session可以用于多线程环境
+
+# pool_recycle 数据库连接的回收周期, 按需调整
+# pool_size 连接池大小, 按需调整, 0为不限制连接数
+engine = create_engine('sqlite:///test.sqlite3'， pool_recycle=3600, pool_size=0)
+
+Session = scoped_session(sessionmaker(bind=engine))
+
+# session 自动管理
+@contextmanager
+def get_session():
+    session = Session()
+    try:
+        yield session
+        session.commit()
+    except:
+        session.rollback()
+        raise
+    finally:
+        session.close()
+
+# 使用示例
+with get_session() as session:
+    session.execute('select 1')
+    session.add(SomeData(status='1', message='aa'))
+```
