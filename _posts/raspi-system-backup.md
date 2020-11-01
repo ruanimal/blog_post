@@ -23,6 +23,8 @@ tags: [树莓派, Linux]
 首先需要将树莓派的SD取下，插入到一台Linux机器上。
 
 ### 使用Gparted缩小分区
+这一步操作比较耗时，跟SD卡大小和速度有关，基本在几分钟到几十分钟不等。
+
 ![-w761](http://image.runjf.com/mweb/2020-11-01-16041166087052.jpg)
 ![-w764](http://image.runjf.com/mweb/2020-11-01-16041166419441.jpg)
 ![-w760](http://image.runjf.com/mweb/2020-11-01-16041167175534.jpg)
@@ -43,6 +45,8 @@ sudo  mount.cifs -o vers=2.0,user=${nas_user},password=${nas_password},uid=$(id 
 sudo dd if=/dev/sda of=/mnt/backup.img bs=1M count=6000 status=progress
 ```
 
+备份耗时跟SD卡大小和速度有关，基本在几分钟到几十分钟不等。
+
 bs参数代表备份文件大小的单位，这里是1M
 
 count代表有多少bs，也就是备份大小是`count*bs=6000M`
@@ -52,3 +56,7 @@ count代表有多少bs，也就是备份大小是`count*bs=6000M`
 
 ### 还原系统
 还原系统和新安装系统是一样的，用官方的[Raspberry Pi Imager](https://www.raspberrypi.org/downloads/)还原备份镜像文件即可
+
+还原完成之后，还需要使用Gparted将缩小的分区还原到原来的大小，耗时大概十几秒。
+
+然后插卡开机即可
