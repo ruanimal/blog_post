@@ -33,13 +33,13 @@ tags: [树莓派, Linux]
 ### 挂载网络存储
 如果不想把备份文件存到网络存储上，该步骤可以忽略
 
-```
+```shell
 sudo  mount.cifs -o vers=2.0,user=${nas_user},password=${nas_password},uid=$(id -u),gid=$(id -g) \
 	//192.168.123.100/D-soft/ /mnt/
 ```
 
 ### 使用DD备份硬盘
-```
+```shell
 sudo dd if=/dev/sda of=/mnt/backup.img bs=1M count=6000 status=progress
 ```
 
