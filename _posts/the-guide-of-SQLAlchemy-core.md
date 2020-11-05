@@ -137,3 +137,21 @@ conn.execute(addresses.insert(), [
 >>> stmt = users.delete().where(users.c.id == 1)
 >>> conn.execute(stmt)
 ```
+
+## 其他特性
+### 监听DBAPI事件
+监听connect事件，在初始化数据库连接时设置数据库参数变量，或者执行语句
+[参考文档](https://docs.sqlalchemy.org/en/13/core/engines.html#modifying-the-dbapi-connection-after-connect-or-running-commands-after-connect)
+```python
+from sqlalchemy import event
+
+engine = create_engine(
+    "postgresql://user:pass@hostname/dbname"
+)
+
+@event.listens_for(engine, "connect")
+def connect(dbapi_connection, connection_record):
+    cursor = dbapi_connection.cursor()
+    cursor.execute("SET some session variables")
+    cursor.close()
+```
