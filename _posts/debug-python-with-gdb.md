@@ -26,7 +26,6 @@ sudo apt install gdb python3 python3-dbg
 
 ## gdb命令速查
 ### gdb原生命令
-```
 run or r –> executes the program from start to end.
 break or b –> sets breakpoint on a particular line.
 disable -> disable a breakpoint.
@@ -38,7 +37,6 @@ print or p –> used to display the stored value.
 quit or q –> exits out of gdb.
 clear –> to clear all breakpoints.
 continue –> continue normal execution.
-```
 
 ### gdb python命令
 py-bt: 输出Python调用栈
