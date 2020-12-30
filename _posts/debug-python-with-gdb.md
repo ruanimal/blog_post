@@ -17,6 +17,8 @@ tags: [Python]
 然后，通过`py-print`等命令输出我们想要的变量信息
 
 ## 环境配置
+不同的Python环境，配置方法不太一样，这里推荐ubuntu 20.04以上版本
+
 ### ubuntu 20.04
 ```
 sudo apt install gdb python3 python3-dbg
