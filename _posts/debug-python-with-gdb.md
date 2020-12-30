@@ -164,3 +164,7 @@ local 'n' = 7
 local 'n' = 6
 ```
 
+## 参考
+1. https://wiki.python.org/moin/DebuggingWithGdb
+2. https://www.geeksforgeeks.org/gdb-step-by-step-introduction/
+
