@@ -73,7 +73,7 @@ config uhttpd main
 
 #### NAS睡眠脚本 
 睡眠的实现是在NAS上写了个简单的Web服务，基于`systemctl suspend`来实现睡眠
-然后访问Web服务，触发NAS的睡眠。这里为了和下面的唤醒统一处理，所以通过CGI转发了一道。
+然后访问Web服务，触发NAS的睡眠。这里为了和下面的唤醒统一处理，所以通过路由器的CGI转发了一道，直接访问也是可以的。
 ```lua
 #!/usr/bin/lua
 -- /www/ctl/sleep.lua
