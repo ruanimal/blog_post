@@ -1,19 +1,21 @@
 title: 在WSL2中安装openmediavault(OMV)
-date: 2021-01-02 14:00
+date: 2021-01-02 17:00
 categories: 工作生活
 tags: [linux, WSL, NAS]
 
 ----
 
 NAS的文件系统一直是我比较纠结的一个点。NAS的系统基本上是基于Linux(Unix)，文件系统不是ntfs，数据迁移不方便，数据恢复工具也没那么全。
+
 WSL就完美解决了这个问题，用Linux提供服务，数据最终还是落在ntfs上，而且重要的是everything也能用上。
+
 openmediavault(OMV)是一个基于Debian的NAS系统，而且能在原生Debian系统上自行安装，正好能够实现我们的功能。
 <!--more-->
 
 ## WSL2 相关准备工作
 需要安装WSL2并启用桥接网络，同时安装好Debian系统
 
-参考本人[这篇文章]()
+参考本人[这篇文章](/2021/01/02/WSL2-bridge-mode/)
 
 ## 安装 systemd
 由于openmediavault对systemd有强依赖，而WSL的系统默认是由`/init`启动的，会导致安装出错
@@ -108,10 +110,10 @@ wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/maste
 ## 配置openmediavault
 ### 系统配置
 1. 修改主机名，防止WSL默认主机名过长（必须小于15位），导致samba配置失败
-    ![2021-01-02_180911](media/2021-01-02_180911.png)
+    ![2021-01-02_180911](http://image.runjf.com/mweb/2021-01-02-2021-01-02_180911.png)
 
 1. 打开`系统 -> 网络 -> 添加 -> 以太网`，配置网口ip，这里配置为DHCP自动获取
-    ![2021-01-02_181342](media/2021-01-02_181342.png)
+    ![2021-01-02_181342](http://image.runjf.com/mweb/2021-01-02-2021-01-02_181342.png)
 
 2. 打开`系统 -> 常规设置 -> Web管理员密码`，修改管理员密码，默认密码为`admin:openmediavault`
 
@@ -122,7 +124,7 @@ wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/maste
 
 这里参考[openmediavault-sharerootfs](https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault-sharerootfs/debian/openmediavault-sharerootfs.postinst)的实现
 
-修改`/etc/openmediavault/config.xml`配置文件， 在`fstab`tag下增加`mntent`挂载点配置，修改完如下
+修改`/etc/openmediavault/config.xml`配置文件， 在`fstab`标签下增加`mntent`挂载点配置，修改完如下
 ```xml
     <!--省略其他部分-->
     <fstab>
@@ -140,9 +142,9 @@ wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/maste
 ```
 
 打开`访问权限管理 -> 共享文件夹 -> 添加`，添加D盘（/mnt/d）作为共享文件夹，然后在samba服务中就能引用这个共享文件夹了
-![2021-01-02_183349](media/2021-01-02_183349.png)
+![2021-01-02_183349](http://image.runjf.com/mweb/2021-01-02-2021-01-02_183349.png)
 
-![2021-01-02_183046](media/2021-01-02_183046.png)
+![2021-01-02_183046](http://image.runjf.com/mweb/2021-01-02-2021-01-02_183046.png)
 
 
 ## 参考
