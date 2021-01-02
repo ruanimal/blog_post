@@ -5,6 +5,15 @@ tags: [linux, WSL]
 
 ----
 
+Windows Subsystem for Linux(WSL)从`Version 1 (WSL1)`升级到`Version 2 (WSL2)` 之后，底层实现方式发生了改变。
+
+由于使用Hyper-V来实现WSL2，使得WSL更像虚拟机，一个能访问硬盘的虚拟机。
+这带来一些便利，能够把它当做独立服务器来使用，可玩性就增强很多。当然，这也导致WSL上的端口不能从外部访问到，总之有利有弊。
+
+虽然能够配置端口转发，曲线救国突破这个缺陷，但是有些服务的端口是约定俗成的（比如samba），更换端口号（原端口号被windows占用）之后其他设备可能识别不到服务。
+经过一番思考后，觉得给WSL2开启桥接模式，直接连接物理网络才是相对最好的方案。
+
+<!--more-->
 
 ## 安装WSL2
 参考[官方文档](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#manual-installation-steps)安装WSL2
@@ -33,6 +42,8 @@ tags: [linux, WSL]
 ## 修改WSL2默认网络为桥接
 由于WSL2底层使用的是Hyper-V虚拟机，所以我们可以修改虚拟交换机的类型，来启用桥接网络
 打开`Hyper-V管理器 -> 操作 -> 虚拟交换机管理器`， 修改WSL的连接类型为“外部网络”
+![2021-01-02_171339](media/2021-01-02_171339.png)
+
 
 ## 修复Debian网络
 由于WSL2默认网络模式是NAT，我们把虚拟交换机改为桥接后，默认的ip和路由以及DNS解析将会失效

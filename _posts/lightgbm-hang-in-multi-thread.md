@@ -43,7 +43,7 @@ pip install lightgbm --install-option=--nomp
 安装完成后可以将site-packages中库文件复制备份, 方便部署. 参考路径
 
 ```
-~/.pyenv/versions/3.6.9/lib/python3.6/site-packages/
+~/.pyenv/versions/3.6.9/lib/python3.6/site-packages/lightgbm
 ```
 
 ### intel工具链
