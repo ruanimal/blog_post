@@ -120,7 +120,7 @@ wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/maste
 ### 共享文件夹配置
 由于WSL2读写本机硬盘是使用的微软的驱动，OMV并不支持，默认只能识别到根目录的虚拟硬盘。
 
-又因为WSL2的本地硬盘多都挂载在`/mnt/`路径下，所以只要能将`/mnt/`目录共享就ok了
+又因为WSL2的本地硬盘都挂载在`/mnt/`路径下，所以只要能将`/mnt/`目录共享就ok了
 
 这里参考[openmediavault-sharerootfs](https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault-sharerootfs/debian/openmediavault-sharerootfs.postinst)的实现
 

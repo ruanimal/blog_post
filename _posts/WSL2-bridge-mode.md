@@ -69,7 +69,7 @@ Windows Subsystem for Linux(WSL)从`Version 1 (WSL1)`升级到`Version 2 (WSL2)`
 3. 清除原默认路由 `ip route delete default`
 4. 添加默认路由 `ip route add default via 192.168.123.1 dev eth0`
 
-这些操作在重启WSL2虚拟机后会失效，如果永久修改，请配置静态ip
+这些操作在重启WSL2虚拟机后会失效，如果需要永久修改，请配置静态ip
 
 ### 修复DNS解析
 1. 新建`/etc/wsl.conf`，防止WSL2覆盖DNS配置文件
