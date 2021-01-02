@@ -101,13 +101,13 @@ fi
     omv-confdbadm populate
     ```
 
-## 安装omv-extras（可选）
+## 安装 omv-extras（可选）
 参考[官方文档](https://forum.openmediavault.org/index.php?thread/5549-omv-extras-org-plugin/)
 ```bash
 wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install | bash
 ```
 
-## 配置openmediavault
+## 配置 openmediavault
 ### 系统配置
 1. 修改主机名，防止WSL默认主机名过长（必须小于15位），导致samba配置失败
     ![2021-01-02_180911](http://image.runjf.com/mweb/2021-01-02-2021-01-02_180911.png)
