@@ -80,7 +80,8 @@ clone-env=WSL_DISTRO_NAME,WSL_INTEROP,WSLENV
 ### ip地址
 注意，由于WSL的mac地址每次重启都会变，该问题暂时无法解决，参考[issue](https://github.com/microsoft/WSL/issues/5352)
 所以这里采用静态IPv4地址和DHCPv6来配置网络地址
-新建`/etc/systemd/network/lan.network`，内容如下，完成后执行`systemctl enable systemd-networkd`
+
+新建`/etc/systemd/network/lan.network`，内容如下
 ```
 [Match]
 Name=eth0
@@ -94,6 +95,8 @@ DNS=192.168.123.1
 LLDP=true
 EmitLLDP=true
 ```
+
+然后执行执行`systemctl enable systemd-networkd && systemctl start systemd-networkd`
 
 ## 安装 openmediavault
 参考[官方文档](https://openmediavault.readthedocs.io/en/5.x/installation/on_debian.html)
