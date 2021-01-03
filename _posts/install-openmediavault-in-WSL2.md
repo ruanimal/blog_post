@@ -56,6 +56,45 @@ if [[ ! -v INSIDE_GENIE ]]; then
 fi
 ```
 
+## 网络相关配置
+主机名和网口配置重启WSL后可能会失效，建议修改配置文件来实现
+
+### 主机名
+修改`/etc/wsl.conf`，增加`hostname = openmediavault`
+```
+[network]
+hostname = openmediavault
+generateResolvConf = false
+```
+
+修改`/etc/genie.ini`，设置`update-hostname`为false
+```
+[genie]
+secure-path=/lib/systemd:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+unshare=/usr/bin/unshare
+update-hostname=false
+clone-path=false
+clone-env=WSL_DISTRO_NAME,WSL_INTEROP,WSLENV
+```
+
+### ip地址
+注意，由于WSL的mac地址每次重启都会变，该问题暂时无法解决，参考[issue](https://github.com/microsoft/WSL/issues/5352)
+所以这里采用静态IPv4地址和DHCPv6来配置网络地址
+新建`/etc/systemd/network/lan.network`，内容如下，完成后执行`systemctl enable systemd-networkd`
+```
+[Match]
+Name=eth0
+
+[Network]
+Description=lan
+DHCP=ipv6
+Address=192.168.123.31/24
+Gateway=192.168.123.1
+DNS=192.168.123.1
+LLDP=true
+EmitLLDP=true
+```
+
 ## 安装 openmediavault
 参考[官方文档](https://openmediavault.readthedocs.io/en/5.x/installation/on_debian.html)
 
@@ -97,7 +136,7 @@ fi
         --option Dpkg::Options::="--force-confdef" \
         --option DPkg::Options::="--force-confold" \
         install openmediavault-keyring openmediavault
-    
+
     omv-confdbadm populate
     ```
 
@@ -109,13 +148,15 @@ wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/maste
 
 ## 配置 openmediavault
 ### 系统配置
+OMV里的主机名和网络配置就配置成和上面配置文件里的一样，防止OMV的服务工作异常
+
 1. 修改主机名，防止WSL默认主机名过长（必须小于15位），导致samba配置失败
     ![2021-01-02_180911](http://image.runjf.com/mweb/2021-01-02-2021-01-02_180911.png)
 
-1. 打开`系统 -> 网络 -> 添加 -> 以太网`，配置网口ip，这里配置为DHCP自动获取
+2. 打开`系统 -> 网络 -> 添加 -> 以太网`，配置网口ip，这里配置为DHCP自动获取
     ![2021-01-02_181342](http://image.runjf.com/mweb/2021-01-02-2021-01-02_181342.png)
 
-2. 打开`系统 -> 常规设置 -> Web管理员密码`，修改管理员密码，默认密码为`admin:openmediavault`
+3. 打开`系统 -> 常规设置 -> Web管理员密码`，修改管理员密码，默认密码为`admin:openmediavault`
 
 ### 共享文件夹配置
 由于WSL2读写本机硬盘是使用的微软的驱动，OMV并不支持，默认只能识别到根目录的虚拟硬盘。
