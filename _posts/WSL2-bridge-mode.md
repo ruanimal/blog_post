@@ -81,8 +81,18 @@ Windows Subsystem for Linux(WSL)从`Version 1 (WSL1)`升级到`Version 2 (WSL2)`
     ```
     nameserver 192.168.123.1
     ```
+    
+## 已知缺陷
+### 重启Windows10后桥接失败
+重启后桥接可能会失败，而且上不了网，可以取消勾选外网网口的“Hyper-V可扩展的虚拟交换机”选项，然后重新配置桥接
+![捕获1](http://image.runjf.com/mweb/2021-01-11-%E6%8D%95%E8%8E%B71.png)
+
+### WSL2的MAC地址不固定
+由于WSL2的MAC地址每次重启后都会变化，所以桥接后DHCP的ip也是非固定的，参考[issue](https://github.com/microsoft/WSL/issues/5352)。
+
+目前没有好的解决办法，一些依赖MAC地址的服务，可能会工作不正常。如samba的域名访问。
 
 ## 参考
-   1. https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#manual-installation-steps
-   2. https://github.com/microsoft/WSL/issues/4928#issuecomment-646703350
-   3. https://github.com/microsoft/WSL/issues/4150#issuecomment-747152240
+1. https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#manual-installation-steps
+2. https://github.com/microsoft/WSL/issues/4928#issuecomment-646703350
+3. https://github.com/microsoft/WSL/issues/4150#issuecomment-747152240
