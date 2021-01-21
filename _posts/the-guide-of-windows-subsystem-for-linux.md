@@ -29,6 +29,8 @@ tags: [linux, WSL]
 - 文件权限管理，在WSL中可访问win中的文件，不过文件的权限均为777
 
 ## 安装
+**由于本文写作时间已经比较久了，强烈建议查看MS的官方教程**[WSL install guide](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
+
 1. 开启开发者模式： 设置 > 更新及安全 > 针对开发人员 > 开发人员模式
 ![](http://image.runjf.com/17-1-8/91407501-file_1483888101129_101b0.gif)
 
@@ -38,8 +40,6 @@ tags: [linux, WSL]
 3. 下载Linux镜像：按`Win + X`选择“命令提示符”或者“Windows PowerShell”，在命令行中输入`bash`，按提示操作。安装完成后使用也是在命令行中输入`bash`
 ![](http://image.runjf.com/17-1-8/71864116-file_1483888221167_146b1.png)
 ![](http://image.runjf.com/17-1-8/275971-file_1483888221026_4896.png)
-
-**也可以看MS的官方教程**[WSL install guide](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
 
 ## 替换WSL终端
 
