@@ -69,7 +69,7 @@ OpenCore配置文件我放到github了 https://github.com/ruanima/GB-BRi5H-8250-
 - [ProperTree](https://github.com/corpnewt/ProperTree): 编辑OpenCore配置
 - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)：用于生成苹果设备序列号信息
 - [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases): OpenCore引导文件，注意下载release版本
-- [gibMacOS](https://github.com/corpnewt/gibMacOS): 下载，制作macOS安装镜像
+- ~~[gibMacOS](https://github.com/corpnewt/gibMacOS): 下载，制作macOS安装镜像~~
 - [speccy](https://www.ccleaner.com/speccy/download): 查看电脑硬件信息
 
 其他
@@ -88,9 +88,9 @@ OpenCore配置文件我放到github了 https://github.com/ruanima/GB-BRi5H-8250-
 
 ### macOS安装U盘制作
 #### macOS准备
-具体步骤参考[这个](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#downloading-macos)
-1. 使用gibMacOS的gibMacOS.bat，下载最新macOS
-2. 使用gibMacOS的MakeInstall.bat，制作安装U盘
+具体步骤参考[这个](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html#downloading-macos)，gibMacOS已被官方教程废弃
+~~1. 使用gibMacOS的gibMacOS.bat，下载最新macOS~~
+~~2. 使用gibMacOS的MakeInstall.bat，制作安装U盘~~
 
 #### OpenCore文件准备
 1. 将下载的OpenCorePkg解压，复制EFI文件夹到U盘
