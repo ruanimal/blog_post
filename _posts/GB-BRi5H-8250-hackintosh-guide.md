@@ -50,8 +50,8 @@ OpenCore配置文件我放到github了 https://github.com/ruanima/GB-BRi5H-8250-
 ### 不正常工作项目
 - 系统偏好设置-节能（错误识别为有电池）
     ![](http://image.runjf.com/mweb/2020-07-25-15956404046858.jpg)
-- HDMI睡眠唤醒，有时屏幕黑屏，需要按一下屏幕开关；DP睡眠正常
-- 显示器喇叭开机时不正常，拔插接口后或者开关屏幕电源后正常。
+- HDMI睡眠唤醒，有时屏幕黑屏，需要按一下屏幕开关；DP睡眠正常 (添加启动参数`igfxonln=1`应该可以解决)
+- 显示器喇叭开机时不正常，拔插接口后或者开关屏幕电源后正常。(添加启动参数`igfxonln=1`应该可以解决)
 
 ## 安装教程
 安装过程大部分参考[dortania](https://dortania.github.io/OpenCore-Install-Guide/)，这里采用的是双系统安装方法。
