@@ -1,7 +1,7 @@
-title: lightgbm多线程卡死问题定位
+title: Lightgbm多线程卡死问题定位
 date: 2020-01-25 5:03 PM
 categories: 编程
-tags: [lightgbm, Python]
+tags: [Lightgbm, Python]
 
 ---
 
@@ -17,7 +17,7 @@ Thread 8 (Thread 0x7f8eb7900700 (LWP 1859)):
 ```
 
 ## 尝试
-首先尝试google `lightgbm hang`, 看了前几条记录. 
+首先尝试google `lightgbm hang`, 看了前几条记录.
 
 发现,github上的一个[issue](https://github.com/microsoft/LightGBM/issues/2217#issuecomment-501233873), 顺着发现官网文档上早就记录里这个问题, 并且提供了解决办法.
 
@@ -62,7 +62,7 @@ pip install lightgbm --install-option=--nomp
 	source activate idp
 	conda install lightgbm
 	```
-	
+
 ## 参考
 1. https://github.com/microsoft/LightGBM/issues/2217
 2. https://lightgbm.readthedocs.io/en/latest/FAQ.html#lightgbm-hangs-when-multithreading-openmp-and-using-forking-in-linux-at-the-same-time

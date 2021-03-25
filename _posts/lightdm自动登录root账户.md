@@ -1,7 +1,7 @@
 title: xubuntu自动登录root账户
 date: April 16, 2016 7:42 PM
 categories: 编程
-tags: [linux, ]
+tags: [Linux, ]
 
 ----
 

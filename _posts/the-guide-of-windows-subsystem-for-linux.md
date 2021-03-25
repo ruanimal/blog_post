@@ -1,7 +1,7 @@
 title: Windows Subsystem for Linux(WSL) 简单指引
 date: 2017-01-08 20:00
 categories: 编程
-tags: [linux, WSL]
+tags: [Linux, WSL]
 
 ----
 

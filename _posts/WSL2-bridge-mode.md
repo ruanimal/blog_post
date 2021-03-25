@@ -1,7 +1,7 @@
 title: WSL2开启桥接网络
 date: 2021-01-02 15:00
 categories: 工作生活
-tags: [linux, WSL]
+tags: [Linux, WSL]
 
 ----
 
@@ -20,19 +20,19 @@ Windows Subsystem for Linux(WSL)从`Version 1 (WSL1)`升级到`Version 2 (WSL2)`
 参考[官方文档](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10#manual-installation-steps)安装WSL2
 
 在PowerShell中执行以下命令
-1. 启用WSL2 
+1. 启用WSL2
     ```
     dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
     ```
-2. 启用虚拟机平台 
+2. 启用虚拟机平台
     ```
     dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
     ```
-3. 启用Hyper-V 
+3. 启用Hyper-V
     ```
     dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
     ```
-4. 设置WSL2为默认 
+4. 设置WSL2为默认
     ```
     wsl --set-default-version 2
     ```
@@ -81,7 +81,7 @@ Windows Subsystem for Linux(WSL)从`Version 1 (WSL1)`升级到`Version 2 (WSL2)`
     ```
     nameserver 192.168.123.1
     ```
-    
+
 ## 已知缺陷
 ### 重启Windows10后桥接失败
 重启后桥接可能会失败，而且上不了网，可以取消勾选外网网口的“Hyper-V可扩展的虚拟交换机”选项，然后重新配置桥接

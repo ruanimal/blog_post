@@ -1,11 +1,11 @@
 title: ubuntu静态ip配置
 date: April 16, 2016 8:52 PM
 categories: 编程
-tags: [ubuntu, linux]
+tags: [Ubuntu, Linux]
 
 ----
 
-以vmware虚拟机为例  
+以vmware虚拟机为例
 
 ## 设置IP
 运行 `sudo nano /etc/network/interfaces`

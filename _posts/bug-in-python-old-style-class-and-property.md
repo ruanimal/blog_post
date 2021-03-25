@@ -1,7 +1,7 @@
 title: Python2 中 旧式类与property引发的bug
 date: 2019-12-01 8:17 PM
 categories: 编程
-tags: [property, Python]
+tags: [Property, Python]
 
 ---
 
@@ -40,8 +40,8 @@ class Context():
     def result_dict(self, result_dict):
         print 'set _result_dict %s ' % result_dict
         self._result_dict = result_dict
-     
-    # 我附加的to_dict方法   
+
+    # 我附加的to_dict方法
     def to_dict(self):
         tmp = {}
         for k, v in self.__dict__.items():
@@ -52,13 +52,13 @@ class Context():
 
 测试之后发现，结果明显不符合预期，两个属性只输出了一个
 ```python
->>> from test_property import  Context 
+>>> from test_property import  Context
 >>> c = Context()
 ... c.input_json = {'a': 1}
 ... c.result_dict['b'] = 2
-... 
+...
 get _result_dict
->>> c.to_dict() 
+>>> c.to_dict()
 {'_input_json': None, '_result_dict': {'b': 2}}
 ```
 
@@ -67,7 +67,7 @@ get _result_dict
 
 但是对应设置`input_json`的时候, 却没有看到对应的print输出
 
-所以可以断定，此处的property工作不正常。 
+所以可以断定，此处的property工作不正常。
 
 仔细看代码后，我发现`Context`是旧式类。可以看到，`A`, `B`, `C`三中类的写法，其中`A`和`B`都是旧式类`<type 'classobj'>`, `C`是新式类。（旧式类只在Python2中存在）。
 我们这里`Context`的写法和`B`是一样的。
@@ -98,7 +98,7 @@ get _result_dict
 确切地说，是对property的支持不完整，具体来说有以下3点。
 - 支持property的getter
 - 不支持property的setter
-- 不支持property的赋值保护 
+- 不支持property的赋值保护
 
 ## 参考
 - https://help.semmle.com/wiki/display/PYTHON/Property+in+old-style+class

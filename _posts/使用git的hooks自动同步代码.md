@@ -1,7 +1,7 @@
 title: 使用git的hooks自动同步代码
 date: April 16, 2016 8:01 PM
 categories: 编程
-tags: [git,]
+tags: [Git,]
 
 ----
 

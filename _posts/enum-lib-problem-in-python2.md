@@ -1,7 +1,7 @@
 title: Python2 中 enum 枚举库诡异行为探究
 date: 2019-11-21 8:17 PM
 categories: 编程
-tags: [enum, Python, ]
+tags: [Enum, Python, ]
 
 ---
 
@@ -43,12 +43,12 @@ enum是一个枚举类型的第三方库，在Python3.4以后就作为官方库�
 **开发环境**
 
 ```python
->>> import sys 
+>>> import sys
 
->>> sys.version 
+>>> sys.version
 '2.7.16 (default, Oct 31 2019, 06:57:54) \n[GCC 4.4.7 20120313 (Red Hat 4.4.7-23)]'
 
->>> from enum import Enum                                                                                                         
+>>> from enum import Enum
 ... class Weekday(Enum):
 ...     Sun = 0 # Sun的value被设定为0
 ...     Mon = 1
@@ -58,7 +58,7 @@ enum是一个枚举类型的第三方库，在Python3.4以后就作为官方库�
 ...     Fri = 5
 ...     Sat = 6
 
->>> type(Weekday.Sun) 
+>>> type(Weekday.Sun)
 <enum 'Weekday'>
 
 >>> Weekday.Sun.value

@@ -1,10 +1,10 @@
 title: C扩展与gevent共存时的问题
 date: 2019-11-07 9:48 AM
 categories: 编程
-tags: [gevent, Python] 
+tags: [Gevent, Python]
 
 ----
- 
+
 gevent是一个使用完全同步编程模型的可扩展的异步I/O框架。
 
 通用monkey.patch_all() 所有io操作函数, gevent可以以同步的方式编写异步代码. 在不更改代码的同时就可以使系统并发性能得到指数级提升。
@@ -17,7 +17,7 @@ gevent是一个使用完全同步编程模型的可扩展的异步I/O框架。
 这里使用flask写了web server 用于测试
 ```python
 # filename: flask_app.py
-import time 
+import time
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -26,7 +26,7 @@ app = Flask(__name__)
 def test():
     time.sleep(0.2)
     return 'hello'
-    
+
 if __name__ == "__main__":
     app.run()
 ```
@@ -36,7 +36,7 @@ if __name__ == "__main__":
 
 启动服务器：`gunicorn -w 1 --bind 127.0.0.1:5000 flask_app:app`
 
-测试性能：`siege -c 20 -r 1 'http://127.0.0.1:5000/test'` 
+测试性能：`siege -c 20 -r 1 'http://127.0.0.1:5000/test'`
 
 ![](http://image.runjf.com/mweb/2019-11-07-15731309158635.jpg)
 
@@ -45,7 +45,7 @@ if __name__ == "__main__":
 ### 使用gevent
 启动服务器：`gunicorn -w 1 -k gevent --bind 127.0.0.1:5000 flask_app:app`
 
-测试性能：`siege -c 20 -r 1 'http://127.0.0.1:5000/test'` 
+测试性能：`siege -c 20 -r 1 'http://127.0.0.1:5000/test'`
 
 ![-w348](http://image.runjf.com/mweb/2019-11-07-15731311981620.jpg)
 
@@ -58,7 +58,7 @@ if __name__ == "__main__":
 ```c
 #include <unistd.h>
 
-// sleep.c 
+// sleep.c
 
 int main(){
   sleep(2);
@@ -83,7 +83,7 @@ def socket_block():
     lib = cdll.LoadLibrary('./sleep.so')
     lib.main()
     return 0
-    
+
 @app.route('/test', methods=['GET', 'POST'])
 def test():
     socket_block()
@@ -138,7 +138,7 @@ def test():
 
 使用 siege 进行测试, 请求没有被阻塞
 
-```    
+```
 ➜  ~/projects siege -c 5 -r 1 'http://127.0.0.1:5000/test'  -v
 ** SIEGE 4.0.4
 ** Preparing 5 concurrent users for battle.

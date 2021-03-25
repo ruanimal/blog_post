@@ -1,40 +1,40 @@
 title: centos开关机日志分析
 date: June 22, 2016 7:52 PM
 categories: 编程
-tags: [linux, ]
+tags: [Linux, ]
 
 ----
 
-## 缘起 
+## 缘起
 在工作中发现有获取linux具体开关机时间和类型的需求，可以通过分析`/var/log/wtmp`日志文件得到。
 通过`last -x -F`可以将`/var/log/wtmp`输出以下格式。
 
 
 <!--more-->
 ```
-root     pts/1        172.16.3.245     Sun Jun 12 10:14:47 2016 - Tue Jun 14 08:34:31 2016 (1+22:19)   
-root     pts/0        172.16.3.245     Sun Jun 12 10:14:37 2016 - Tue Jun 14 08:34:25 2016 (1+22:19)   
-root     ttyS0                         Sun Jun 12 10:14:24 2016 - down                     (5+03:49)   
-runlevel (to lvl 3)   3.10.0           Sun Jun 12 10:14:17 2016 - Fri Jun 17 14:03:40 2016 (5+03:49)   
-root     pts/1        172.16.3.145     Sun Jun 12 10:13:57 2016 - Sun Jun 12 10:13:57 2016  (00:00)    
-reboot   system boot  3.10.0           Sun Jun 12 10:13:18 2016 - Fri Jun 17 14:03:40 2016 (5+03:50)   
-shutdown system down  3.10.0           Sun Jun 12 10:12:51 2016 - Sun Jun 12 10:13:18 2016  (00:00)    
-root     pts/1        172.16.3.145     Sun Jun 12 10:12:47 2016 - down                      (00:00)    
-root     pts/20       172.16.3.211     Sun Jun 12 10:07:58 2016 - down                      (00:04)    
-root     pts/19       172.16.3.119     Sun Jun 12 10:07:50 2016 - down                      (00:05)    
+root     pts/1        172.16.3.245     Sun Jun 12 10:14:47 2016 - Tue Jun 14 08:34:31 2016 (1+22:19)
+root     pts/0        172.16.3.245     Sun Jun 12 10:14:37 2016 - Tue Jun 14 08:34:25 2016 (1+22:19)
+root     ttyS0                         Sun Jun 12 10:14:24 2016 - down                     (5+03:49)
+runlevel (to lvl 3)   3.10.0           Sun Jun 12 10:14:17 2016 - Fri Jun 17 14:03:40 2016 (5+03:49)
+root     pts/1        172.16.3.145     Sun Jun 12 10:13:57 2016 - Sun Jun 12 10:13:57 2016  (00:00)
+reboot   system boot  3.10.0           Sun Jun 12 10:13:18 2016 - Fri Jun 17 14:03:40 2016 (5+03:50)
+shutdown system down  3.10.0           Sun Jun 12 10:12:51 2016 - Sun Jun 12 10:13:18 2016  (00:00)
+root     pts/1        172.16.3.145     Sun Jun 12 10:12:47 2016 - down                      (00:00)
+root     pts/20       172.16.3.211     Sun Jun 12 10:07:58 2016 - down                      (00:04)
+root     pts/19       172.16.3.119     Sun Jun 12 10:07:50 2016 - down                      (00:05)
 
 ...
-root     pts/3        172.16.3.145     Sun Jun 12 09:10:15 2016 - down                      (01:02)    
-root     pts/2        172.16.3.145     Sun Jun 12 09:10:15 2016 - down                      (01:02)    
-root     tty1                          Sun Jun 12 09:09:37 2016 - down                      (01:03)    
-runlevel (to lvl 3)   3.10.0           Sun Jun 12 09:09:22 2016 - Sun Jun 12 10:12:51 2016  (01:03)    
-root     pts/1        172.16.3.245     Sun Jun 12 09:09:10 2016 - Sun Jun 12 10:12:47 2016  (01:03)    
-reboot   system boot  3.10.0           Sun Jun 12 09:07:24 2016 - Sun Jun 12 10:12:51 2016  (01:05)    
-root     pts/14       172.16.3.211     Sun Jun 12 08:57:19 2016 - crash                     (00:10)    
-root     pts/7        172.16.3.245     Sun Jun 12 08:52:13 2016 - crash                     (00:15)    
-root     pts/11       172.16.3.245     Sun Jun 12 08:51:38 2016 - crash                     (00:15)    
-root     pts/10       172.16.3.211     Sun Jun 12 08:46:06 2016 - crash                     (00:21)    
-root     pts/9        172.16.3.30      Sun Jun 12 08:41:33 2016 - crash                     (00:25)       
+root     pts/3        172.16.3.145     Sun Jun 12 09:10:15 2016 - down                      (01:02)
+root     pts/2        172.16.3.145     Sun Jun 12 09:10:15 2016 - down                      (01:02)
+root     tty1                          Sun Jun 12 09:09:37 2016 - down                      (01:03)
+runlevel (to lvl 3)   3.10.0           Sun Jun 12 09:09:22 2016 - Sun Jun 12 10:12:51 2016  (01:03)
+root     pts/1        172.16.3.245     Sun Jun 12 09:09:10 2016 - Sun Jun 12 10:12:47 2016  (01:03)
+reboot   system boot  3.10.0           Sun Jun 12 09:07:24 2016 - Sun Jun 12 10:12:51 2016  (01:05)
+root     pts/14       172.16.3.211     Sun Jun 12 08:57:19 2016 - crash                     (00:10)
+root     pts/7        172.16.3.245     Sun Jun 12 08:52:13 2016 - crash                     (00:15)
+root     pts/11       172.16.3.245     Sun Jun 12 08:51:38 2016 - crash                     (00:15)
+root     pts/10       172.16.3.211     Sun Jun 12 08:46:06 2016 - crash                     (00:21)
+root     pts/9        172.16.3.30      Sun Jun 12 08:41:33 2016 - crash                     (00:25)
 ```
 
 ## 性空

@@ -1,7 +1,7 @@
 title: 在WSL2中安装openmediavault(OMV)
 date: 2021-01-02 17:00
 categories: 工作生活
-tags: [linux, WSL, NAS]
+tags: [Linux, WSL, NAS]
 
 ----
 

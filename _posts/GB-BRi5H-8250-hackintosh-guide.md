@@ -1,7 +1,7 @@
 title: 技嘉GB-BRi5H-8250黑苹果安装指南
 date: 2020-07-24 8:17 PM
 categories: 工作生活
-tags: [hackintosh, 电子产品]
+tags: [Hackintosh, 电子产品]
 
 ----
 
@@ -135,7 +135,7 @@ OpenCore配置文件我放到github了 https://github.com/ruanima/GB-BRi5H-8250-
 4. 配置准确性校验 https://opencore.slowgeek.com/
 
 **注意**：配置文件中kext的顺序是有影响的，建议前两个是lilu和virtualsmc
-   
+
 ### Bios设置
 如果bios没有相关设置项，可以跳过
 
@@ -241,7 +241,7 @@ USB定制直接影响睡眠是否正常
 
 详细步骤参考[这个](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html#using-cpu-friend)
 
-#### 睡眠修复 
+#### 睡眠修复
 如果上面的SSDT和驱动都做好了，睡眠的问题基本不大了，可能要设置下系统参数，禁止休眠到硬盘。
 
 详细步骤参考[这个](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html)

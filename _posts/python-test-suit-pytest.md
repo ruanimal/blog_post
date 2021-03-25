@@ -1,7 +1,7 @@
 title: 用Pytest测试Python代码
 date: 2020-03-12 9:48 AM
 categories: 编程
-tags: [Python, pytest]
+tags: [Python, Pytest]
 
 --------
 
@@ -18,11 +18,11 @@ pip install pytest
 先写个测试代码`tmp.py`
 ```python
 def add(a, b):
-    return a + b 
+    return a + b
 
 def test_add():
     assert add(1, 1) == 2
-    
+
 def test_add_fail():
     assert add(1, 2) == 2
 ```
@@ -59,11 +59,11 @@ tmp.py:92: AssertionError
 ```
 
 ### 用例查找规则
-测试用例目录优先级: `命令行参数目录 > 配置文件中的testpaths配置项 > 当前目录` 
+测试用例目录优先级: `命令行参数目录 > 配置文件中的testpaths配置项 > 当前目录`
 
 支持的配置文件: pytest.ini，tox.ini，setup.cfg
 
-测试用例查找规则: 
+测试用例查找规则:
 * 如果当前目录在包中, 则以该包的顶级目录作为工作目录(向上查找, 第一个不包含`__init__.py`的目录)
 * 递归遍历目录，除非目录指定了不递归参数`norecursedirs`
 * 在目录中查找匹配`test_*.py` 或者 `*_test.py` 的文件, 并以包名的全路径导入
@@ -131,7 +131,7 @@ with pytest.raises(ZeroDivisionError):
 ```
 
 #### Fixtures
-`fixture` 是 pytest 特有的功能，它用 pytest.fixture 标识，定义在函数前面, 起到依赖注入的作用. 
+`fixture` 是 pytest 特有的功能，它用 pytest.fixture 标识，定义在函数前面, 起到依赖注入的作用.
 
 在编写测试函数的时候，可以将此函数名称做为传入参数，pytest 将会以依赖注入方式，将该函数的返回值作为测试函数的传入参数。
 
@@ -198,7 +198,7 @@ class TestA:
 	@classmethod
 	def setup_class(cls):
 	    pass
-	
+
 	@classmethod
 	def teardown_class(cls):
 	    pass
@@ -206,7 +206,7 @@ class TestA:
 	# 方法级别
 	def setup_method(self, method):
 	    pass
-	
+
 	def teardown_method(self, method):
 	    pass
 
@@ -216,7 +216,7 @@ def setup_function(function):
 
 def teardown_function(function):
     pass
-    
+
 # 会话级别
 def pytest_sessionstart(session):
     # setup_stuff
@@ -238,7 +238,7 @@ def my_fixture():
 #### conftest.py
 从广义理解，`conftest.py` 是一个本地的 `per-directory` 插件，在该文件中可以定义目录特定的 hooks 和 fixtures。
 
-`pytest` 框架会在它测试的项目中寻找 conftest.py 文件，然后在这个文件中寻找针对整个目录的测试选项. 
+`pytest` 框架会在它测试的项目中寻找 conftest.py 文件，然后在这个文件中寻找针对整个目录的测试选项.
 
 总结起来，`conftest.py` 文件大致有如下几种功能：
 
@@ -326,7 +326,7 @@ addopts = --pylint --mypy ; 指定默认追加的参数
 ; norecursedirs = xx ; 不搜索测试用例的路径
 ; console_output_style ; 控制台测试报告格式
 ; 记录测试用例中用到的markers, 通过--markers参数可以显示出来
-; markers = 
+; markers =
 ;   webtest:  Run the webtest case
 ;   hello: Run the hello case
 ```

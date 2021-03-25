@@ -1,7 +1,7 @@
 title: linux添加回收站功能
 date: June 12, 2016 9:48 PM
 categories: 编程
-tags: [linux,]
+tags: [Linux,]
 
 ----
 
@@ -17,7 +17,7 @@ tags: [linux,]
 ```bash
 mv -v $@ ${trash_bin}
 ```
-`chmod +x ~/bin/trash`   # 增加执行权限 
+`chmod +x ~/bin/trash`   # 增加执行权限
 
 ### 登录时初始化回收站
 ```bash
