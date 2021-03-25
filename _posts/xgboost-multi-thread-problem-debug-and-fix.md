@@ -43,7 +43,7 @@ inline void PredLoopSpecalize() {
         // thread_temp 为成员变量
         // 省略其他逻辑
     }
-}  
+}
 
 inline void InitThreadTemp(int nthread, int num_feature) {
     int prev_thread_temp_size = thread_temp.size();
@@ -74,7 +74,7 @@ inline void PredLoopSpecalize() {
         // thread_temp 为成员变量
         // 省略其他逻辑
     }
-}  
+}
 ```
 
 显然问题就在`thread_temp`, 做为类成员，它不是线程安全的，通过替换为栈上的`local_thread_temp`，不同进程访问的地址不同，自然就不存在冲突了。
@@ -83,31 +83,31 @@ inline void PredLoopSpecalize() {
 ```c++
 // 调用链
 XGBoosterPredict()
-	--> LearnerImpl::Predict()
-		--> LearnerImpl::PredictRaw() // if 正常predict
-			--> GBTree::PredictBatch()
-				--> CPUPredictor::PredictBatch()
-					--> CPUPredictor::PredLoopInternal() 
-						--> Dart::PredLoopSpecalize()
-		--> GBTree::PredictLeaf()   // if pred_leaf
-		--> GBTree::PredictContribution()
-		--> ObjFunction::PredTransform()
-		
-	// LearnerImpl::Predict() 源码
-  void Predict(DMatrix* data, bool output_margin,
-               std::vector<bst_float>* out_preds, unsigned ntree_limit,
-               bool pred_leaf, bool pred_contribs) const override {
+    --> LearnerImpl::Predict()
+        --> LearnerImpl::PredictRaw() // if 正常predict
+            --> GBTree::PredictBatch()
+                --> CPUPredictor::PredictBatch()
+                    --> CPUPredictor::PredLoopInternal()
+                        --> Dart::PredLoopSpecalize()
+        --> GBTree::PredictLeaf()   // if pred_leaf
+        --> GBTree::PredictContribution()
+        --> ObjFunction::PredTransform()
+
+// LearnerImpl::Predict() 源码
+void Predict(DMatrix* data, bool output_margin,
+            std::vector<bst_float>* out_preds, unsigned ntree_limit,
+            bool pred_leaf, bool pred_contribs) const override {
     if (pred_contribs) {
-      gbm_->PredictContribution(data, out_preds, ntree_limit);
+        gbm_->PredictContribution(data, out_preds, ntree_limit);
     } else if (pred_leaf) {
-      gbm_->PredictLeaf(data, out_preds, ntree_limit);
+        gbm_->PredictLeaf(data, out_preds, ntree_limit);
     } else {
-      this->PredictRaw(data, out_preds, ntree_limit);
-      if (!output_margin) {
+        this->PredictRaw(data, out_preds, ntree_limit);
+        if (!output_margin) {
         obj_->PredTransform(out_preds);
-      }
+        }
     }
-  }
+}
 ```
 
 所以，最后采用与`PredLoopSpecalize`相同方法对`PredictLeaf`进行修复，问题得以完美解决。
