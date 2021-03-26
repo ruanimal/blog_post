@@ -44,6 +44,7 @@ HEAD：一个指向当前版本号的指针
 `git commit`  提交暂存区内容到当前分支，会新加一个commit
 `git commit  --amend`     追加暂存区内容到当前分支的最近一个commit
 `git rebase -i HEAD~4`   合并最近4个commit
+`git rebase 目标分支名称`   把本分支改动放到目标分支之后
 
 ## 分支与Tag
 `git branch -a`   查看所有分支信息
