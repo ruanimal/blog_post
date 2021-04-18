@@ -14,7 +14,7 @@ IPython项目起初是Fernando Pérez在2001年的一个用以加强和Python交
 
 ## 环境安装
 ### Python
-这里我们使用[miniconda](https://docs.conda.io/en/latest/miniconda.html)，防止机器学习很图形显示相关的库出问题. 使用pyenv的同学，也可以用pyenv来安装miniconda。
+这里我们使用[miniconda](https://docs.conda.io/en/latest/miniconda.html)，防止机器学习和图形显示相关的库出问题. 使用pyenv的同学，也可以用pyenv来安装miniconda。
 
 下载：`wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh`
 
