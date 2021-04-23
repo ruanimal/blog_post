@@ -49,7 +49,7 @@ typedef struct zskiplist {
 } zskiplist;
 ```
 
-![](media/16190066207268.jpg)
+![](http://image.runjf.com/mweb/2021-04-23-16190066207268.jpg)
 
 所谓跳跃表，就是多层链表（redis中的实现是最多32层）通过额外的链接提高效率，从低层到高层，节点之间的跨度逐渐变大。
 
@@ -134,4 +134,8 @@ def zslGetRank(zsl: zskiplist, score: float, obj: robj) -> int:
 ```
 
 查找score=2.0的o2对象的过程
-![](media/16191635872238.jpg)
+![](http://image.runjf.com/mweb/2021-04-23-16191635872238.jpg)
+
+## 参考
+- redis 3.0 源码
+- redis 设计与实现
