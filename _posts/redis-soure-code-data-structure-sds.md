@@ -1,4 +1,4 @@
-title: Redis原理 —— SDS 数据结构
+title: Redis原理 —— SDS 简单动态字符串
 date: 2021-05-07 7:48 PM
 categories: 编程
 tags: [Redis, C]

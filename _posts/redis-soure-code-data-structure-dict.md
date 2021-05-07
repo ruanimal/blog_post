@@ -1,4 +1,4 @@
-title: Redis原理 —— dict 数据结构
+title: Redis原理 —— dict 字典
 date: 2021-04-17 9:48 AM
 categories: 编程
 tags: [Redis, C]
