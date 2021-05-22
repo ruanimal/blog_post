@@ -39,7 +39,6 @@ address                                |                          |        |
 ![-w1224](http://image.runjf.com/mweb/2021-05-22-16216774199505.jpg)
 
 上图我们向ziplist添加了3个entry元素，向list头部插入（redis内部使用时一般向尾部插入），后面会详细解析这些元素。
-个人觉得ziplist的精华就在entry的encoding，对让内存的每一个bit都重复表示了信息。
 
 ### ziplist 节点元素
 每个ziplist节点由一下3个部分组成
@@ -74,6 +73,8 @@ prelen 记录了以字节为单位的前一个节点长度，有两种情况
 
 ### encoding 
 encoding 记录了当前节点的编码类型，编码时先尝试将内容转成数字，失败则当做字符串处理。
+
+个人觉得ziplist的精华就在entry的encoding，对让内存的每一个bit都重复表示了信息。
 
 | 编码 | 占用空间/字节 | 表示类型 | 具体含义 |
 | --- | --- | --- | --- |
@@ -136,8 +137,8 @@ static unsigned char *__ziplistInsert(unsigned char *zl, unsigned char *p, unsig
     // 计算encoding和content的长度
     reqlen += zipEncodeLength(NULL,encoding,slen);
 
-    // 只要新节点不是被添加到列表末端，那么程序就需要检查看 p 所指向的节点（的 header）能否编码新节点的长度。
-    // nextdiff 保存了新旧编码之间的字节大小差，如果这个值大于 0 ，那么说明需要对 p 所指向的节点（的 header ）进行扩展
+    // 只要新节点不是被添加到列表末端，就需要确认 p 所指向的节点的prelen是否足够大
+    // nextdiff 保存了新旧编码之间的字节大小差，如果大于 0，需要进行扩展
     nextdiff = (p[0] != ZIP_END) ? zipPrevLenByteDiff(p,reqlen) : 0;
 
     // 因为重分配空间，该可能会改变 zl 的地址，p指针可能会失效，需要记录 zl 到 p 的偏移量
