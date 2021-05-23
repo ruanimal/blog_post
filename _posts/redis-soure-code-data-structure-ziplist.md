@@ -76,11 +76,13 @@ encoding 记录了当前节点的编码类型，编码时先尝试将内容转�
 
 个人觉得ziplist的精华就在entry的encoding，对让内存的每一个bit都重复表示了信息。
 
+下表中的0和1表示具体的二进制位, b表示该位置可能为0或者1
+
 | 编码 | 占用空间/字节 | 表示类型 | 具体含义 |
 | --- | --- | --- | --- |
 | 00bbbbbb | 1 | 字节数组 | content的长度为6bit, 也就是0-63  |
 | 01bbbbbb bbbbbbbb | 2 | 字节数组 | content的长度为14bit, 也就是0-16383 |
-| 10000000 bbbbbbbb bbbbbbbb bbbbbbbb bbbbbbbb | 5 | 字节数组 | content的长度为14bit, 也就是0-4294967295 |
+| 10000000 bbbbbbbb bbbbbbbb bbbbbbbb bbbbbbbb | 5 | 字节数组 | content的长度为32bit, 也就是0-4294967295 |
 | 11110001 到 11111101 | 1 | 数字 | 用4个bit直接表示数字0-12， content长度为0 |
 | 11111110 | 1 | 数字 | content为int8_t, 长度2字节 |
 | 11000000 | 1 | 数字 | content为int16_t, 长度2字节 |
@@ -192,6 +194,7 @@ static unsigned char *__ziplistInsert(unsigned char *zl, unsigned char *p, unsig
 
 ## list底层转换为链表
 判断是不是要把list转换为链表
+
 ```c
 void listTypeTryConversion(robj *subject, robj *value) {
     // 确保 subject 为 ZIPLIST 编码
@@ -201,6 +204,26 @@ void listTypeTryConversion(robj *subject, robj *value) {
         sdslen(value->ptr) > server.list_max_ziplist_value)
             // 将编码转换为双端链表
             listTypeConvert(subject,REDIS_ENCODING_LINKEDLIST);
+}
+
+void listTypeConvert(robj *subject, int enc) {
+    listTypeIterator *li;
+    listTypeEntry entry;
+    if (enc == REDIS_ENCODING_LINKEDLIST) {
+        list *l = listCreate();
+        listSetFreeMethod(l,decrRefCountVoid);
+        // 遍历 ziplist ，并将里面的值全部添加到双端链表中
+        li = listTypeInitIterator(subject,0,REDIS_TAIL);
+        while (listTypeNext(li,&entry)) listAddNodeTail(l,listTypeGet(&entry));
+        listTypeReleaseIterator(li);
+        // 更新编码
+        subject->encoding = REDIS_ENCODING_LINKEDLIST;
+        // 释放原来的 ziplist
+        zfree(subject->ptr);
+        subject->ptr = l;
+    } else {
+        redisPanic("Unsupported list conversion");
+    }
 }
 ```
 
