@@ -27,11 +27,11 @@ tags: [限流, Python,]
 ![-w1308](http://image.runjf.com/mweb/2021-05-31-16223889987592.jpg)
 
 ### 漏桶Python实现
-网上参加的一种实现是用个队列直接存储请求来模拟漏桶，其实大可不必，内存空间占用大而且效率低。
+网上常见的一种实现是用个队列直接存储请求来模拟漏桶，其实大可不必，内存空间占用大而且效率低。
 
 其实只需要通过一个队列记录请求时间，结合漏桶漏出速率进行计算，然后移动窗口就可以实现漏桶了。
 
-这里的实现对漏桶进行了简化，漏桶的容量恰好等于单位时间漏出的量，简化实现。
+这里的实现对漏桶进行了简化，漏桶的容量恰好等于单位时间漏出的量。
 
 ```Python
 from time import time, sleep
@@ -126,14 +126,11 @@ class TokenBucket(object):
         self.timestamp = time()
 
     def consume(self, tokens, block=True):
-        assert tokens <= self.capacity, \
-            'Attempted to consume {} tokens from a bucket with capacity {}' \
-                .format(tokens, self.capacity)
+        assert tokens <= self.capacity, 'Attempted to consume {} tokens from a bucket with capacity {}'.format(tokens, self.capacity)
 
         if block and tokens > self.tokens:
             deficit = tokens - self._tokens
             delay = deficit / self.fill_rate
-
             print('Have {} tokens, need {}; sleeping {} seconds'.format(self._tokens, tokens, delay))
             sleep(delay)
 
@@ -183,4 +180,4 @@ if __name__ == '__main__':
 - 《亿级流量网站架构核心技术》
 - https://github.com/vutran1710/PyrateLimiter
 - https://gist.github.com/drocco007/6155452
-https://vim0.com/post/interview/
+- https://vim0.com/post/interview/
