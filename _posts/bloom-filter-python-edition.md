@@ -80,4 +80,7 @@ if __name__ == '__main__':
     print(bf.contains('2'))
 ```
 
+## 参考
+- https://zh.wikipedia.org/wiki/布隆过滤器
+- https://www.cnblogs.com/cpselvis/p/6265825.html
 
