@@ -28,7 +28,7 @@ SnowFlake 算法，是 Twitter 开源的分布式 id 生成算法。
 
 其核心思想就是：使用一个 64 bit 的 long 型的数字作为全局唯一 id。在分布式系统中的应用十分广泛，且ID 引入了时间戳，保持自增性且不重复。
 
-![](media/16231545423727.jpg)
+![](http://image.runjf.com/mweb/2021-06-08-16231545423727.jpg)
 
 主要分为 5 个部分：
 1. 1 个 bit：0，无特殊意义，主要是为防止歧义，因为负数的第一位是1。
@@ -80,5 +80,8 @@ if __name__ == '__main__':
     sf = SnowFlake(1)
     for _ in range(100):
         print(sf.get_bin(sf.next_id()), sf._timestamp, sf._seq)
-
 ```
+
+## 参考
+1. https://juejin.cn/post/6844903631137800200
+2. https://www.cnblogs.com/wuzhenzhao/p/13295382.html
