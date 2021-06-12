@@ -27,44 +27,44 @@ tags: [健身, GTD]
 | 最终式 | 单臂俯卧撑 | 1 x 100 次 |
 
 ### 第一式 墙壁俯卧撑
-![](media/16233763110637.jpg)
-![](media/16233763151918.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233763110637.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233763151918.jpg)
 
 ### 第二式 上斜俯卧撑
-![](media/16233763579987.jpg)
-![](media/16233763621816.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233763579987.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233763621816.jpg)
 
 ### 第三式 膝盖俯卧撑
-![](media/16233763890571.jpg)
-![](media/16233763946028.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233763890571.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233763946028.jpg)
 
 ### 第四式 半俯卧撑
-![](media/16233764161292.jpg)
-![](media/16233764200771.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233764161292.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233764200771.jpg)
 
 ### 第五式 标准俯卧撑
-![](media/16233764425831.jpg)
-![](media/16233764478111.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233764425831.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233764478111.jpg)
 
 ### 第六式 窄距俯卧撑
-![](media/16233769560037.jpg)
-![](media/16233769605101.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233769560037.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233769605101.jpg)
 
 ### 第七式 偏重俯卧撑
-![](media/16233769968660.jpg)
-![](media/16233770012414.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233769968660.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233770012414.jpg)
 
 ### 第八式 单臂半俯卧撑
-![](media/16233770432550.jpg)
-![](media/16233770509249.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233770432550.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233770509249.jpg)
 
 ### 第九式 杠杆俯卧撑
-![](media/16233770802445.jpg)
-![](media/16233770843751.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233770802445.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233770843751.jpg)
 
 ### 最终式 单臂俯卧撑
-![](media/16233771031421.jpg)
-![](media/16233771091907.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233771031421.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233771091907.jpg)
 
 ## 深蹲
 ### 升级表
@@ -82,44 +82,44 @@ tags: [健身, GTD]
 | 最终式 | 单腿深蹲 | 2 x 50 次 |
 
 ### 第一式 肩倒立深蹲
-![](media/16233772675490.jpg)
-![](media/16233772719098.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233772675490.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233772719098.jpg)
 
 ### 第二式 折刀深蹲
-![](media/16233772955163.jpg)
-![](media/16233772994497.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233772955163.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233772994497.jpg)
 
 ### 第三式 支撑深蹲
-![](media/16233773213387.jpg)
-![](media/16233773261167.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233773213387.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233773261167.jpg)
 
 ### 第四式 半深蹲
-![](media/16233773506567.jpg)
-![](media/16233773550078.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233773506567.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233773550078.jpg)
 
 ### 第五式 标准深蹲
-![](media/16233773844689.jpg)
-![](media/16233773897676.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233773844689.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233773897676.jpg)
 
 ### 第六式 窄距深蹲
-![](media/16233774176578.jpg)
-![](media/16233774216603.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233774176578.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233774216603.jpg)
 
 ### 第七式 偏重深蹲
-![](media/16233774451041.jpg)
-![](media/16233774620446.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233774451041.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233774620446.jpg)
 
 ### 第八式 单腿半深蹲
-![](media/16233774812360.jpg)
-![](media/16233774886667.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233774812360.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233774886667.jpg)
 
 ### 第九式 单腿辅助深蹲
-![](media/16233775041579.jpg)
-![](media/16233775094918.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233775041579.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233775094918.jpg)
 
 ### 最终式 单腿深蹲
-![](media/16233775591993.jpg)
-![](media/16233775633887.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233775591993.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16233775633887.jpg)
 
 ## 引体向上
 ### 升级表
@@ -137,45 +137,45 @@ tags: [健身, GTD]
 | 最终式 | 单臂引体向上 | 2 x 6 次 |
 
 ### 第一式 垂直引体
-![](media/16235046931778.jpg)
-![](media/16235046978279.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235046931778.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235046978279.jpg)
 
 ### 第二式 水平引体向上
-![](media/16235047167487.jpg)
-![](media/16235047206632.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235047167487.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235047206632.jpg)
 
 ### 第三式 折刀引体向上
-![](media/16235047427692.jpg)
-![](media/16235047509050.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235047427692.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235047509050.jpg)
 
 ### 第四式 半引体向上
-![](media/16235047741587.jpg)
-![](media/16235047788361.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235047741587.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235047788361.jpg)
 
 ### 第五式 标准引体向上
-![](media/16235050886345.jpg)
-![](media/16235050937641.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235050886345.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235050937641.jpg)
 
 ### 第六式 窄距引体向上
-![](media/16235052213410.jpg)
-![](media/16235052268650.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235052213410.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235052268650.jpg)
 
 ### 第七式 偏重引体向上
-![](media/16235052582706.jpg)
-![](media/16235052625014.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235052582706.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235052625014.jpg)
 
 
 ### 第八式 单臂半引体向上
-![](media/16235052816468.jpg)
-![](media/16235052856461.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235052816468.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235052856461.jpg)
 
 ### 第九式 单臂辅助引体向上
-![](media/16235053207198.jpg)
-![](media/16235053249302.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235053207198.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235053249302.jpg)
 
 ### 最终式 单臂引体向上
-![](media/16235056128115.jpg)
-![](media/16235056169086.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235056128115.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235056169086.jpg)
 
 ## 举腿
 ### 升级表
@@ -193,45 +193,45 @@ tags: [健身, GTD]
 | 最终式 | 悬垂直举腿 | 2 x 30 次 |
 
 ### 第一式 坐姿屈膝
-![](media/16235058330516.jpg)
-![](media/16235058387786.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235058330516.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235058387786.jpg)
 
 ### 第二式 平卧抬膝
-![](media/16235058715628.jpg)
-![](media/16235058987367.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235058715628.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235058987367.jpg)
 
 ### 第三式 平卧屈举腿
-![](media/16235059377778.jpg)
-![](media/16235059420733.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235059377778.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235059420733.jpg)
 
 ### 第四式 平卧蛙举腿
-![](media/16235059751819.jpg)
-![](media/16235059808055.jpg)
-![](media/16235059845183.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235059751819.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235059808055.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235059845183.jpg)
 
 ### 第五式 平卧直举腿
-![](media/16235060043259.jpg)
-![](media/16235060079971.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235060043259.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235060079971.jpg)
 
 ### 第六式 悬垂屈膝
-![](media/16235060276364.jpg)
-![](media/16235060318027.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235060276364.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235060318027.jpg)
 
 ### 第七式 悬垂屈举腿
-![](media/16235060762848.jpg)
-![](media/16235060798627.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235060762848.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235060798627.jpg)
 
 ### 第八式 悬垂蛙举腿
-![](media/16235061418479.jpg)
-![](media/16235061459126.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235061418479.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235061459126.jpg)
 
 ### 第九式 悬垂半举腿
-![](media/16235061942966.jpg)
-![](media/16235061990087.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235061942966.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235061990087.jpg)
 
 ### 最终式 悬垂直举腿
-![](media/16235062300592.jpg)
-![](media/16235062342441.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235062300592.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235062342441.jpg)
 
 ## 桥
 ### 升级表
@@ -249,40 +249,40 @@ tags: [健身, GTD]
 | 最终式 | 铁板桥 | 2 x 30 次 |
 
 ### 第一式 短桥
-![](media/16235063290015.jpg)
-![](media/16235063328476.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235063290015.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235063328476.jpg)
 
 ### 第二式 直桥
-![](media/16235063942389.jpg)
-![](media/16235064080533.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235063942389.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235064080533.jpg)
 
 ### 第三式 高低桥
-![](media/16235064277856.jpg)
-![](media/16235064317107.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235064277856.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235064317107.jpg)
 
 ### 第四式 顶桥
-![](media/16235064592857.jpg)
-![](media/16235064626259.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235064592857.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235064626259.jpg)
 
 ### 第五式 半桥
-![](media/16235065659440.jpg)
-![](media/16235065703449.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235065659440.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235065703449.jpg)
 
 ### 第六式 标准桥
-![](media/16235066089725.jpg)
-![](media/16235066129116.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235066089725.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235066129116.jpg)
 
 ### 第七式 下行桥
-![](media/16235066913378.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235066913378.jpg)
 
 ### 第八式 上行桥
-![](media/16235067177964.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235067177964.jpg)
 
 ### 第九式 合桥
-![](media/16235067415816.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235067415816.jpg)
 
 ### 最终式 铁板桥
-![](media/16235067900645.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235067900645.jpg)
 
 ## 倒立撑
 ### 升级表
@@ -300,36 +300,36 @@ tags: [健身, GTD]
 | 最终式 | 单臂倒立撑 | 2 x 5 次 |
 
 ### 第一式 靠墙顶立
-![](media/16235068440926.jpg)
-![](media/16235068489541.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235068440926.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235068489541.jpg)
 
 ### 第二式 乌鸦式
-![](media/16235068745842.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235068745842.jpg)
 
 ### 第三式 靠墙倒立
-![](media/16235068887754.jpg)
-![](media/16235069018339.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235068887754.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235069018339.jpg)
 
 ### 第四式 半倒立撑
-![](media/16235069405758.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235069405758.jpg)
 
 ### 第五式 标准倒立撑
-![](media/16235069592851.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235069592851.jpg)
 
 ### 第六式 窄距倒立撑
-![](media/16235069787787.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235069787787.jpg)
 
 ### 第七式 偏重倒立撑
-![](media/16235069957421.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235069957421.jpg)
 
 ### 第八式 单臂半倒立撑
-![](media/16235070206862.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235070206862.jpg)
 
 ### 第九式 杠杆倒立撑
-![](media/16235070497871.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235070497871.jpg)
 
 ### 最终式 单臂倒立撑
-![](media/16235070847276.jpg)
+![](http://image.runjf.com/mweb/2021-06-12-16235070847276.jpg)
 
 
 
