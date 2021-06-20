@@ -13,7 +13,7 @@ tags: [缓存, Python,]
 
 <!--more-->
 
-![-w727](media/16241743798154.jpg)
+![-w727](http://image.runjf.com/mweb/2021-06-20-16241743798154.jpg)
 
 高层的空间速度快容量小，为了充分利用，就必须有个数据替换的规则，决定数据的去留。这就是所谓的**缓存淘汰算法**。
 
@@ -155,3 +155,4 @@ if __name__ == '__main__':
 * https://github.com/python/cpython/blob/7247f6f433846c6e37308a550e8e5eb6be379856/Lib/functools.py#L525
 * https://zhuanlan.zhihu.com/p/76553221
 * https://melonshell.github.io/2020/02/07/ds_cache_eli/
+* 深入理解计算机系统
