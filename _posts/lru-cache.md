@@ -68,7 +68,7 @@ class DoublyLink:
         return self.insert_after(self.root, node)
 
     def append_tail(self, node):
-        return self.insert_after(self.root.prev, node)
+        return self.insert_after(self.tail, node)
 
     def insert_after(self, pos: Node, node):
         pos.next.prev = node
