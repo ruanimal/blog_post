@@ -24,7 +24,9 @@ tags: [缓存, Python,]
 * 非最近使用算法（NMRU）：在最近没有使用的内容中随机选择一个作为替换对象
 
 ## LRU 原理
-Least Recently used(LRU) 直译为“最近最少使用”，也就是将最近一次访问时间最远的数据淘汰掉。
+Least Recently used(LRU) 是最常用的缓存淘汰算法， 直译为“最近最少使用”，也就是将最近一次访问时间最远的数据淘汰掉。
+
+LRU正好体现了时间局部性，也就是，如果一个信息项正在被访问，那么在近期它很可能还会被再次访问。
 
 既然是缓存自然需要数据结构记录key和value，可以使用hashmap来存储，查询和设置的复杂度为O(1)。
 
@@ -35,6 +37,13 @@ Least Recently used(LRU) 直译为“最近最少使用”，也就是将最近�
 * 新数据插入到链表头部，并存入hashmap（value为链表节点指针）；
 * 查找hashmap，当key命中，则将数据移到链表头部；
 * 当链表满的时候，将链表尾部的数据丢弃，删除hashmap对应key；
+
+### LRU的不足
+当存在热点数据时，LRU的效率很好，但偶发性的、周期性的批量操作会导致LRU命中率急剧下降，缓存污染情况比较严重。
+
+**缓存污染**，是指系统将不常用的数据从内存移到缓存，造成常用数据的挤出，降低了缓存效率的现象。
+
+常见改进算法有LFU，LRU-K
 
 ## Python 实现
 首先需要实现双向链表，引入头节点，并将链表首未连在一起，这样插入和删除的时候就不需要额外判断链表的头部和尾部，简化了实现。
@@ -151,8 +160,9 @@ if __name__ == '__main__':
 ```
 
 ## 参考
+* 深入理解计算机系统
 * https://en.wikipedia.org/wiki/Cache_replacement_policies
 * https://github.com/python/cpython/blob/7247f6f433846c6e37308a550e8e5eb6be379856/Lib/functools.py#L525
 * https://zhuanlan.zhihu.com/p/76553221
 * https://melonshell.github.io/2020/02/07/ds_cache_eli/
-* 深入理解计算机系统
+* https://segmentfault.com/a/1190000018810255
