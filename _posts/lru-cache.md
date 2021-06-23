@@ -135,7 +135,7 @@ class LRUCache:
         return node.val
 
     def set(self, key, val):
-        node = self.cache.pop(key, None)
+        node = self.cache.get(key, None)
         if node:
             node.val = val
             self.move_to_head(node)
