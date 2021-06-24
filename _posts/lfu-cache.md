@@ -8,8 +8,8 @@ tags: [缓存, Python,]
 Least Frequently Used (LFU) 是一种常见的缓存淘汰算法，译为“最近最不经常使用”，也就是将缓存中使用次数最少的数据淘汰掉。
 
 有两种常见的实现方法
-- 小顶堆 + hashmap，插入和删除的复杂度为O(logN), 但淘汰相同访问次数的节点多个节点存在问题。
-- 频次hashmap + hashmap, 淘汰缓存的复杂度为O(N)
+- 小顶堆 + hashmap，插入和删除的复杂度为O(logN), 但淘汰相同访问次数的节点是不稳定的，因为堆排序不稳定。
+- 数组存储数据项 + hashmap记录数据项index, 淘汰缓存的复杂度为O(N)
 
 <!--more-->
 特点
@@ -18,6 +18,10 @@ Least Frequently Used (LFU) 是一种常见的缓存淘汰算法，译为“最�
 
 ## Python 实现
 这里的Python实现是方案1
+
+具体步骤
+1. get元素时，如果存在则返回结果并更新访问次数
+2. set元素时，如果存在则更新val并更新访问次数，否则检查是否淘汰缓存并插入新key
 
 ```
 from math import log, ceil
@@ -129,3 +133,7 @@ class LFUCache:
     def __repr__(self):
         return '<LFU {!r}>'.format(self.cache)
 ```
+
+## 参考
+- https://en.wikipedia.org/wiki/Least_frequently_used
+- https://melonshell.github.io/2020/02/07/ds_cache_eli/
