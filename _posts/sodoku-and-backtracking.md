@@ -27,15 +27,13 @@ tags: [Python, 算法, 回溯法]
 ```Python
 def backtracking(args):
     if can_stop(args):  # 判断是否终止，限制了递归深度
-        if need():   # 必要时收集叶子节点的结果
+        if need():   # 必要时收集递归子树的叶子节点的结果
             collect_result()
         return
 
     for choice in get_all_choices(args):  # 针对每一种情况, 情况的个数也就是每一层的广度
         set_state(args, choice)  # 暂时选择该项
-        res = process(args)   # 该节点数据加工
-        if need():   # 必要时收集该节点的结果
-            collect_result()
+        process(args)   # 该节点数据加工
         backtracking(args)   # 递归进入下一层次
         revert_state(args, choice)   # 撤销当前选择
 ```
