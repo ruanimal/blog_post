@@ -79,7 +79,7 @@ session = Session()
 ### 插入
 ```python
 # 插入单条
-session.add(SomeData(status='1', message='aa')) 
+session.add(SomeData(status='1', message='aa'))
 # 插入多条
 session.add_all([
     SomeData(status='2', message='bb'),
@@ -100,8 +100,8 @@ session.query(SomeData).all()
 ## 通过主键获取数据
 session.query(SomeData).get(1)
 
-## select * from table11 where status='2' 
-data = session.query(SomeData).filter_by(status='2').first() 
+## select * from table11 where status='2'
+data = session.query(SomeData).filter_by(status='2').first()
 # data: <__main__.SomeData object at 0x103aa13c8>
 
 ## select * from table11 where status in ('1', '2')
@@ -155,12 +155,13 @@ session.commit()
 ```python
 from contextlib import contextmanager
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker 
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session  # 使session可以用于多线程环境
 
 # pool_recycle 数据库连接的回收周期, 按需调整
 # pool_size 连接池大小, 按需调整, 0为不限制连接数
-engine = create_engine('sqlite:///test.sqlite3'， pool_recycle=3600, pool_size=0)
+# pool_pre_ping=True 每次从连接池中取出连接时, 都判断是否有效, 可替代pool_recycle参数
+engine = create_engine('sqlite:///test.sqlite3'， pool_pre_ping=True, pool_size=0)
 
 Session = scoped_session(sessionmaker(bind=engine))
 
