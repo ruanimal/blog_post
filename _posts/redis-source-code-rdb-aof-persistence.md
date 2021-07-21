@@ -16,7 +16,7 @@ RDB持久化功能所生成的RDB文件是一个经过压缩的二进制文件�
 
 RDB是将redis中所有db中的所有键值对以如下格式进行储存
 
-![](media/16268563558568.jpg)
+![](http://image.runjf.com/mweb/2021-07-21-16268563558568.jpg)
 
 ### RDB文件创建
 有两个命令可以生成RDB文件，`SAVE` 和 `BGSAVE`。生成RDB文件时，redis会遍历所有非空db的所有键值对按一定格式存储到RDB文件中。
@@ -37,8 +37,8 @@ save选项的格式是 `save seconds option_times`。例如`save 900 1`，若服
 ## AOF持久化
 由于RDB生成的机制决定了，RDB文件总是会和redis内存有部分不一致，**RDB文件会缺少从上次BGSAVE开始到当前时刻的所有改动**。AOF持久化的存在就是为了解决该问题。
 
-AOF持久化是通过保存Redis服务器所执行的写命令来记录数据库状态。
-因为Redis的命令请求协议是纯文本格式，所以AOF文件类似如下格式
+AOF持久化是通过保存执行的写命令来记录数据库状态。
+因为Redis的命令请求协议是纯文本格式，所以AOF文件类似如下。
 ```
 *2\r\n$6\r\nSELECT\r\n$l\r\nO\r\n 
 *3\r\n$3\r\nSET\r\n$3\r\nmsg\r\n$5\r\nhello\r\n 
@@ -97,11 +97,11 @@ AOF重写程序在子进程里执行, 这样做可以同时达到两个目的:
 
 在AOF重新过程中，所有命令会额外会写一份到**AOF重写缓冲区**中，当新AOF文件生成时，父进程会将AOF重写缓冲区的内容追加到新AOF文件中，并替换旧AOF文件。
 
-![](media/16268637141893.jpg)
+![](http://image.runjf.com/mweb/2021-07-21-16268637141893.jpg)
 
-为防止AOF重新失败，AOF缓冲区在重写过程中依然正常工作。
+为防止AOF重写失败，AOF缓冲区在重写过程中依然正常工作。
 
-![](media/16268635658876.jpg)
+![](http://image.runjf.com/mweb/2021-07-21-16268635658876.jpg)
 
 **注意**：redis主从是基于`RDB + 命令传播`，并没有利用AOF文件，与MySQL的binlog不同。
 
