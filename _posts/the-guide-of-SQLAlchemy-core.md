@@ -116,6 +116,10 @@ conn.execute(addresses.insert(), [
 ...         "AND (addresses.email_address LIKE :e1 "
 ...             "OR addresses.email_address LIKE :e2)")
 ... conn.execute(s, x='m', y='z', e1='%@aol.com', e2='%@msn.com').fetchall()
+
+## 遍历大表，每N条数据请求数据库一次
+for p in conn.execute(select([users])).yield_per(5):
+    print(p)
 ```
 
 ### 更改
