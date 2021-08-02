@@ -172,6 +172,7 @@ def merge(left, right):
 
 ### 代码
 ```python
+# 该实现是原位排序, 所以和上面的步骤有点区别
 def quick_sort(arry):
     return qsort(arry, 0, len(arry)-1)
 
@@ -182,13 +183,17 @@ def qsort(arry, left, right):
     l = left
     r = right
     while l < r:
-        while arry[l] <= key and l < r:   # A.直到从左边找到一个比基准大的元素
+        if arry[l] <= key:
             l += 1
-        while arry[r] >= key and l < r:   # B.直到从右边找到一个比基准小的元素; 
-            r -= 1	# A与B对调会出错，因为r可能会多移动一步，而arry[r]是要与arry[right]交换的
-        arry[l], arry[r] = arry[r], arry[l]
+            continue
+        if arry[r] >= key:
+            r -= 1
+            continue
+        arry[l], arry[r] = arry[r], arry[l]  # 交换 左边比基准大, 右边比基准小的两个元素
+    # 循环完成时l == r, 此时 arry[r-1] < arry[right] < arry[r]
+    # 最后交换 arry[right] 和 arry[r], 则left 到 r-1 都是小于arry[r]; r+1到right 都是大于arry[r]
     arry[r], arry[right] = arry[right], arry[r]
-    qsort(arry, left, l-1)
+    qsort(arry, left, r-1)
     qsort(arry, r+1, right)
     return arry
 ```
