@@ -30,7 +30,7 @@ Windows Subsystem for Linux(WSL)从`Version 1 (WSL1)`升级到`Version 2 (WSL2)`
     ```
 3. 启用Hyper-V
     ```
-    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+    dism.exe /online /enable-feature /featurename:Microsoft-Hyper-V /all /norestart
     ```
 4. 设置WSL2为默认
     ```
