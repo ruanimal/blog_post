@@ -54,7 +54,8 @@ WSL2 的便利之处在于让 linux 系统能以一个足够快的速度访问 w
 ### openmediavault 安装及配置
 1. 创建 Hyper-V 虚拟机：选择第一代，选择桥接网卡，虚拟硬盘需挂载到 IDE 控制器
 2. 挂载安装镜像，安装 openmediavault 系统
-3. 安装 omv-extras: `wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install | bash`
+3. 安装 omv-extras
+	`wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install | bash`
 4. 安装插件：openmediavault-sharerootfs(共享系统分区的文件夹) openmediavault-remotemount(远程挂载)
 5. 挂载 NFS 共享：存储器 -> 远程挂载
 6. 建立共享文件夹: 选择系统分区上的 NFS 挂载文件夹
