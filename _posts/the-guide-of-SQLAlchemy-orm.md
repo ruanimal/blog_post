@@ -24,11 +24,14 @@ Base = declarative_base()
 
 class SomeData(Base):
     __tablename__ = 'table11'
-
+    __table_args__ = (
+        Index('message_idx', 'message'),
+    )
+    
     id = Column(Integer, primary_key=True)
     status = Column('status', String(4) , comment='状态', quote=True)   # 转义关键字
     message = Column(String(50), comment='描述',)
-    the_time = Column(DateTime, comment='请求时间',)
+    the_time = Column(DateTime, comment='请求时间', index=True)
     cost_time = Column(String(8), comment='请求耗时',)
     # created_at = Column(TIMESTAMP, comment='创建时间', server_default=text('CURRENT_TIMESTAMP'))
 ```
@@ -100,8 +103,8 @@ session.query(SomeData).all()
 ## 通过主键获取数据
 session.query(SomeData).get(1)
 
-## select * from table11 where status='2'
-data = session.query(SomeData).filter_by(status='2').first()
+## select * from table11 where status='2' order by the_time limit 1
+data = session.query(SomeData).filter_by(status='2').order_by(SomeData.the_time).first()
 # data: <__main__.SomeData object at 0x103aa13c8>
 
 ## select * from table11 where status in ('1', '2')
@@ -161,7 +164,7 @@ from sqlalchemy.orm import scoped_session  # 使session可以用于多线程环�
 # pool_recycle 数据库连接的回收周期, 按需调整
 # pool_size 连接池大小, 按需调整, 0为不限制连接数
 # pool_pre_ping=True 每次从连接池中取出连接时, 都判断是否有效, 可替代pool_recycle参数
-engine = create_engine('sqlite:///test.sqlite3'， pool_pre_ping=True, pool_size=0)
+engine = create_engine('sqlite:///test.sqlite3', pool_pre_ping=True, pool_size=0)
 
 Session = scoped_session(sessionmaker(bind=engine))
 
