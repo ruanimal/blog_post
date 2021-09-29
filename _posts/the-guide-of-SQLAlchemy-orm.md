@@ -164,8 +164,8 @@ from sqlalchemy.orm import scoped_session  # 使session可以用于多线程环�
 # pool_recycle 数据库连接的回收周期, 按需调整
 # pool_size 连接池大小, 按需调整, 0为不限制连接数
 # pool_pre_ping=True 每次从连接池中取出连接时, 都判断是否有效, 可替代pool_recycle参数
-engine = create_engine('sqlite:///test.sqlite3', pool_pre_ping=True, pool_size=0)
-
+# engine = create_engine('mysql://database', pool_pre_ping=True, pool_size=0)
+engine = create_engine('sqlite:///test.sqlite3')
 Session = scoped_session(sessionmaker(bind=engine))
 
 # session 自动管理
