@@ -5,6 +5,8 @@ tags: [Linux, WSL, NAS]
 
 ----
 
+**本方案存在不可解决的缺点，已被笔者放弃，请移步[最新解决方案](/2021/09/21/openmediavault-on-hyperv/)**
+
 NAS的文件系统一直是我比较纠结的一个点。NAS的系统基本上是基于Linux(Unix)，文件系统不是ntfs，数据迁移不方便，数据恢复工具也没那么全。
 
 WSL就完美解决了这个问题，用Linux提供服务，数据最终还是落在ntfs上，而且重要的是everything也能用上。
