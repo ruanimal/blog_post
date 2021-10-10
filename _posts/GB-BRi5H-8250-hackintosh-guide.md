@@ -1,7 +1,7 @@
 title: 技嘉GB-BRi5H-8250黑苹果安装指南
 date: 2020-07-24 8:17 PM
 categories: 工作生活
-tags: [Hackintosh, 电子产品]
+tags: [mac, Hackintosh, 电子产品]
 
 ----
 
