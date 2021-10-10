@@ -59,7 +59,7 @@ macOS 10.14 以后系统动画越来越复杂，对显卡要求比较高，导�
 ## 使 macOS 的命令风格与Linux相同
 macOS 的命令应该是 Unix 风格的，和 Linux 有些不同，可选参数必须放在前面，会有些不方便。
 比如
-```
+```shell
 # mac
 ➜  ~ /bin/ls /tmp -al
 ls: -al: No such file or directory
