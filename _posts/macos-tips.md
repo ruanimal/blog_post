@@ -85,6 +85,7 @@ export  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 ```
 
 字符含义
+
 | Prefix | Meaning |
 | --- | --- |
 | `~` | ⌥ Option key |
