@@ -98,4 +98,10 @@ export  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 - https://blog.victormendonca.com/2020/04/27/how-to-change-macos-key-bindings/
 
 ## 关闭启动声音
-https://support.apple.com/zh-cn/HT211996
+```
+# 关闭提示音
+sudo nvram StartupMute=%01
+
+# 打开duang
+sudo nvram StartupMute=%00
+```
