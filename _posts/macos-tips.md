@@ -106,3 +106,6 @@ sudo nvram StartupMute=%01
 # 打开duang
 sudo nvram StartupMute=%00
 ```
+
+## crontab 文件路径
+用户执行`crontab -e`之后定时任务存储位置`/private/var/at/tabs/<username>`
