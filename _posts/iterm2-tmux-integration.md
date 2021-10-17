@@ -38,8 +38,10 @@ iTerm2 对于 tmux 会话有一个profile，建议对终端颜色和外观进行
 对于终端机器的 Tmux 版本有要求，需要支持`-CC`命令
 
 **具体方法**
-* 新建窗口: `tmux -CC`
+* 新建tmux会话: `tmux -CC`
 * 断开重连(attach): `tmux -CC attach`
+* 如已存在会话则连接，否则新建会话：`tmux -CC new -A -s main`
+* 如果是ssh连接的机器: `ssh -t user@host 'tmux -CC new -A -s main'`
 * 断开连接(dettach): 在连接的窗口按 esc，或者直接关掉连接的 tab 吧
 * 关掉 session(destroy): 关闭当前 session 的所有 tab 即可
 
@@ -55,3 +57,4 @@ iTerm2 对于 tmux 会话有一个profile，建议对终端颜色和外观进行
 - https://www.ruanyifeng.com/blog/2019/10/tmux.html
 - https://www.v2ex.com/t/589453
 - https://iterm2.com/documentation-tmux-integration.html
+- https://gitlab.com/gnachman/iterm2/-/wikis/tmux-Integration-Best-Practices
