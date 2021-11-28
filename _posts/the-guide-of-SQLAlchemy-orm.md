@@ -45,7 +45,7 @@ SQLAlchemy使用类似`sqlite:///test.sqlite3`的URI来表示数据库连接
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine('sqlite:///test.sqlite3', echo=True)
+engine = create_engine('sqlite:///test.sqlite3')
 Base.metadata.create_all(engine)  # 如果表不存在，则生成
 ```
 
@@ -61,7 +61,8 @@ dbname = 'test.sqlite3'
 engine = create_engine('sqlite:///' + dbname)
 
 Base.prepare(engine, reflect=True)
-
+# 只映射部分表
+# Base.prepare(engine, reflect=True, reflection_options={'only': ['table11']})
 Base.classes.keys()  # 所有映射列表
 
 SomeData = Base.classes.table11
@@ -73,7 +74,7 @@ SomeData = Base.classes.table11
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine('sqlite:///test.sqlite3', echo=True)
+engine = create_engine('sqlite:///test.sqlite3')
 Session = sessionmaker(bind=engine)
 
 session = Session()
@@ -166,7 +167,9 @@ from sqlalchemy.orm import scoped_session  # 使session可以用于多线程环�
 # pool_pre_ping=True 每次从连接池中取出连接时, 都判断是否有效, 可替代pool_recycle参数
 # engine = create_engine('mysql://database', pool_pre_ping=True, pool_size=0)
 engine = create_engine('sqlite:///test.sqlite3')
-Session = scoped_session(sessionmaker(bind=engine))
+# scoped_session 可在多线程环境使用，但不支持session嵌套
+# Session = scoped_session(sessionmaker(bind=engine))
+Session = sessionmaker(bind=engine)
 
 # session 自动管理
 @contextmanager
