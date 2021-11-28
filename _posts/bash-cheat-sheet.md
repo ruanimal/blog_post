@@ -1,5 +1,5 @@
 title: bash 语法备忘
-date: 2021年11月28日 15:00:00
+date: 2021-11-28 15:00:00
 categories: 编程
 tags:  [Shell, ]
 
