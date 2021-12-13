@@ -336,6 +336,7 @@ bash 有字符串，数字，数字，关联数组四种数据类型，默认是
 ### 字符串
 #### 定义
 语法 `varname=value`
+
 ```
 bash-5.1$ s1=abcdefg
 bash-5.1$ echo $s1
@@ -344,6 +345,7 @@ abcdefg
 
 #### 获取长度（length）
 语法 `${#varname}`
+
 ```
 bash-5.1$ echo ${#s1}
 7
@@ -351,6 +353,7 @@ bash-5.1$ echo ${#s1}
 
 #### 子字符串（substr）
 语法 `${varname:offset:length}`, offset为负数的时候，前面要加空格，防止与默认值语法冲突。
+
 ```
 bash-5.1$ echo ${s1:1:3}
 bcd
@@ -366,6 +369,7 @@ bcd
 - `${variable##pattern}`: 删除最长匹配（贪婪匹配）的部分，返回剩余部分
 
 匹配模式pattern可以使用*、?、[]等通配符。
+
 ```
 $ myPath=/home/cam/book/long.file.name
 
