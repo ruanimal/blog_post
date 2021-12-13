@@ -380,5 +380,54 @@ $ echo ${myPath##/*/}
 long.file.name
 ```
 
+##### 字符串尾部的模式匹配
+- `${variable%pattern}`: 删除最短匹配（非贪婪匹配）的部分，返回剩余部分
+- `${variable%%pattern}`: 删除最长匹配（贪婪匹配）的部分，返回剩余部分
+
+```
+$ path=/home/cam/book/long.file.name
+
+$ echo ${path%.*}
+/home/cam/book/long.file
+
+$ echo ${path%%.*}
+/home/cam/book/long
+```
+
+##### 任意位置的模式匹配
+如果匹配`pattern`则用`replace`替换匹配的内容
+- `${variable/pattern/replace}`: 替换第一个匹配
+- `${variable//pattern/replace}`: 替换所有匹配
+
+```
+$ path=/home/cam/foo/foo.name
+
+$ echo ${path/foo/bar}
+/home/cam/bar/foo.name
+
+$ echo ${path//foo/bar}
+/home/cam/bar/bar.name
+```
+
+### 数字
+### 数组
+### 关联数组
+
+## 控制流
+### 条件判断
+### 循环
+### 分支
+
+## 函数
+
+## 脚本相关
+### 几个关键概念
+#### shebang
+#### 返回码
+#### 参数
+#### 文件描述符
+
+未完待续
+
 ## 参考
 - https://wangdoc.com/bash/
