@@ -6,6 +6,7 @@ tags:  [Shell, ]
 ---
 
 bash 语法作为程序员好像都了解一些，但又缺少体系化学习，需要使用到某些功能时又经常手忙脚乱地查。
+本文主要参考[阮一峰的bash教程](https://wangdoc.com/bash/)，对bash的知识点进行了梳理。
 本文目的是作为bash的语法备忘录、语法速查表。
 <!--more-->
 ## 模式扩展
@@ -312,12 +313,98 @@ Bash 提供一些特殊变量。这些变量的值由 Shell 提供，用户不�
 *   `-i`：声明整数变量。
 *   `-p`：查看变量信息。
 *   `-r`：声明只读变量。
-*   `-x`：该变量输出为环境变量。
+*   `-x`：该变量输出为环境变量。 
 
-未完待续
+```
+# 声明为整数，可以直接计算，不需要使用$符号
+bash-5.1$ declare -i val1=12 val2=5
+bash-5.1$ echo $val1
+12
+bash-5.1$ val1+=val2
+bash-5.1$ echo $val1
+17
+
+# 一个变量声明为整数以后，依然可以被改写为字符串。Bash 不会报错，但会赋以不确定的值
+bash-5.1$ val1=aaa
+bash-5.1$ echo $val1
+0
+```
 
 ## 数据类型
+bash 有字符串，数字，数字，关联数组四种数据类型，默认是字符串，其他类型需要手动声明。
+
 ### 字符串
+#### 定义
+语法 `varname=value`
+```
+bash-5.1$ s1=abcdefg
+bash-5.1$ echo $s1
+abcdefg
+```
+
+#### 获取长度（length）
+语法 `${#varname}`
+```
+bash-5.1$ echo ${#s1}
+7
+```
+
+#### 子字符串（substr）
+语法 `${varname:offset:length}`, offset为负数的时候，前面要加空格，防止与默认值语法冲突。
+```
+bash-5.1$ echo ${s1:1:3}
+bcd
+bash-5.1$ echo ${s1: -6:2}
+bc
+bash-5.1$ echo ${s1: -6:3}
+bcd
+``` 
+
+#### 替换 （replace）
+##### 字符串头部的模式匹配
+- `${variable#pattern}`: 删除最短匹配（非贪婪匹配）的部分，返回剩余部分
+- `${variable##pattern}`: 删除最长匹配（贪婪匹配）的部分，返回剩余部分
+
+匹配模式pattern可以使用*、?、[]等通配符。
+```
+$ myPath=/home/cam/book/long.file.name
+
+$ echo ${myPath#/*/}
+cam/book/long.file.name
+
+$ echo ${myPath##/*/}
+long.file.name
+```
+
+##### 字符串尾部的模式匹配
+- `${variable%pattern}`: 删除最短匹配（非贪婪匹配）的部分，返回剩余部分
+- `${variable%%pattern}`: 删除最长匹配（贪婪匹配）的部分，返回剩余部分
+
+```
+$ path=/home/cam/book/long.file.name
+
+$ echo ${path%.*}
+/home/cam/book/long.file
+
+$ echo ${path%%.*}
+/home/cam/book/long
+```
+
+##### 任意位置的模式匹配
+如果匹配`pattern`则用`replace`替换匹配的内容
+- `${variable/pattern/replace}`: 替换第一个匹配
+- `${variable//pattern/replace}`: 替换所有匹配
+
+```
+$ path=/home/cam/foo/foo.name
+
+$ echo ${path/foo/bar}
+/home/cam/bar/foo.name
+
+$ echo ${path//foo/bar}
+/home/cam/bar/bar.name
+```
+
 ### 数字
 ### 数组
 ### 关联数组
@@ -330,11 +417,13 @@ Bash 提供一些特殊变量。这些变量的值由 Shell 提供，用户不�
 ## 函数
 
 ## 脚本相关
+### 几个关键概念
+#### shebang
+#### 返回码
+#### 参数
+#### 文件描述符
 
-## 几个关键概念
-### 返回码
-### 参数
-### 文件描述符
+未完待续
 
 ## 参考
-- https://wangdoc.com/bash/condition.html
+- https://wangdoc.com/bash/
