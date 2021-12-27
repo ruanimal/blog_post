@@ -929,10 +929,23 @@ print("Hello, world!")
 * `2`：错误输出
 
 #### 打开新的文件描述符
+手动指定描述符
 ```
 exec 3<> /tmp/foo  #open fd 3.
 echo "test" >&3
 exec 3>&- #close fd 3.
+```
+
+系统自动分配描述符，bash4.1开始支持(在macos报错，原因不明)
+```
+#!/bin/bash
+
+FILENAME=abc.txt
+
+exec {FD}<>"$FILENAME"
+echo 11 >&FD
+echo 22 >&FD
+$FD>&-
 ```
 
 #### 描述符重定向
