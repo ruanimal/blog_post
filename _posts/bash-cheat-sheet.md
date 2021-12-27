@@ -930,14 +930,14 @@ print("Hello, world!")
 
 #### 打开新的文件描述符
 手动指定描述符
-```
+```shell
 exec 3<> /tmp/foo  #open fd 3.
 echo "test" >&3
 exec 3>&- #close fd 3.
 ```
 
 系统自动分配描述符，bash4.1开始支持(在macos报错，原因不明)
-```
+```shell
 #!/bin/bash
 
 FILENAME=abc.txt
