@@ -890,7 +890,7 @@ function func_return_value {
 }
 ```
 
-## 关键名词
+## 关键概念
 ### shebang
 Shebang（也称为Hashbang）是一个由井号和叹号构成的字符序列`#!`， 其出现在可执行文本文件的第一行的前两个字符。
 在文件中存在Shebang的情况下，类Unix操作系统的程序加载器会分析Shebang后的内容，将这些内容作为解释器指令，并调用该指令.
@@ -959,6 +959,35 @@ $FD>&-
 
 所以命令中常见的`ls -al > output.txt 2>&1`, 就是将标准输出和错误输出都重定向到一个文件。
 等价于`ls -al &>output.txt`，本人偏好这种写法，比较简洁。
+
+### IFS (Input Field Separators)
+IFS决定了bash在处理字符串的时候是如何进行单词切分。 
+IFS的默认值是空格，TAB，换行符，即` \t\n`
+
+```shell
+$ echo "$IFS" | cat -et
+ ^I$
+$
+```
+
+例如，在for循环的时候，如何区分每个item
+```shell
+for i in `echo -e "foo bar\tfoobar\nfoofoo"`; do 
+    echo "'$i' is the substring"; 
+done
+```
+
+也可以自定义
+```shell
+OLD_IFS="$IFS"
+IFS=":"
+string="1:2:3"
+for i in $string; do 
+    echo "'$i' is the substring";
+done 
+IFS=$OLD_IFS
+```
+
 
 ## 参考
 - https://wangdoc.com/bash/
