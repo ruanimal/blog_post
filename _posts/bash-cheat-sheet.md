@@ -188,7 +188,7 @@ bash-5.1$ echo '{"user": "'${USER}'"}'
 Here 文档（here document）是一种输入多行字符串的方法，格式如下。
 它的格式分成开始标记（`<< token`）和结束标记（`token`）, 一般用字符串`EOF`作为token
 
-```
+```shell
 << token
 text
 token
@@ -510,7 +510,7 @@ bash-5.1$ echo ${c[@]}
 #### 访问数组元素
 `array[index]` 语法可访问数组元素，不带index访问则是访问数组首个元素。
 
-```shell
+```
 bash-5.1$ a=(1 2 3)
 # 查看元素
 bash-5.1$ echo ${a[1]}
@@ -629,7 +629,7 @@ bash 和常规编程语言一样使用`if`作为分支条件的关键字, `fi`�
 
 其中`if`和`elif`的`condition`所判断的内容是命令的[状态码](#状态码)是否为0，为0则执行关联的语句。
 
-```
+```shell
 # 因为bash中分号(;)和换行是等价的，所以有下面两种风格，其他多行语句也是类似的
 # 本人偏好风格1
 # 风格1
@@ -730,7 +730,7 @@ bash默认数据类型为字符串，所以常见的 `>`, `<`是用于字符串�
 ### switch case
 bash也支持，switch case，语法如下。
 
-```sh
+```shell
 case EXPRESSION in
 
   PATTERN_1)
@@ -771,7 +771,7 @@ esac
 `while`循环有一个判断条件，只要符合条件，就不断循环执行指定的语句。
 `condition`与if语句的相同，就不赘述了。
 
-```
+```shell
 while condition; do
   command
 done
@@ -780,7 +780,7 @@ done
 #### unitl 循环
 `until`循环与`while`循环恰好相反，只要不符合判断条件（判断条件失败），就不断循环执行指定的语句。一旦符合判断条件，就退出循环。
 
-```
+```shell
 until condition; do
   command
 done
@@ -789,14 +789,14 @@ done
 #### for-in 循环
 `for...in`循环用于遍历列表的每一项。
 
-```
+```shell
 for variable in list; do
   commands
 done
 ```
 
 常见的几种用法
-```
+```shell
 for i in 1 2 3; do
     echo $i
 done
@@ -814,7 +814,7 @@ done
 #### for 循环
 `for`循环还支持 C 语言的循环语法。
 
-```
+```shell
 for (( expression1; expression2; expression3 )); do
   commands
 done
@@ -825,7 +825,7 @@ done
 注意，循环条件放在双重圆括号之中。另外，圆括号之中使用变量，不必加上美元符号`$`。
 
 例如
-```
+```shell
 for ((i=1; i<=3; i++)); do
     echo $i
 done
@@ -841,7 +841,7 @@ Bash 提供了两个内部命令`break`和`continue`，用来在循环内部跳�
 ### 函数定义
 Bash 函数定义的语法有两种，其中`fn`为定义的函数名称。
 
-```
+```shell
 # 第一种
 fn() {
   # codes
@@ -862,12 +862,29 @@ function fn() {
 *   `$@`：函数的全部参数，参数之间使用空格分隔。
 *   `$*`：函数的全部参数，参数之间使用变量`$IFS`值的第一个字符分隔，默认为空格，但是可以自定义。
 
+### 函数调用
+`funcname arg1 arg ... argN` 的语法进行函数调用。主要函数的返回值和输出值（标准输出）的区别，这和主流编程语言不同
+
+```shell
+add() {
+    declare -i res
+    res=0 
+    for i in $@; do 
+        res+=$i
+    done
+    echo $res
+}
+
+# 结果为10
+add 1 2 3 4
+```
+
 ### 函数返回值
 `return`命令用于从函数返回一个值。返回值和命令的状态码一样，可以用`$?`拿到值。
 `return`也可以不接具体的值，则返回值是return命令的上一条命令的状态码。
 如果不加`return`，则返回值是函数体最后一条命令的状态码。
 
-```
+```shell
 function func_return_value {
   return 10
 }
