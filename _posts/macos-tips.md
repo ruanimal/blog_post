@@ -109,3 +109,19 @@ sudo nvram StartupMute=%00
 
 ## crontab 文件路径
 用户执行`crontab -e`之后定时任务存储位置`/private/var/at/tabs/<username>`
+
+## hostname 更改
+macos 默认没有设置hostname，导致终端`PS1`显示时会用网卡的mac地址作为主机名，看起来比较别扭。
+
+可以通过`sudo scutil --set HostName <name>`设置想要的主机名
+
+```
+➜  ~ hostname
+a8a159010000
+➜  ~ scutil --get HostName
+HostName: not set
+➜  ~ sudo scutil --set HostName Mac-mini
+Password:
+➜  ~ hostname
+ruandeMac-mini
+```
