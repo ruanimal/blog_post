@@ -25,6 +25,7 @@ Tmux 可以维持和管理我们的远程终端会话，和服务断线重连后
 而 iTerm2 内置了 Tmux 绑定功能，可以将 tmux 的窗口和窗格映射成原生的窗口和窗格，可以用 iTerm2 的菜单和快捷键来操作窗口，解决了前3点问题。
 
 至于第4点，rzsz 由于 tmux 的实现机制决定了是无解的。
+然而 [lonnywong](https://github.com/lonnywong) 实现了替代方案 [trzsz](https://github.com/trzsz/trzsz) ，**完美解决了文件上传下载的问题**，亲测非常好用。
 
 ## iTerm2 配置
 可以对 tmux 窗口的映射进行一些定制
