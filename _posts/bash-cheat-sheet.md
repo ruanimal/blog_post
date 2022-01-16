@@ -692,6 +692,20 @@ if [[ 1 -eq 2  || 1 -eq 1 ]]; then
 fi  
 ```
 
+#### 判断时引号使用（quote）
+使用`[`和`test`时，变量引用注意加双引号，否则得不到正确的结果，`[[`则不需要。
+
+```shell
+bash-3.2$ echo "$SSH_CLIENT"
+
+bash-3.2$ if [ -n $SSH_CLIENT ]; then echo 1; else echo 0; fi
+1
+bash-3.2$ if [ -n "$SSH_CLIENT" ]; then echo 1; else echo 0; fi
+0
+bash-3.2$ if [[ -n $SSH_CLIENT ]]; then echo 1; else echo 0; fi
+0
+```
+
 #### 字符串判断
 bash默认数据类型为字符串，所以常见的 `>`, `<`是用于字符串判断。
 
@@ -733,19 +747,15 @@ bash也支持，switch case，语法如下。
 
 ```shell
 case EXPRESSION in
-
   PATTERN_1)
     STATEMENTS
     ;;
-
   PATTERN_2)
     STATEMENTS
     ;;
-
   PATTERN_N)
     STATEMENTS
     ;;
-
   *)
     STATEMENTS
     ;;
