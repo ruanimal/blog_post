@@ -91,3 +91,8 @@ for i in [1,2,3]:
 - 在独立的函数中定义闭包
 - 闭包引用的变量应该是其他函数不可修改的
 - 优先使用列表推导式
+
+## 参考
+- https://stackoverflow.com/questions/3611760/scoping-in-python-for-loops
+- https://www.educative.io/courses/python-ftw-under-the-hood/N8RW8508RkL
+- https://mail.python.org/pipermail/python-ideas/2008-October/002109.html
