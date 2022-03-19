@@ -13,3 +13,12 @@ body {counter-reset: h1}
 .post-block.post .post-body h5:before {counter-increment: h4; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " "}
 .post-block.post .post-body h6:before {counter-increment: h5; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " "}
 .post-block.post .post-body h1.nocount:before, .post-block.post .post-body h2.nocount:before, .post-block.post .post-body h3.nocount:before, .post-block.post .post-body h4.nocount:before, .post-block.post .post-body h5.nocount:before, .post-block.post .post-body h6.nocount:before { content: ""; counter-increment: none }
+
+// hide from categroy
+// #posts div.category-all-page > div.category-all > ul > li:nth-child(1) {
+//     display: None
+// }
+//
+// #posts div.category-all-page > div.category-all-title {
+//     display: None
+// }
