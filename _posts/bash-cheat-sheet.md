@@ -471,7 +471,7 @@ bash-5.1$ echo $((++a))
 ```
 
 ### 数组
-#### 创建数组 
+#### 创建数组
 `array=(item1 item2)` 语法可初始化数组，括号内可以换行，多行初始化可以用`#`注释。
 
 ```
@@ -523,7 +523,7 @@ bash-5.1$ echo ${a[1]}
 bash-5.1$ a[1]=22
 bash-5.1$ echo ${a[1]}
 22
-# 
+#
 bash-5.1$ a[0]=1111
 bash-5.1$ echo ${a}
 1111
@@ -676,20 +676,20 @@ bash-5.1$ echo $?
 由于`[`和`]`是命令， 所以两侧一定要有空格，也是就是`[ 1 -eq 1 ]`，否则bash会认为命令找不到。
 
 ```shell
-# test 
+# test
 if test 1 -eq 2 || test 1 -eq 1; then
     echo True
-fi  
+fi
 
-# [ ] 
+# [ ]
 if [ 1 -eq 2 ] || [ 1 -eq 1 ]; then
     echo True
-fi  
+fi
 
 # [[ ]]
 if [[ 1 -eq 2  || 1 -eq 1 ]]; then
     echo True
-fi  
+fi
 ```
 
 #### 判断时引号使用（quote）
@@ -765,15 +765,15 @@ esac
 例如
 ```
 a=2
-case $a in  
-1) 
+case $a in
+1)
     echo 11
-    ;; 
-2) 
+    ;;
+2)
     echo 22
-    ;; 
-*) 
-    ;; 
+    ;;
+*)
+    ;;
 esac
 ```
 
@@ -879,8 +879,8 @@ function fn() {
 ```shell
 add() {
     declare -i res
-    res=0 
-    for i in $@; do 
+    res=0
+    for i in $@; do
         res+=$i
     done
     echo $res
@@ -929,7 +929,7 @@ print("Hello, world!")
 如果是bash脚本，状态码的值则是 `exit` 命令的参数值。
 当脚本以不带参数的 `exit` 命令来结束时，脚本的退出状态码就由脚本中最后执行的命令来决定，这与函数的 `return` 行为是一致的。
 
-特殊变量`$?`可以查看上个命令的退出状态码 
+特殊变量`$?`可以查看上个命令的退出状态码
 
 ### 文件描述符
 文件描述符在形式上是一个非负整数。指向内核为每一个进程所维护的该进程打开文件的记录表。
@@ -974,7 +974,7 @@ $FD>&-
 等价于`ls -al &>output.txt`，本人偏好这种写法，比较简洁。
 
 ### IFS (Input Field Separators)
-IFS决定了bash在处理字符串的时候是如何进行单词切分。 
+IFS决定了bash在处理字符串的时候是如何进行单词切分。
 IFS的默认值是空格，TAB，换行符，即` \t\n`
 
 ```shell
@@ -985,8 +985,8 @@ $
 
 例如，在for循环的时候，如何区分每个item
 ```shell
-for i in `echo -e "foo bar\tfoobar\nfoofoo"`; do 
-    echo "'$i' is the substring"; 
+for i in `echo -e "foo bar\tfoobar\nfoofoo"`; do
+    echo "'$i' is the substring";
 done
 ```
 
@@ -995,9 +995,9 @@ done
 OLD_IFS="$IFS"
 IFS=":"
 string="1:2:3"
-for i in $string; do 
+for i in $string; do
     echo "'$i' is the substring";
-done 
+done
 IFS=$OLD_IFS
 ```
 
