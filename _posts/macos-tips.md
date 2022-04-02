@@ -128,3 +128,16 @@ Password:
 ➜  ~ hostname
 ruandeMac-mini
 ```
+
+## catalina 禁用系统更新提示
+在终端中输入
+```
+defaults write com.apple.systempreferences AttentionPrefBundleIDs 0 ; killall  Dock
+```
+
+在 /etc/hosts 中加入
+```
+# disable mac update
+0.0.0.0 swdist.apple.com.edgekey.net
+0.0.0.0 swdist.apple.com.akadns.net
+```

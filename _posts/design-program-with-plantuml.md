@@ -250,3 +250,6 @@ FishShoal o-- Fish: contains >
 ```
 
 ![-w1253](http://image.runjf.com/mweb/15690445125047.jpg)
+
+## 参考资源
+- https://real-world-plantuml.com/ PlantUML示例网站
