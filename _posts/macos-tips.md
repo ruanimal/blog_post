@@ -76,11 +76,14 @@ export  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 创建文件 ~/Library/KeyBindings/DefaultKeyBinding.dict
 这里是清除了默认的 `Control + Command + 方向键`的行为
+
+修改完成后必须重新打开现有app才能生效
+
 ```
 {
-"^@\UF701" = "noop:";
-"^@\UF702" = "noop:";
-"^@\UF703" = "noop:";
+"^@\UF701" = ("noop:");
+"^@\UF702" = ("noop:");
+"^@\UF703" = ("noop:");
 }
 ```
 
