@@ -80,7 +80,11 @@ EOF
 你所缺失的知识，让你看不清前方正确的道路。
 
 按我的知识，docker0是网桥，等价于交换机，除了性能问题，不应该导致丢包，就一直没往这个方向考虑（当然这块的知识也不扎实）。
-MTU也不应该导致丢包，交换机应该会进行IP分片。但忽略了一个点，虚拟的网桥并不是硬件网桥，可能并没有实现IP分片的逻辑（仅丢弃）。
+MTU也不应该导致丢包，交换机应该会进行IP分片。
+但忽略了一个点，虚拟的网桥并不是硬件网桥，可能并没有实现IP分片的逻辑（仅丢弃），又或者没有实现（Path MTU Discovery）。
+上面这点存疑，但更直接的原因是服务的IP包的 `Don't fragment` flag 为1，也就是禁止分片（原因不清楚）。
+![](http://image.runjf.com/mweb/2022-07-11-16575342644060.jpg)
+
 
 ## 参考
 - https://github.com/apache/incubator-brpc/issues/1075
@@ -88,3 +92,4 @@ MTU也不应该导致丢包，交换机应该会进行IP分片。但忽略了一
 - https://mlohr.com/docker-mtu/
 - https://github.com/docker/for-win/issues/1144
 - https://www.cnblogs.com/sammyliu/p/5079898.html
+- https://github.com/moby/moby/issues/12565
