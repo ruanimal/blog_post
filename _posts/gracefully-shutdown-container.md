@@ -1,9 +1,9 @@
-title: 游戏内进程优雅退出
+title: 容器内进程优雅退出
 date: 2022-07-10 9:48 PM
 categories: 编程
 tags: [Docker, Linux]
 
---- 
+---
 
 在使用 docker 时，常常会碰到进程退出时资源清理的问题，比如保证当前请求处理完成，再退出程序。
 
@@ -12,7 +12,9 @@ tags: [Docker, Linux]
 
 一般的web框架或者rpc框架都集成了 `SIGTERM` 信号处理程序， 一般不用担心优雅退出的问题。
 但是如果你的容器内有多个程序（称为胖容器，一般不推荐），那么就需要做一些操作保证所有程序优雅退出。
+
 <!--more-->
+
 ## signals
 信号是一种进程间通信机制，它给应用程序提供一种异步的软件中断，使应用程序有机会接受其他程序活终端发送的命令(即信号)。
 
@@ -32,7 +34,7 @@ tags: [Docker, Linux]
 
 
 ## Dockerfile
-以是supervisor为例，Dockerfile 如下
+下面以 supervisor 为例，Dockerfile 如下
 
 ```Dockerfile
 FROM centos:centos7
