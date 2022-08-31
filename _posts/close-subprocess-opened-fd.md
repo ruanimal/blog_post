@@ -52,7 +52,7 @@ python  18022   2u   CHR 136,13       0t0         16 /dev/pts/13
 python  18022   4u  sock    0,7       0t0   58345077 protocol: TCP
 ```
 
-如果server进程退出时，sleep进程没有退出fd=4对应的端口就被占用了，服务也就不能正常启动了。
+如果server进程退出时，sleep进程没有退出，fd=4对应的端口就被占用了，服务也就不能正常启动了。
 
 
 ## 解决方法
