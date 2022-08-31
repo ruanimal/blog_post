@@ -68,7 +68,7 @@ sds sdsnewlen(const void *init, size_t initlen) {
 
 ## 容量调整
 既然是动态数组，就会涉及到容量调整。
-Redis的调整策略，当所需空间小于SDS_MAX_PREALLOC(当前版本是1MB)时是指数增长, 否则线性增长。
+Redis的调整策略，当所需空间小于SDS_MAX_PREALLOC(当前版本是1MB)时是指数增长, 否则线性增长SDS_MAX_PREALLOC的大小。
 
 ```c
 sds sdsMakeRoomFor(sds s, size_t addlen) {

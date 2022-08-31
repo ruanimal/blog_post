@@ -29,6 +29,9 @@ RDB是将redis中所有db中的所有键值对以如下格式进行储存
 用户可以通过save选项设置多个保存条件,但只要其中任意一个条件被满足，就会触发RDB保存.
 save选项的格式是 `save seconds option_times`。例如`save 900 1`，若服务器在900秒之内, 对数据库进行了至少1次修改，则执行BGSAVE。
 
+BGSAVE也已可能会阻塞请求，因为磁盘io满了，这时如果有fsync操作，服务也会阻塞。
+可以设置 `no-appendfsync-on-rewrite yes`, 在子进程处理和写硬盘时, 主进程不调用 fsync() 操作。
+
 ### RDB文件读取
 服务器启动时会自动载入RDB文件，Redis并没有专门用于载人RDB文件的命令。
 
