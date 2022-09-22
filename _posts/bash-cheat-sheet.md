@@ -692,6 +692,24 @@ if [[ 1 -eq 2  || 1 -eq 1 ]]; then
 fi
 ```
 
+逻辑操作符
+```shell
+# not  
+if [[ ! 'aa' == 'bb' ]]; then
+    echo True
+fi
+
+# or 
+if [[ 1 -eq 2  || 1 -eq 1 ]]; then
+    echo True
+fi
+
+# and
+if [[ 1 -ne 2  && 1 -eq 1 ]]; then
+    echo True
+fi
+```
+
 #### 判断时引号使用（quote）
 使用`[`和`test`时，变量引用注意加双引号，否则得不到正确的结果，`[[`则不需要。
 
