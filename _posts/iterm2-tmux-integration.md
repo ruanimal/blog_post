@@ -54,6 +54,10 @@ iTerm2 对于 tmux 会话有一个profile，建议对终端颜色和外观进行
 
 ![](http://image.runjf.com/mweb/2021-08-03-16279775548246.jpg)
 
+## 其他
+- tmux静态编译版本 https://github.com/mjakob-gh/build-static-tmux/releases
+- tmux显示颜色 `set -g default-terminal "screen-256color" >> ~/.tmux.conf`
+
 ## 参考
 - https://www.ruanyifeng.com/blog/2019/10/tmux.html
 - https://www.v2ex.com/t/589453
