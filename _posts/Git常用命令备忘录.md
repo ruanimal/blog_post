@@ -60,7 +60,7 @@ HEAD：一个指向当前版本号的指针
 `git tag`     查看tag列表
 `git tag tag_name`    打tag
 `git tag -d tag_name`     删除tag
-
+`git push --delete origin tagname`    删除远程tag
 
 ## 仓库操作
 `git remote -v`   查看远程仓库详细信息
