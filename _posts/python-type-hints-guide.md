@@ -185,4 +185,5 @@ def foo(item: Any) -> int:
     ...
 ```
 
-
+## 其他
+- 分离的hint信息（typing stubs） https://peps.python.org/pep-0561/
