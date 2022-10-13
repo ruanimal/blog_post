@@ -1051,6 +1051,18 @@ bash-5.1$ wait %1
 [1]-  已完成               sleep 100
 ```
 
+#### 后台进程并发控制
+可以利用jobs对后台进程并发数目进行控制
+```shell
+for i in {1..30}; do
+	sleep $((30+i)) &
+	if [[ $(jobs | wc -l ) -gt 10 ]]; then
+		jobs
+		wait
+	fi
+done
+```
+
 ## 参考
 - https://wangdoc.com/bash/
 - https://tldp.org/LDP/abs/html/fto.html
