@@ -141,3 +141,8 @@ defaults write com.apple.systempreferences AttentionPrefBundleIDs 0 ; killall  D
 0.0.0.0 swdist.apple.com.edgekey.net
 0.0.0.0 swdist.apple.com.akadns.net
 ```
+
+## 固定dock位置，防止在不同屏幕间移动
+```
+defaults write com.apple.Dock position-immutable -bool yes; killall Dock
+```
