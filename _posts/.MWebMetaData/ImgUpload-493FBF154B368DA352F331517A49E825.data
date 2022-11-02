@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>9CECA4154ECB34CE46984779210F3948</key>
+	<array>
+		<dict>
+			<key>localURL</key>
+			<string>media/16673997943438.jpg</string>
+			<key>remoteURL</key>
+			<string>http://image.runjf.com/mweb/2022-11-02-16673997943438.jpg</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/16673999123628.jpg</string>
+			<key>remoteURL</key>
+			<string>http://image.runjf.com/mweb/2022-11-02-16673999123628.jpg</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/16674004811769.jpg</string>
+			<key>remoteURL</key>
+			<string>http://image.runjf.com/mweb/2022-11-02-16674004811769.jpg</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/16674009451584.jpg</string>
+			<key>remoteURL</key>
+			<string>http://image.runjf.com/mweb/2022-11-02-16674009451584.jpg</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/16674017788245.jpg</string>
+			<key>remoteURL</key>
+			<string>http://image.runjf.com/mweb/2022-11-02-16674017788245.jpg</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/16674007610777.jpg</string>
+			<key>remoteURL</key>
+			<string>http://image.runjf.com/mweb/2022-11-02-16674007610777.jpg</string>
+		</dict>
+		<dict>
+			<key>localURL</key>
+			<string>media/16674023982597.jpg</string>
+			<key>remoteURL</key>
+			<string>http://image.runjf.com/mweb/2022-11-02-16674023982597.jpg</string>
+		</dict>
+	</array>
+	<key>selectedItem</key>
+	<string>9CECA4154ECB34CE46984779210F3948</string>
+</dict>
+</plist>
