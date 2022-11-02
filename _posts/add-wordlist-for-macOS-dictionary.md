@@ -75,8 +75,11 @@ if word not in old_words:
 [Karabiner-Elements](https://karabiner-elements.pqrs.org/) 是 macOS 平台的一个重新映射快捷键的软件。
 这里我们使用它将“查询单词”和“触发workflow”整合在一起，当然它还支持很多用途，这里就不赘述了。
 
-安装好Karabiner-Elements后，打开它的配置文件，路径在 `/Users/<用户名>/.config/karabiner/karabiner.json`
-在 `profiles -> complex_modifications -> rules` 列表中增加一项配置，内容如下。然后保存，Karabiner会自动加载新的配置。
+安装好Karabiner-Elements后，打开它的配置文件
+路径在 `/Users/<用户名>/.config/karabiner/karabiner.json`
+
+在 `profiles -> complex_modifications -> rules` 列表中增加一项配置，内容如下。
+然后保存，Karabiner会自动加载新的配置。
 
 这里是将鼠标的侧键（靠前的）映射为查单词的快捷键，实现一键查词。
 也可以根据需要更改按键，通过[EventViewer](https://karabiner-elements.pqrs.org/docs/manual/operation/eventviewer/)可以查看按键代码，配置文件格式可参考[官方文档](https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to/)
