@@ -23,7 +23,7 @@ Least Frequently Used (LFU) 是一种常见的缓存淘汰算法，译为“最�
 1. get元素时，如果存在则返回结果并更新访问次数
 2. set元素时，如果存在则更新val并更新访问次数，否则检查是否淘汰缓存并插入新key
 
-```
+```python
 from math import log, ceil
 
 class MinHeap(object):

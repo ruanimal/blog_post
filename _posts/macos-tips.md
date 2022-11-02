@@ -76,11 +76,14 @@ export  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 创建文件 ~/Library/KeyBindings/DefaultKeyBinding.dict
 这里是清除了默认的 `Control + Command + 方向键`的行为
+
+修改完成后必须重新打开现有app才能生效
+
 ```
 {
-"^@\UF701" = "noop:";
-"^@\UF702" = "noop:";
-"^@\UF703" = "noop:";
+"^@\UF701" = ("noop:");
+"^@\UF702" = ("noop:");
+"^@\UF703" = ("noop:");
 }
 ```
 
@@ -124,4 +127,22 @@ HostName: not set
 Password:
 ➜  ~ hostname
 ruandeMac-mini
+```
+
+## catalina 禁用系统更新提示
+在终端中输入
+```
+defaults write com.apple.systempreferences AttentionPrefBundleIDs 0 ; killall  Dock
+```
+
+在 /etc/hosts 中加入
+```
+# disable mac update
+0.0.0.0 swdist.apple.com.edgekey.net
+0.0.0.0 swdist.apple.com.akadns.net
+```
+
+## 固定dock位置，防止在不同屏幕间移动
+```
+defaults write com.apple.Dock position-immutable -bool yes; killall Dock
 ```

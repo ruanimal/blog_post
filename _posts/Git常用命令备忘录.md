@@ -60,7 +60,7 @@ HEAD：一个指向当前版本号的指针
 `git tag`     查看tag列表
 `git tag tag_name`    打tag
 `git tag -d tag_name`     删除tag
-
+`git push --delete origin tagname`    删除远程tag
 
 ## 仓库操作
 `git remote -v`   查看远程仓库详细信息
@@ -105,3 +105,4 @@ HEAD：一个指向当前版本号的指针
 `git <command> --abort`   一般用于中断某次操作
 `git cherry-pick <commit_id>`       捡取某一个commit到当前分支（包含commit变更的内容和注释）
 `git filter-branch --tree-filter 'rm -f testme.txt' HEAD`       从git仓库中永久删除某个文件的历史
+`git rebase -r <commit_id> --exec 'git commit --amend --no-edit --reset-author'`   将HEAD到commit_id为止的commit的提交用户信息重置

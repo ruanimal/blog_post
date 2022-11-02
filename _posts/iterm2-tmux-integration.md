@@ -7,9 +7,9 @@ tags: [tmux, ]
 
 Tmux 是一个终端复用器（terminal multiplexer），非常有用，属于常用的开发工具。
 
-Tmux 可以维持和管理我们的远程终端会话，和服务断线重连后也不会丢失工作状态, 同时可以在一个终端连接中开启多个窗口（window）和窗格（pane）。
-
 一个典型的例子就是，SSH 登录远程计算机，打开一个远程窗口执行命令。这时，网络突然断线，再次登录的时候，是找不回上一次执行的命令的。因为上一次 SSH 会话已经终止了，里面的进程也随之消失了。
+
+Tmux 可以维持和管理我们的远程终端会话，和服务断线重连后也不会丢失工作状态, 同时可以在一个终端连接中开启多个窗口（window）和窗格（pane）。
 <!--more-->
 比如，下面就包含了2个窗口和3个窗格
 ![](http://image.runjf.com/mweb/2021-08-03-16279763351692.jpg)
@@ -53,6 +53,10 @@ iTerm2 对于 tmux 会话有一个profile，建议对终端颜色和外观进行
 ![](http://image.runjf.com/mweb/2021-08-03-16279791503013.jpg)
 
 ![](http://image.runjf.com/mweb/2021-08-03-16279775548246.jpg)
+
+## 其他
+- tmux静态编译版本 https://github.com/mjakob-gh/build-static-tmux/releases
+- tmux显示颜色 `echo 'set -g default-terminal "screen-256color"' >> ~/.tmux.conf`
 
 ## 参考
 - https://www.ruanyifeng.com/blog/2019/10/tmux.html
