@@ -134,6 +134,6 @@ if word not in old_words:
 - https://zhuanlan.zhihu.com/p/433646737
 - https://hectorguo.com/zh/save-words-in-dictionary/
 - https://github.com/jjgod/mac-dictionary-kit
-
+- https://lightcss.com/mac-dictionary/
 
 
