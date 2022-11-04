@@ -30,7 +30,7 @@ macOS 系统的自带词典应用非常强大，与其他应用整合很好，�
 # -*- coding:utf-8 -*-
 
 from __future__ import unicode_literals, print_function
-import sys, os, io
+import sys, os, io, subprocess
 
 FILE=os.path.expanduser("~/weiyun_sync/!sync/logseq-note/pages/生词本.md")
 output = []
@@ -63,6 +63,9 @@ if word not in old_words:
         fp.write('\n')
         fp.write('\n'.join(output))
         fp.write('\n')
+    subprocess.check_call(['osascript', '-e', u'display notification "添加 {}" with title "生词本"'.format(word)])
+else:
+    subprocess.check_call(['osascript', '-e', u'display notification "跳过 {}" with title "生词本"'.format(word)])
 
 ```
 
