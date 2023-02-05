@@ -152,7 +152,7 @@ LOGGING = {
         '': {
             'handlers': ['backend_file', 'backend_err_file'],
             'level': 'INFO',
-            'propagate': False,
+            'propagate': False,  # 是否传递给上级logger，一般设置为False；否则，可能会导致多份日志
         },
     }
 }
