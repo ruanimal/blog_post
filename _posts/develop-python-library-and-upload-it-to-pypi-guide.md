@@ -122,7 +122,7 @@ global-exclude *.py[co]
 
 
 ## 打包
-执行: `python3 setup.py sdist bdist_wheel`
+执行: `pip3 install wheel && python3 setup.py sdist bdist_wheel`
 
 输出文件
 ```
