@@ -70,7 +70,7 @@ HEAD：一个指向当前版本号的指针
 `git remote set-url [--push] <name> <newurl>`     设置远程仓库链接
 `git remote prune origin`     清除本地无用remote
 `git pull`      <远程主机名> <远程分支名>:<本地分支名>    从远程仓库更新
-`git fetch git@github.com:ruanima/Mysite.git`    从其他仓库获取代码，但不更新到本地分支
+`git fetch git@github.com:ruanimal/Mysite.git`    从其他仓库获取代码，但不更新到本地分支
 `git push <远程主机名> <本地分支名>:<远程分支名>`    提交到远程仓库
 `git push origin <本地分支名>`     将本地分支推送与之存在“追踪关系”的远程分支(通常两者同名)
 `git push`    如果当前分支只有一个追踪分支，那么主机名都可以省略。
