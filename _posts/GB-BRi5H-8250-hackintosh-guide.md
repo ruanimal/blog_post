@@ -32,7 +32,7 @@ tags: [mac, Hackintosh, 电子产品]
 - 无线网卡：DW1820A (08PKF4)
 
 ## 总体成果
-OpenCore配置文件我放到github了 https://github.com/ruanima/GB-BRi5H-8250-hackintosh
+OpenCore配置文件我放到github了 https://github.com/ruanimal/GB-BRi5H-8250-hackintosh
 
 ### 正常工作项目
 - CPU，变频

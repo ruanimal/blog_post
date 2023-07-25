@@ -78,6 +78,10 @@ else:
 [Karabiner-Elements](https://karabiner-elements.pqrs.org/) 是 macOS 平台的一个重新映射快捷键的软件。
 这里我们使用它将“查询单词”和“触发workflow”整合在一起，当然它还支持很多用途，这里就不赘述了。
 
+注意确保Karabiner相关权限，并且设置中下图相关设备是勾选状态
+
+![](http://image.runjf.com/mweb/2022-11-04-16675619005392.jpg)
+
 安装好Karabiner-Elements后，打开它的配置文件
 路径在 `/Users/<用户名>/.config/karabiner/karabiner.json`
 

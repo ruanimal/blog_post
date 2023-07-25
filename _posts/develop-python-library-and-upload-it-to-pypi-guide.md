@@ -20,7 +20,7 @@ tags: [PyPI, Python]
 │   ├── __init__.py
 ├── setup.py
 ```
-整体代码结构，其中[dingtalk_log_handler](https://github.com/ruanima/dingtalk-log-handler)是我写的一个用于发日志到钉钉群的库，也是这次要发布的库。
+整体代码结构，其中[dingtalk_log_handler](https://github.com/ruanimal/dingtalk-log-handler)是我写的一个用于发日志到钉钉群的库，也是这次要发布的库。
 
 先看下库的主体代码`dingtalk_log_handler/__init__.py`, 由于功能比较简单，逻辑就都写在`__init__.py`里了
 
@@ -78,7 +78,7 @@ setup(
     python_requires='>=3.5',
     install_requires=[],
     project_urls={
-        'Source': 'https://github.com/ruanima/dingtalk-log-handler',
+        'Source': 'https://github.com/ruanimal/dingtalk-log-handler',
     },
 )
 ```
@@ -122,7 +122,7 @@ global-exclude *.py[co]
 
 
 ## 打包
-执行: `python3 setup.py sdist bdist_wheel`
+执行: `pip3 install wheel && python3 setup.py sdist bdist_wheel`
 
 输出文件
 ```
@@ -134,9 +134,9 @@ dist
 ## 上传
 我们可以通过[PyPI的测试站点](https://test.pypi.org) 来练习库文件的上传，并测试效果
 
-1. [注册账户](https://test.pypi.org/account/register/) 
+1. [注册账户](https://test.pypi.org/account/register/)
 2. 安装上传工具：`pip install twine -U`
-3. 上传文件：`twine upload --repository testpypi dist/*` 
+3. 上传文件：`twine upload --repository testpypi dist/*`
 
 熟悉流程之后，就可以换成[正式站点](https://pypi.org)，指定正式仓库(--repository pypi)上传文件
 

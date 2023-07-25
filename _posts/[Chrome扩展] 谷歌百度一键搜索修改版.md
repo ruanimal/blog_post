@@ -15,14 +15,13 @@ tags: [浏览器扩展, ]
 
 创建：2015.11.25
 作者：ponder.work
-反馈：190127701@qq.com
 forked from: raywill/BaiGoogleDu
 
 <!--more-->
 
 ## 安装方法
 
-下载crx文件：[github](https://github.com/ruanima/BaiGoogleDu/releases)
+下载crx文件：[github](https://github.com/ruanimal/BaiGoogleDu/releases)
 拖入到 chrome://extensions/ 页面，即可完成安装。
 
 ## 更新日志
