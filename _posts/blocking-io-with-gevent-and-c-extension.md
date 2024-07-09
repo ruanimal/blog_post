@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
 测试性能：`siege -c 20 -r 1 'http://127.0.0.1:5000/test'`
 
-![](http://image.runjf.com/mweb/2019-11-07-15731309158635.jpg)
+![](https://image.ponder.work/mweb/2019-11-07-15731309158635.jpg)
 
 由于只有一个worker进程，可以看到只有5qps，每个请求sleep 0.2秒，是符合预期的。
 
@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
 测试性能：`siege -c 20 -r 1 'http://127.0.0.1:5000/test'`
 
-![-w348](http://image.runjf.com/mweb/2019-11-07-15731311981620.jpg)
+![-w348](https://image.ponder.work/mweb/2019-11-07-15731311981620.jpg)
 
 可以看到，性能有接近20倍的提升
 
@@ -91,7 +91,7 @@ def test():
 ```
 
 测试后发现，gevent失效了，整个服务基本是串行阻塞状态
-![-w454](http://image.runjf.com/mweb/2019-11-07-15731339898524.jpg)
+![-w454](https://image.ponder.work/mweb/2019-11-07-15731339898524.jpg)
 
 
 ### 解决方案

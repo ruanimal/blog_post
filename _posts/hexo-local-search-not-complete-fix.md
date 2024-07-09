@@ -9,7 +9,7 @@ tags: [XML,]
 
 在浏览器中打开[/search.xml](/search.xml)发现以下错误。显然xml中有非法字符，xml解析产生了错误。
 <!--more-->
-![](http://image.runjf.com/mweb/2021-10-12-16339770374988.jpg)
+![](https://image.ponder.work/mweb/2021-10-12-16339770374988.jpg)
 
 将search.xml文件保存，并用python打开，找到具体出错的位置。
 utf8解码之后可以发现`\x10`非法字符，将其删除，重新生成文章问题解决。
@@ -24,4 +24,4 @@ b'\x10\xe7\x84\xb6\xe5\x88\x99\xef\xbc\x8c\xe4\xbb\x8a\xe4\xb9\x8b\xe4\xb8\x96\x
 '\x10然则，今之世人，类此'
 ```
 
-![](http://image.runjf.com/mweb/2021-10-12-16339793845815.jpg)
+![](https://image.ponder.work/mweb/2021-10-12-16339793845815.jpg)

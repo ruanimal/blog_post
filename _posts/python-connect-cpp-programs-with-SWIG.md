@@ -14,7 +14,7 @@ tags: [SWIG, Python, C++]
 2. 生成C/C++和目标语言的包装代码
 3. 编译位置无关的C/C++包装代码和功能代码，并链接为动态库
 
-![](http://image.runjf.com/mweb/2020-08-06-Untitled%20Diagram.svg)
+![](https://image.ponder.work/mweb/2020-08-06-Untitled%20Diagram.svg)
 
 ## c++示例代码
 下面用到的C++代码

@@ -42,19 +42,19 @@ WSL2 的便利之处在于让 linux 系统能以一个足够快的速度访问 w
 软件环境选择
 - windows 10 21H1
 - haneWIN NFS server 1.2.59
-- openmediavault 
+- openmediavault
 
 ### Windows 10 安装及配置
 1. 设置开机自动登录用户（可选）: https://zhuanlan.zhihu.com/p/61262940
 2. 禁止自动从睡眠中唤醒（可选）: 控制面板 -> 电源选项 -> 更改计划设置 -> 更改高级计划设置 -> 睡眠 -> 允许使用睡眠唤醒定时器（禁用）
 3. 启用 Hyper-V：`DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V`
-4. Hyper-V 配置桥接网络：虚拟交换机管理器 -> 新建虚拟网络交换机(外部) 
+4. Hyper-V 配置桥接网络：虚拟交换机管理器 -> 新建虚拟网络交换机(外部)
 5. 安装 haneWIN NFS server 并配置需要共享的硬盘
 
 ### openmediavault 安装及配置
 1. 创建 Hyper-V 虚拟机：选择第一代，选择桥接网卡，虚拟硬盘需挂载到 IDE 控制器
 2. 挂载安装镜像，安装 openmediavault 系统
-3. 安装 omv-extras	
+3. 安装 omv-extras
 	```
 	wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install | bash
 	```
@@ -64,12 +64,12 @@ WSL2 的便利之处在于让 linux 系统能以一个足够快的速度访问 w
 7. 启用smb共享
 8. 关闭虚拟机，并配置虚拟机的网卡为静态MAC地址（如果是导入的虚拟机，注意检查MAC地址是否合法）
 
-![-w610](http://image.runjf.com/mweb/2021-09-21-16322275739423.jpg)
-![-w524](http://image.runjf.com/mweb/2021-09-21-16322277511161.jpg)
+![-w610](https://image.ponder.work/mweb/2021-09-21-16322275739423.jpg)
+![-w524](https://image.ponder.work/mweb/2021-09-21-16322277511161.jpg)
 
 ### 其他优化配置
 #### samba 性能优化
-配置页面：服务 -> SMB/CIFS -> 设置 -> 高级设置 -> 扩展选项 
+配置页面：服务 -> SMB/CIFS -> 设置 -> 高级设置 -> 扩展选项
 
 ```
 veto files = /.Trashes/$RECYCLE.BIN/System Volume Information/.recycle/
@@ -82,8 +82,8 @@ aio read size = 40960
 aio write size = 40960
 write cache size = 262144
 large readwrite = yes
-fake oplocks = yes 
-oplocks = no   
+fake oplocks = yes
+oplocks = no
 ```
 
 #### samba 回收站优化
@@ -94,7 +94,7 @@ oplocks = no
 
 ```
 recycle:repository = .recycle/%U/today
-``` 
+```
 
 配置页面：系统 -> 计划任务
 增加共享文件夹回收站整理脚本
@@ -135,7 +135,7 @@ windows 系统中，增加定时任务，删除NFS共享目录中的回收站文
 Python 代码如下，超过一定时间的文件会被送到 windows 回收站
 
 ```Python
-import time 
+import time
 import os
 import logging
 from datetime import datetime, timedelta

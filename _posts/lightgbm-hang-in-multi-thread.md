@@ -23,7 +23,7 @@ Thread 8 (Thread 0x7f8eb7900700 (LWP 1859)):
 
 <!--more-->
 
-![](http://image.runjf.com/mweb/2020-01-25-15799334551032.jpg)
+![](https://image.ponder.work/mweb/2020-01-25-15799334551032.jpg)
 
 意思是说,OpenMP这个库在多线程fork的时候, 存在bug, 对于C/C++程序必须在fork完成之后再使用OpenMP的功能.
 

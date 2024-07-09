@@ -25,12 +25,12 @@ tags: [树莓派, Linux]
 ### 使用Gparted缩小分区
 这一步操作比较耗时，跟SD卡大小和速度有关，基本在几分钟到几十分钟不等。
 
-![-w761](http://image.runjf.com/mweb/2020-11-01-16041166087052.jpg)
-![-w764](http://image.runjf.com/mweb/2020-11-01-16041166419441.jpg)
-![-w760](http://image.runjf.com/mweb/2020-11-01-16041167175534.jpg)
-![-w756](http://image.runjf.com/mweb/2020-11-01-16041167579651.jpg)
-![-w764](http://image.runjf.com/mweb/2020-11-01-16041167920279.jpg)
-![-w708](http://image.runjf.com/mweb/2020-11-01-16041169311741.jpg)
+![-w761](https://image.ponder.work/mweb/2020-11-01-16041166087052.jpg)
+![-w764](https://image.ponder.work/mweb/2020-11-01-16041166419441.jpg)
+![-w760](https://image.ponder.work/mweb/2020-11-01-16041167175534.jpg)
+![-w756](https://image.ponder.work/mweb/2020-11-01-16041167579651.jpg)
+![-w764](https://image.ponder.work/mweb/2020-11-01-16041167920279.jpg)
+![-w708](https://image.ponder.work/mweb/2020-11-01-16041169311741.jpg)
 
 ### 挂载网络存储
 如果不想把备份文件存到网络存储上，该步骤可以忽略

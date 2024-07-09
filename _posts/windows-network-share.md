@@ -17,14 +17,14 @@ windows下的网络共享只有SNAT那一部分，比如各自免费wifi软件�
 - A: 用于访问外网
 - B: 共享网络接入点
 
-打开：控制面板 》网络和Internet 》网络和共享中心 》更改适配器设置 
+打开：控制面板 》网络和Internet 》网络和共享中心 》更改适配器设置
 
-![](http://image.runjf.com/mweb/2021-10-10-16338760513347.jpg)
+![](https://image.ponder.work/mweb/2021-10-10-16338760513347.jpg)
 
-![](http://image.runjf.com/mweb/2021-10-10-16338761455929.jpg)
+![](https://image.ponder.work/mweb/2021-10-10-16338761455929.jpg)
 
 右键A网卡 > 属性 > 共享 > 勾选允许 （win10可能有下拉选择，下拉选中B网卡）
-![](http://image.runjf.com/mweb/2021-10-10-16338761903207.jpg)
+![](https://image.ponder.work/mweb/2021-10-10-16338761903207.jpg)
 
 ## 端口映射配置
 netsh是Windows自带的端口转发/端口映射工具。
@@ -43,9 +43,9 @@ netsh是Windows自带的端口转发/端口映射工具。
 
 ### 用法(以v4tov4为例)
 ```
-add v4tov4 [listenport=]integer>|servicename> \ 
-           [connectaddress=]IPv4 address>|hostname>  \ 
-           [[connectport=]integer>|servicename>]  \ 
+add v4tov4 [listenport=]integer>|servicename> \
+           [connectaddress=]IPv4 address>|hostname>  \
+           [[connectport=]integer>|servicename>]  \
            [[listenaddress=]IPv4 address>|hostname>]  \
            [[protocol=]tcp]
 ```

@@ -36,7 +36,7 @@ address                                |                          |        |
                                                         ZIPLIST_ENTRY_TAIL
 ```
 
-![-w1224](http://image.runjf.com/mweb/2021-05-22-16216774199505.jpg)
+![-w1224](https://image.ponder.work/mweb/2021-05-22-16216774199505.jpg)
 
 上图我们向ziplist添加了3个entry元素，向list头部插入（redis内部使用时一般向尾部插入），后面会详细解析这些元素。
 
@@ -47,12 +47,12 @@ address                                |                          |        |
 - content: 节点内容，可能是字节数组(c语言字符串去除末尾的\0)或者数组
 
 之前的3个节点的二进制详情
-![-w678](http://image.runjf.com/mweb/2021-05-22-16216773421053.jpg)
+![-w678](https://image.ponder.work/mweb/2021-05-22-16216773421053.jpg)
 
 节点迭代器结构体 zlentry
 ```c
 typedef struct zlentry {
-    unsigned int prevrawlensize;  // 编码 prevrawlen 所需的字节大小 
+    unsigned int prevrawlensize;  // 编码 prevrawlen 所需的字节大小
     unsigned int prevrawlen;  // 前置节点的长度
     unsigned int lensize; // 编码 len 所需的字节大小
     unsigned int len;  // 当前节点值的长度
@@ -64,14 +64,14 @@ typedef struct zlentry {
 
 **注意**：zlentry结构体和ziplist中实际存储的entry结构是不一样的，zlentry只是为了遍历时操作entry时便利一些，类似序列化和反序列化。在需要对entry操作时，把对应位置的信息取出存到zlentry结构体中
 
-### prelen 
+### prelen
 prelen 记录了以字节为单位的前一个节点长度，有两种情况
 1. 默认占用1字节空间，表示0到253
 2. 如果节点长度大于253，则这个字节就设置为254(0xFE)作为标志位, 随后的4个字节存储实际长度。
 
 255这个数字为啥舍弃不用呢？因为255已经作为列表结束的标志位，避免出现误导。
 
-### encoding 
+### encoding
 encoding 记录了当前节点的编码类型，编码时先尝试将内容转成数字，失败则当做字符串处理。
 
 个人觉得ziplist的精华就在entry的encoding，对让内存的每一个bit都重复表示了信息。
@@ -111,7 +111,7 @@ static unsigned char *__ziplistInsert(unsigned char *zl, unsigned char *p, unsig
     unsigned char encoding = 0;
     long long value = 123456789;   // 默认值，megic num， 便于debug
     zlentry entry, tail;
-    
+
     if (p[0] != ZIP_END) {
         // 列表非空，并且 p 正指向列表的其中一个节点
         // 取出 p 所指向节点的信息，并将它保存到 entry 结构中；用 prevlen 变量记录前置节点的长度
@@ -175,7 +175,7 @@ static unsigned char *__ziplistInsert(unsigned char *zl, unsigned char *p, unsig
         zl = __ziplistCascadeUpdate(zl,p+reqlen);
         p = zl+offset;
     }
-    
+
     // 一切搞定，将前置节点的长度写入新节点的 header
     p += zipPrevEncodeLength(p,prevlen);
     // 将节点值的长度写入新节点的 header

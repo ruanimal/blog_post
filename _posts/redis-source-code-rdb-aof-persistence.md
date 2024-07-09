@@ -16,7 +16,7 @@ RDB持久化功能所生成的RDB文件是一个经过压缩的二进制文件�
 
 RDB是将redis中所有db中的所有键值对以如下格式进行储存
 
-![](http://image.runjf.com/mweb/2021-07-21-16268563558568.jpg)
+![](https://image.ponder.work/mweb/2021-07-21-16268563558568.jpg)
 
 ### RDB文件创建
 有两个命令可以生成RDB文件，`SAVE` 和 `BGSAVE`。生成RDB文件时，redis会遍历所有非空db的所有键值对按一定格式存储到RDB文件中。
@@ -43,8 +43,8 @@ BGSAVE也已可能会阻塞请求，因为磁盘io满了，这时如果有fsync�
 AOF持久化是通过保存执行的写命令来记录数据库状态。
 因为Redis的命令请求协议是纯文本格式，所以AOF文件类似如下。
 ```
-*2\r\n$6\r\nSELECT\r\n$l\r\nO\r\n 
-*3\r\n$3\r\nSET\r\n$3\r\nmsg\r\n$5\r\nhello\r\n 
+*2\r\n$6\r\nSELECT\r\n$l\r\nO\r\n
+*3\r\n$3\r\nSET\r\n$3\r\nmsg\r\n$5\r\nhello\r\n
 ```
 
 ### AOF持久化实现
@@ -94,17 +94,17 @@ AOF的还原时机也是服务启动时，并且在还原过程中能正常执�
 AOF文件重写是遍历redis的所有键值对，生成对应的redis命令，写入到一个新的文件中，并替换旧AOF文件。
 所以AOF文件重写和旧AOF文件并没有关系，更应该称之为**AOF重生成**。
 
-AOF重写程序在子进程里执行, 这样做可以同时达到两个目的: 
+AOF重写程序在子进程里执行, 这样做可以同时达到两个目的:
 - 子进程进行AOF重写期间, 服务器进程可以继续处理命令请求。
 - 子进程带有服务器进程的数据副本，可以在避免使用锁的情况下，保证数据的安全性（Copy-on-write）。
 
 在AOF重新过程中，所有命令会额外会写一份到**AOF重写缓冲区**中，当新AOF文件生成时，父进程会将AOF重写缓冲区的内容追加到新AOF文件中，并替换旧AOF文件。
 
-![](http://image.runjf.com/mweb/2021-07-21-16268637141893.jpg)
+![](https://image.ponder.work/mweb/2021-07-21-16268637141893.jpg)
 
 为防止AOF重写失败，AOF缓冲区在重写过程中依然正常工作。
 
-![](http://image.runjf.com/mweb/2021-07-21-16268635658876.jpg)
+![](https://image.ponder.work/mweb/2021-07-21-16268635658876.jpg)
 
 **注意**：redis主从是基于`RDB + 命令传播`，并没有利用AOF文件，与MySQL的binlog不同。
 

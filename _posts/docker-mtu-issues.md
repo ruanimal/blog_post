@@ -17,7 +17,7 @@ tags: [Docker, ]
 ### 我代码不应该有bug!!
 首先是怀疑业务代码有问题，逐行统计业务代码耗时，发现业务代码仅耗时10+ms。
 
-### curl 不应该 Expect 
+### curl 不应该 Expect
 用空数据访问接口，发现耗时也只有20+ms，这时开始怀疑brpc是不是编译得有问题，或者说和libtorch编译到一起不兼容。
 这时我请教了一位同事，他对brpc比较熟悉，然后他说是curl实现的问题，和brpc没关系, 参考[ brpc issue](https://github.com/apache/incubator-brpc/issues/1075)
 
@@ -28,7 +28,7 @@ curl传输的时候，会设置 Expect: 100-continue, 这个协议brpc本身没�
 
 所以这个1s超时是个烟雾弹，线上client是Python，不会有这个问题。
 
-### 难道是 lvs ? 
+### 难道是 lvs ?
 接着又是一通疯狂测试，各种角度体位测试。发现本机测试是ok的，透过lvs请求（跨机房）就会卡住直到超时，而且小body请求一切正常，大body请求卡住。
 
 这时又开始怀疑brpc编译的不对，导致这个超时（brpc编译过程比较曲折，导致我不太有信心）。
@@ -83,7 +83,7 @@ EOF
 MTU也不应该导致丢包，交换机应该会进行IP分片。
 但忽略了一个点，虚拟的网桥并不是硬件网桥，可能并没有实现IP分片的逻辑（仅丢弃），又或者没有实现 PMTU（Path MTU Discovery）。
 上面这点存疑，但更直接的原因是服务的IP包的 `Don't fragment` flag 为1，也就是禁止分片（为什么设置还不清楚）。
-![](http://image.runjf.com/mweb/2022-07-11-16575342644060.jpg)
+![](https://image.ponder.work/mweb/2022-07-11-16575342644060.jpg)
 
 
 ## 参考

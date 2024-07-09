@@ -28,7 +28,7 @@ struct sdshdr {
 };
 ```
 
-![](http://image.runjf.com/mweb/2021-05-07-16203880544303.jpg)
+![](https://image.ponder.work/mweb/2021-05-07-16203880544303.jpg)
 
 使用SDS时，一般是通过指向buf数组的指针而不是sdshdr，这样相关接口就和C字符串兼容。同时需要使用到len和free相关属性时，通过计算指针偏移来得到sdshdr指针，整体设计比较高效。
 ```c

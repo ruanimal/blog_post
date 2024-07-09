@@ -93,7 +93,7 @@ get _result_dict
 然后自然就怀疑旧式类对property装饰器的支持存在问题。
 一通google之后，确定旧式类是不支持property。
 
-![](http://image.runjf.com/mweb/2019-12-02-15752721846597.jpg)
+![](https://image.ponder.work/mweb/2019-12-02-15752721846597.jpg)
 
 确切地说，是对property的支持不完整，具体来说有以下3点。
 - 支持property的getter

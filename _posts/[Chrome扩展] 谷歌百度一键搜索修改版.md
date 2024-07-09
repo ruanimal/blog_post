@@ -32,6 +32,6 @@ forked from: raywill/BaiGoogleDu
 - 适应新版google首页。
 
 ## 截图
-![](http://image.runjf.com/mweb/2020-04-30-15882559454860.png)
-![](http://image.runjf.com/mweb/2020-04-30-15882559641017.png)
-![](http://image.runjf.com/mweb/2020-04-30-15882559823254.png)
+![](https://image.ponder.work/mweb/2020-04-30-15882559454860.png)
+![](https://image.ponder.work/mweb/2020-04-30-15882559641017.png)
+![](https://image.ponder.work/mweb/2020-04-30-15882559823254.png)

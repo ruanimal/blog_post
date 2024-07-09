@@ -1,7 +1,7 @@
 title: 使用PlantUML做软件设计
 date: 2019-09-21 9:48 AM
 categories: 编程
-tags: [UML, 软件架构] 
+tags: [UML, 软件架构]
 
 
 ----
@@ -39,13 +39,13 @@ class BaseClass
 namespace net.dummy #DDDDDD {
 	.BaseClass <|-- Person
 	Meeting o-- Person
-	
+
 	.BaseClass <|- Meeting
 
 }
 
 namespace net.foo {
-  net.dummy.Person  <|- Person  
+  net.dummy.Person  <|- Person
   .BaseClass <|-- Person
 
   net.dummy.Meeting o-- Person
@@ -56,13 +56,13 @@ BaseClass <|-- net.unused.Person
 ```
 
 输出效果
-![](http://image.runjf.com/mweb/15690347198367.jpg)
+![](https://image.ponder.work/mweb/15690347198367.jpg)
 
 ## 环境搭建
 我们需要一个编辑器/IDE来编辑和预览UML图表，这里使用[vscode](https://code.visualstudio.com/)
 
 ### 安装PlantUML插件
-![-w1151](http://image.runjf.com/mweb/15690363185298.jpg)
+![-w1151](https://image.ponder.work/mweb/15690363185298.jpg)
 
 ### 配置插件渲染方式
 渲染方式有两种
@@ -70,7 +70,7 @@ BaseClass <|-- net.unused.Person
 - PlantUMLServer 远程渲染服务器
 
 方便起见，我们直接用官方的服务器
-![-w1151](http://image.runjf.com/mweb/15690367077023.jpg)
+![-w1151](https://image.ponder.work/mweb/15690367077023.jpg)
 
 ### 验证
 1. 新建 test.puml
@@ -78,12 +78,12 @@ BaseClass <|-- net.unused.Person
     @startuml
     ' Split into 4 pages
     class BaseClass
-    
+
     @enduml
     ```
-    
+
 2. 预览图表
-![-w1151](http://image.runjf.com/mweb/15690369832230.jpg)
+![-w1151](https://image.ponder.work/mweb/15690369832230.jpg)
 
 ## PlantUML基础语法
 由于PlantUML支持的图表类型比较多，每种图表的语法还不太一致，这里只简单介绍通用的语法，具体的图表还是建议查看官方文档。
@@ -101,7 +101,7 @@ You -> World: Hello
 @enduml
 ```
 
-![-w315](http://image.runjf.com/mweb/15690376853589.jpg)
+![-w315](https://image.ponder.work/mweb/15690376853589.jpg)
 
 ### 注释和标记
 - 单行注释：单引号 `'` 在行首
@@ -114,16 +114,16 @@ You -> World: Hello
 
 /'
 you can not 多行注释
-see me 
+see me
 '/
 
-You <-> World: Hello 
+You <-> World: Hello
 note left of You: yoyoyo
 ' 标记
 @enduml
 ```
 
-![-w254](http://image.runjf.com/mweb/15690390104495.jpg)
+![-w254](https://image.ponder.work/mweb/15690390104495.jpg)
 
 
 ### 对象和关系
@@ -133,12 +133,12 @@ note left of You: yoyoyo
 ```
 @startuml hello-world1
 You -> World: Hello
-You <- World: also Hello 
-You <-> World: Hololo 
-You <--> World: Hololo 
+You <- World: also Hello
+You <-> World: Hololo
+You <--> World: Hololo
 @enduml
 ```
-![-w260](http://image.runjf.com/mweb/15690396911033.jpg)
+![-w260](https://image.ponder.work/mweb/15690396911033.jpg)
 
 ## 一些例子
 ### 时序图
@@ -173,7 +173,7 @@ end
 @enduml
 ```
 
-![-w765](http://image.runjf.com/mweb/15690411434468.jpg)
+![-w765](https://image.ponder.work/mweb/15690411434468.jpg)
 
 ### 类图
 ```
@@ -249,7 +249,7 @@ FishShoal o-- Fish: contains >
 @enduml
 ```
 
-![-w1253](http://image.runjf.com/mweb/15690445125047.jpg)
+![-w1253](https://image.ponder.work/mweb/15690445125047.jpg)
 
 ## 参考资源
 - https://real-world-plantuml.com/ PlantUML示例网站

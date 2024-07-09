@@ -19,7 +19,7 @@ async def hello_world():
     print('hello')
     await asyncio.sleep(1)
     print(' world')
-    
+
 loop = asyncio.get_event_loop()
 loop.run_until_complete(hello_world())
 loop.close()
@@ -27,7 +27,7 @@ loop.close()
 
 ## 执行逻辑
 `async def` 定义的每一个函数, 本质上是一个协程.
-当await调用一个函数时, 程序就切换到该函数中执行了, 当执行完成时, 程序又回到await调用处继续执行. 
+当await调用一个函数时, 程序就切换到该函数中执行了, 当执行完成时, 程序又回到await调用处继续执行.
 
 当函数的调用链上碰到系统io相关函数时，程序执行的控制权就会回到eventloop主循环，eventloop就会调度执行别的函数，等到该函数的io就绪时，再从该函数暂停的地方继续执行。
 
@@ -35,9 +35,9 @@ loop.close()
 
 所有异步函数是在同一个线程中执行的, 在该进程内我们还可启用其他线程, 执行其他同步代码. 下图展示了Python中协程、线程、进程的逻辑关系。
 
-![](http://image.runjf.com/mweb/2020-05-24-15903277834535.jpg)
+![](https://image.ponder.work/mweb/2020-05-24-15903277834535.jpg)
 
- 
+
 ## 如何在event loop内调用同步代码
 
 一旦使用async, 整个线程内都必须使用异步, 否则整个线程都会阻塞。
@@ -74,7 +74,7 @@ loop.run_until_complete(main())
 loop.close()
 ```
 
-输出 
+输出
 ```
 hello world 1533904346.37133
 hello world 1533904346.371683

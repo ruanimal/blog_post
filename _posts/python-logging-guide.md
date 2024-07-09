@@ -1,7 +1,7 @@
 title: Python日志原理及实践
 date: 2019-11-02 9:48 AM
 categories: 编程
-tags: [日志, Python] 
+tags: [日志, Python]
 
 ----
 
@@ -38,7 +38,7 @@ ZeroDivisionError: division by zero
 <!--more-->
 
 ### 记录器 (logger)
-![](http://image.runjf.com/mweb/2019-11-02-15441717816714.jpg)
+![](https://image.ponder.work/mweb/2019-11-02-15441717816714.jpg)
 
 
 * logger是Python记录日志的入口
@@ -93,23 +93,23 @@ record主要有以下属性
 ### 过滤器 (filter)
 filter是附加在logger上的, 对日志进行细粒度控制, 例如根据一些条件判断是否记录日志, 修改日志record的内容等
 
-![](http://image.runjf.com/mweb/2019-11-02-15441884511996.jpg)
+![](https://image.ponder.work/mweb/2019-11-02-15441884511996.jpg)
 
 例如上面这个ContextFilter, 就将第二条日志过滤掉了.
 
 
 ### 格式器 (formatter)
 根据配置，将日志record的属性格式化成字符串
-![](http://image.runjf.com/mweb/2019-11-02-15441892815553.jpg)
+![](https://image.ponder.work/mweb/2019-11-02-15441892815553.jpg)
 
-![](http://image.runjf.com/mweb/2019-11-02-15441892888667.jpg)
+![](https://image.ponder.work/mweb/2019-11-02-15441892888667.jpg)
 
 
 
 ### 日志处理流程
 解释完这些名词, 然后看这个这个流程图, 就会明白整个日志的处理流程
 
-![](http://image.runjf.com/mweb/2019-11-02-15393262305519.jpg)
+![](https://image.ponder.work/mweb/2019-11-02-15393262305519.jpg)
 
 ### 日志配置
 开发过程中觉得比较好的一个日志配置
@@ -133,7 +133,7 @@ LOGGING = {
             'formatter': 'simple',
         },
         'backend_file':{
-            'class': 'logging.handlers.TimedRotatingFileHandler',    
+            'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': 'main.log',
             'backupCount': 5,
             'formatter':'verbose',
@@ -179,10 +179,10 @@ logging.config.dictConfig(LOGGING)
 
 	```
 	'%(levelname)s %(asctime)s %(name)s %(funcName)s %(lineno)d %(process)d %(thread)d %(message)s'
-	
+
 	日志级别 时间 logger名称 函数名称 函数名 行号 进程id 线程id
 	```
-	
+
 - 唯一请求id
 - 必要的描述信息: 如request xxx failed
 - 异常相关信息, 调用trace info
@@ -202,7 +202,7 @@ logging.config.dictConfig(LOGGING)
 - error级别日志输出到单独文件
 
 #### 网络日志
-- 单机情况下一般不需要 
+- 单机情况下一般不需要
 - 多机部署可用kafka，ELK等方案
 
 

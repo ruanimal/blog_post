@@ -44,7 +44,7 @@ $$s=(-1)^1=-1$$
 $$E=-127 + 2^7 + 2^0 = 2$$
 $$N=2^{-2}=0.25$$
 
-![](http://image.runjf.com/mweb/2020-08-04-15965370742818.jpg)
+![](https://image.ponder.work/mweb/2020-08-04-15965370742818.jpg)
 
 ## 特殊值
 这里有三个特殊值需要指出：
@@ -78,7 +78,7 @@ def binary_to_float(data):
     exponent = 2 ** (-127 + sum(int(a) * 2 ** b for a, b in zip(data[1:9], range(7, -1, -1))))
     fraction = 1 + sum(int(a) * 2 ** b for a, b in zip(data[9:], range(-1, -24, -1)))
     return sign * exponent * fraction
-    
+
 def float_to_binary(data):
     import struct
     bins = struct.pack('>f', data)

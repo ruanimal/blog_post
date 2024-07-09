@@ -49,7 +49,7 @@ typedef struct zskiplist {
 } zskiplist;
 ```
 
-![](http://image.runjf.com/mweb/2021-04-23-16190066207268.jpg)
+![](https://image.ponder.work/mweb/2021-04-23-16190066207268.jpg)
 
 所谓跳跃表，就是多层链表（redis中的实现是最多32层）通过额外的链接提高效率，从低层到高层，节点之间的跨度逐渐变大。
 
@@ -70,7 +70,7 @@ def _node_lt(node: zskiplistNode, score: float, obj: robj):
         compareStringObjects(node.obj, obj) < 0):
         return True
     return False
-    
+
 def zslInsert(zsl: zskiplist, score: float, obj: robj) -> zskiplistNode:
     # update list记录的是每一层, 新节点需要插入的位置(新节点x的backward节点指针)
     update: List[Opt[zskiplistNode]] = [None for _ in range(ZSKIPLIST_MAXLEVEL)]
@@ -93,15 +93,15 @@ def zslInsert(zsl: zskiplist, score: float, obj: robj) -> zskiplistNode:
         for i in range(zsl.level, level):
             rank[i] = 0
             update[i] = zsl.header
-            update[i].level[i].span = zsl.length 
+            update[i].level[i].span = zsl.length
         zsl.level = level
     # 更新节点x和前驱节点已有层的跨度
     x = zslCreateNode(level, score, obj)
     for i in range(level):
         x.level[i].forward = update[i].level[i].forward
-        update[i].level[i].forward = x 
-        x.level[i].span = update[i].level[i].span - (rank[0] - rank[i])  
-        update[i].level[i].span = (rank[0] - rank[i]) + 1 
+        update[i].level[i].forward = x
+        x.level[i].span = update[i].level[i].span - (rank[0] - rank[i])
+        update[i].level[i].span = (rank[0] - rank[i]) + 1
     # 更新前驱节点扩展层的跨度，x节点这些层没有后继节点，所以跨度为0
     for i in range(level, zsl.level):
         update[i].level[i].span += 1  # type: ignore
@@ -134,7 +134,7 @@ def zslGetRank(zsl: zskiplist, score: float, obj: robj) -> int:
 ```
 
 查找score=2.0的o2对象的过程
-![](http://image.runjf.com/mweb/2021-04-23-16191635872238.jpg)
+![](https://image.ponder.work/mweb/2021-04-23-16191635872238.jpg)
 
 ## 参考
 - redis 3.0 源码

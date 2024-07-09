@@ -14,7 +14,7 @@ tags: [mac,]
 可以通过这个命令去除
 
 ```bash
-pwpolicy -clearaccountpolicies 
+pwpolicy -clearaccountpolicies
 ```
 
 **注意**：去除限制之后，通过time machine备份的系统，还原到有限制的机器上，可能会导致一些bug。如卡死在登陆页面，部分应用的资源库损坏等等。
@@ -48,7 +48,7 @@ macOS 10.14 以后系统动画越来越复杂，对显卡要求比较高，导�
 
 通过关闭一些动画和特效可以让系统更流畅些
 
-![](http://image.runjf.com/mweb/2021-10-10-16338756772783.jpg)
+![](https://image.ponder.work/mweb/2021-10-10-16338756772783.jpg)
 
 ## 键位修改
 使用 [karabiner](https://karabiner-elements.pqrs.org/) 可以对系统全局快捷键和应用快捷键进行修改。

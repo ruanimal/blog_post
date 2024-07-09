@@ -51,7 +51,7 @@ typedef struct dict {
     // 哈希表，ht[1]在rehash的时候使用
     dictht ht[2];
     // rehash 索引，当 rehash 不在进行时，值为 -1
-    int rehashidx; 
+    int rehashidx;
     // 目前正在运行的安全迭代器的数量
     int iterators;
 } dict;
@@ -75,7 +75,7 @@ typedef struct dictType {
 } dictType;
 ```
 
-![-w789](http://image.runjf.com/mweb/2021-04-18-16187320239054.jpg)
+![-w789](https://image.ponder.work/mweb/2021-04-18-16187320239054.jpg)
 
 ## 哈希算法
 redis 的 dict 本质上就是个hashmap，其中的关键是哈希算法。
@@ -110,12 +110,12 @@ index = hash & dict->ht[0].sizemask
 
 Redis的哈希表使用链地址法（separate chaining) 来解决键冲突，每个哈希表节点都有一个next指针，多个哈希表节点可以用 next指针构成一个单向链表，被分配到同一个索 引上的多个节点可以用这个单向链表连接起来，这就解决了键冲突的问题。
 
-![-w722](http://image.runjf.com/mweb/2021-04-18-16187328149108.jpg)
+![-w722](https://image.ponder.work/mweb/2021-04-18-16187328149108.jpg)
 
 还有一种常用的冲突解决办法是再哈希法，就是同时构造多个不同的哈希函数。
 当H1 = hashfunc1(key) 发生冲突时，再用H2 = hashfunc1(key) 进行计算，直到冲突不再产生，这种方法不易产生聚集，但是增加了计算时间。
 
-## rehash 
+## rehash
 随着操作的不断执行，哈希表保存的键值对会逐渐地增多或者减少，为了让哈希表的负载因子（used/size)维持在一个合理的范围之内，程序需要对哈希表的大小进行相应的扩展或者收缩, 这个过程就是rehash。
 
 这里redis采用的装载系数为1，扩容系数为2
@@ -135,9 +135,9 @@ Redis对字典的哈希表执行rehash的步骤如下：
 rehash 示例代码
 ```python
 def dictRehash(d: rDict, n: int) -> int:
-    if not dictIsRehashing(d):  
+    if not dictIsRehashing(d):
         return 0
-        
+
     while (n):
         n -= 1
         if d.ht[0].used == 0:  # rehash 完成了

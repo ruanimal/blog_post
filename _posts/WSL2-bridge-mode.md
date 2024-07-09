@@ -55,7 +55,7 @@ Windows Subsystem for Linux(WSL)从`Version 1 (WSL1)`升级到`Version 2 (WSL2)`
 ## 修改WSL2默认网络为桥接
 由于WSL2底层使用的是Hyper-V虚拟机，所以我们可以修改虚拟交换机的类型，来启用桥接网络
 打开`Hyper-V管理器 -> 操作 -> 虚拟交换机管理器`， 修改WSL的连接类型为“外部网络”
-![2021-01-02_171339](http://image.runjf.com/mweb/2021-01-02-2021-01-02_171339.png)
+![2021-01-02_171339](https://image.ponder.work/mweb/2021-01-02-2021-01-02_171339.png)
 
 
 ## 修复Debian网络
@@ -85,7 +85,7 @@ Windows Subsystem for Linux(WSL)从`Version 1 (WSL1)`升级到`Version 2 (WSL2)`
 ## 已知缺陷
 ### 重启Windows10后桥接失败
 重启后桥接可能会失败，而且上不了网，可以取消勾选外网网口的“Hyper-V可扩展的虚拟交换机”选项，然后重新配置桥接
-![捕获1](http://image.runjf.com/mweb/2021-01-11-%E6%8D%95%E8%8E%B71.png)
+![捕获1](https://image.ponder.work/mweb/2021-01-11-%E6%8D%95%E8%8E%B71.png)
 
 ### WSL2的MAC地址不固定
 由于WSL2的MAC地址每次重启后都会变化，所以桥接后DHCP的ip也是非固定的，参考[issue](https://github.com/microsoft/WSL/issues/5352)。

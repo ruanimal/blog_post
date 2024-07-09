@@ -6,7 +6,7 @@ tags: [番茄工作法, GTD]
 ---
 
 <style type="text/css" rel="stylesheet">
-img[alt="-w350"] { 
+img[alt="-w350"] {
 	width: 350px
 }
 </style>
@@ -30,13 +30,13 @@ img[alt="-w350"] {
 ## 使用步骤
 
 1. 小米穿戴app - 我的 - 开启通知相关权限
-![-w350](http://image.runjf.com/mweb/2021-04-17-v2-083dc66a6eac131538658e0718197f8a_1440w.jpg)
+![-w350](https://image.ponder.work/mweb/2021-04-17-v2-083dc66a6eac131538658e0718197f8a_1440w.jpg)
 
 2. 小米穿戴app - 我的 - 消息通知
-![-w350](http://image.runjf.com/mweb/2021-04-17-v2-1456fe9137371ebec9f71507c539893d_1440w.jpg)
+![-w350](https://image.ponder.work/mweb/2021-04-17-v2-1456fe9137371ebec9f71507c539893d_1440w.jpg)
 
 3. 小米穿戴app - 我的 - 设备更多设置 - 震动模式 - App通知提醒 - 添加震动模式（可选）
-![-w350](http://image.runjf.com/mweb/2021-04-17-v2-ff6418a487908a51642bec98c7a17179_1440w.jpg)
+![-w350](https://image.ponder.work/mweb/2021-04-17-v2-ff6418a487908a51642bec98c7a17179_1440w.jpg)
 
 4. 滴答清单app - 番茄专注 - 开始
-![-w350](http://image.runjf.com/mweb/2021-04-17-v2-32488091b7f87efd080108626d1f9d1f_1440w.jpg)
+![-w350](https://image.ponder.work/mweb/2021-04-17-v2-32488091b7f87efd080108626d1f9d1f_1440w.jpg)

@@ -146,7 +146,7 @@ dist
 可以在[这里](https://pypi.org/project/dingtalk-log-handler/)找到我这次上传的库
 
 可以看到 setup.py 文件里的很多信息会对应体现在PyPI网页上
-![](http://image.runjf.com/mweb/2020-09-11-15997969319299.jpg)
+![](https://image.ponder.work/mweb/2020-09-11-15997969319299.jpg)
 
 ## 参考
 1. https://packaging.python.org/guides/distributing-packages-using-setuptools

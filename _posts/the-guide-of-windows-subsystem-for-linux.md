@@ -32,20 +32,20 @@ tags: [Linux, WSL]
 **由于本文写作时间已经比较久了，强烈建议查看MS的官方教程**[WSL install guide](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
 
 1. 开启开发者模式： 设置 > 更新及安全 > 针对开发人员 > 开发人员模式
-![](http://image.runjf.com/17-1-8/91407501-file_1483888101129_101b0.gif)
+![](https://image.ponder.work/mweb/17-1-8/91407501-file_1483888101129_101b0.gif)
 
 2. 启用WSL功能：资源管理器地址栏输入 “控制面板\程序\程序和功能”，选择启用或关闭Windows功能，勾选适用于Linux的Windwos子系统(beta)，重启系统
-![](http://image.runjf.com/17-1-8/87068378-file_1483888094877_143b7.png)
+![](https://image.ponder.work/mweb/17-1-8/87068378-file_1483888094877_143b7.png)
 
 3. 下载Linux镜像：按`Win + X`选择“命令提示符”或者“Windows PowerShell”，在命令行中输入`bash`，按提示操作。安装完成后使用也是在命令行中输入`bash`
-![](http://image.runjf.com/17-1-8/71864116-file_1483888221167_146b1.png)
-![](http://image.runjf.com/17-1-8/275971-file_1483888221026_4896.png)
+![](https://image.ponder.work/mweb/17-1-8/71864116-file_1483888221167_146b1.png)
+![](https://image.ponder.work/mweb/17-1-8/275971-file_1483888221026_4896.png)
 
 ## 替换WSL终端
 
 可以用`mintty`作为WSL的终端，替换命令提示符，获得更类似linux的体验。github中已经有人做好了，下载使用即可[goreliu/wsl-terminal](https://github.com/goreliu/wsl-terminal/releases)
 解压运行open-wsl.exe，你就得到了一个漂亮的linux终端。
-![](http://image.runjf.com/17-1-8/57114153-file_1483889057173_a2dd.png)
+![](https://image.ponder.work/mweb/17-1-8/57114153-file_1483889057173_a2dd.png)
 
 ## 在右键菜单中添加在此处打开WSL
 新建文本文件，用记事本打开，输入一下内容，替换里面的两处路径，保存重命名为`wsl.reg`，运行。
@@ -59,17 +59,17 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\Background\shell\wsl\command]
 @="D:\\PortableApps\\wsl-terminal\\open-wsl.exe"
 ```
-![](http://image.runjf.com/17-1-8/4400425-file_1483888101002_ba17.png)
+![](https://image.ponder.work/mweb/17-1-8/4400425-file_1483888101002_ba17.png)
 
 ## 运行linux桌面
 1. 在WSL里安装好桌面，`apt-get -y install xorg xfce4`
 2. 在win上安装`x server`，可选`xming`和`VcXsrv`，这里选用[VcXsrv](https://sourceforge.net/projects/vcxsrv/)
 3. 启动`x server`
-![](http://image.runjf.com/17-1-8/7879750-file_1483888094999_453c.png)
-![](http://image.runjf.com/17-1-8/86091829-file_1483889277522_60b1.png)
-![](http://image.runjf.com/17-1-8/74401307-file_1483888095234_162aa.png)
-![](http://image.runjf.com/17-1-8/59701947-file_1483888095343_17660.png)
-![](http://image.runjf.com/17-1-8/85096906-file_1483888095449_1787e.png)
+![](https://image.ponder.work/mweb/17-1-8/7879750-file_1483888094999_453c.png)
+![](https://image.ponder.work/mweb/17-1-8/86091829-file_1483889277522_60b1.png)
+![](https://image.ponder.work/mweb/17-1-8/74401307-file_1483888095234_162aa.png)
+![](https://image.ponder.work/mweb/17-1-8/59701947-file_1483888095343_17660.png)
+![](https://image.ponder.work/mweb/17-1-8/85096906-file_1483888095449_1787e.png)
 
 4. WSL的配置，在wsl的bash中运行
 ```
@@ -78,5 +78,5 @@ source ~/.bashrc
 sudo sed -i 's$<listen>.*</listen>$<listen>tcp:host=localhost,port=0</listen>$' /etc/dbus-1/session.conf  # 解决D-bus的问题
 ```
 5. 在WSL里运行`startxfce4`，就此大功告成
-![](http://image.runjf.com/17-1-8/26700478-file_1483888100890_f880.png)
-![](http://image.runjf.com/17-1-8/4581644-file_1483888100682_e456.png)
+![](https://image.ponder.work/mweb/17-1-8/26700478-file_1483888100890_f880.png)
+![](https://image.ponder.work/mweb/17-1-8/4581644-file_1483888100682_e456.png)

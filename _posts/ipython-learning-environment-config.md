@@ -30,12 +30,12 @@ IPython项目起初是Fernando Pérez在2001年的一个用以加强和Python交
 
 ### 安装Python插件
 在扩展商店，搜索“Python”， 并安装
-![-w549](http://image.runjf.com/mweb/2020-07-19-15951449200011.jpg)
+![-w549](https://image.ponder.work/mweb/2020-07-19-15951449200011.jpg)
 
 ### 创建使用NoteBook
 选择IPython环境
-![-w1421](http://image.runjf.com/mweb/2020-07-19-15951453546560.jpg)
+![-w1421](https://image.ponder.work/mweb/2020-07-19-15951453546560.jpg)
 
 创建`hello.ipynb`Notebook
-![-w1421](http://image.runjf.com/mweb/2020-07-19-15951457001314.jpg)
+![-w1421](https://image.ponder.work/mweb/2020-07-19-15951457001314.jpg)
 

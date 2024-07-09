@@ -7,10 +7,10 @@ tags: [mac, Hackintosh, 电子产品]
 
 ## 硬件信息
 ### GB-BRi5H-8250 准系统
-![](http://image.runjf.com/mweb/2020-07-25-15955608894288.png)
+![](https://image.ponder.work/mweb/2020-07-25-15955608894288.png)
 <!--more-->
-![](http://image.runjf.com/mweb/2020-07-25-15955609109238.png)
-![](http://image.runjf.com/mweb/2020-07-25-15955609232489.png)
+![](https://image.ponder.work/mweb/2020-07-25-15955609109238.png)
+![](https://image.ponder.work/mweb/2020-07-25-15955609232489.png)
 
 | 硬件 | 规格 |
 | --- | --- |
@@ -49,7 +49,7 @@ OpenCore配置文件我放到github了 https://github.com/ruanimal/GB-BRi5H-8250
 
 ### 不正常工作项目
 - 系统偏好设置-节能（错误识别为有电池）
-    ![](http://image.runjf.com/mweb/2020-07-25-15956404046858.jpg)
+    ![](https://image.ponder.work/mweb/2020-07-25-15956404046858.jpg)
 - HDMI睡眠唤醒，有时屏幕黑屏，需要按一下屏幕开关；DP睡眠正常 (添加启动参数`igfxonln=1`应该可以解决)
 - 显示器喇叭开机时不正常，拔插接口后或者开关屏幕电源后正常。(添加启动参数`igfxonln=1`应该可以解决)
 
@@ -95,7 +95,7 @@ OpenCore配置文件我放到github了 https://github.com/ruanimal/GB-BRi5H-8250
 #### OpenCore文件准备
 1. 将下载的OpenCorePkg解压，复制EFI文件夹到U盘
 2. 删除EFI文件夹中多余的文件，只保留以下内容
-    ![](http://image.runjf.com/mweb/2020-07-25-15955829462860.png)
+    ![](https://image.ponder.work/mweb/2020-07-25-15955829462860.png)
 3. 添加必要的.efi驱动到U盘EFI/OC/Drivers文件夹，不同的机型需要的有所区别
     - [HfsPlus.efi](https://github.com/acidanthera/OcBinaryData/blob/master/Drivers/HfsPlus.efi): 用于读写苹果HFS分区
 
@@ -112,7 +112,7 @@ OpenCore配置文件我放到github了 https://github.com/ruanimal/GB-BRi5H-8250
 #### SSDT准备
 添加必要的Kexts驱动到U盘EFI/OC/ACPI文件夹，不同的机型需要的有所区别
 
-![-w828](http://image.runjf.com/mweb/2020-07-25-15955842564825.jpg)
+![-w828](https://image.ponder.work/mweb/2020-07-25-15955842564825.jpg)
 
 从opencore的[文档](https://dortania.github.io/OpenCore-Install-Guide/ktext.html#desktop)可以看出，我们至少需要以下几个SSDT
 - [SSDT-PLUG](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html)：电源管理相关，影响睡眠
@@ -130,7 +130,7 @@ OpenCore配置文件我放到github了 https://github.com/ruanimal/GB-BRi5H-8250
 #### OpenCore配置文件准备
 1. 复制OpenCorePKG的Docs/Sample.plist到U盘EFI/OC/config.plist
 2. 打开ProperTree的ProperTree.bat脚本，打开前面的config.plist，选择OC Clean Snapshot, 根据我们的驱动文件自动修改配置，保存。
-    ![-w355](http://image.runjf.com/mweb/2020-07-25-15955861876823.jpg)
+    ![-w355](https://image.ponder.work/mweb/2020-07-25-15955861876823.jpg)
 3. 配置文件各项微调，参考[文档](https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html)，注意DeviceProperties，PlatformInfo配置项，影响比较大。
 4. 配置准确性校验 https://opencore.slowgeek.com/
 
@@ -204,7 +204,7 @@ USB定制直接影响睡眠是否正常
 无线网卡驱动和系统序列号影响iMessage, sidecar等Apple服务使用。
 
 1. 找到无线的PCI设备地址
-    ![](http://image.runjf.com/mweb/2020-07-25-15956404767924.jpg)
+    ![](https://image.ponder.work/mweb/2020-07-25-15956404767924.jpg)
 2. 在config.plist中`DeviceProperties->Add`配置项下加入设备信息, 注意替换PCI设备地址
     ```xml
 			<key>PciRoot(0x0)/Pci(0x1C,0x5)/Pci(0x0,0x0)</key>
@@ -256,11 +256,11 @@ USB定制直接影响睡眠是否正常
 这样就不需要每次都从U盘启动了，并且开启会默认进入macOS
 
 1. 在pe系统下，使用DiskGenius挂载硬盘ESP分区（右键ESP分区-指派新的驱动器号）
-	![-w1059](http://image.runjf.com/mweb/2020-09-19-16004770939670.jpg)
+	![-w1059](https://image.ponder.work/mweb/2020-09-19-16004770939670.jpg)
 2. 复制U盘的EFI文件夹到ESP分区根目录，和原有的文件夹合并
 3. 使用bootice，添加硬盘ESP分区的`\EFI\BOOT\BOOTx64.efi`文件到启动条目，并上移到第一位
-![-w446](http://image.runjf.com/mweb/2020-09-19-16004775381948.jpg)
-![-w548](http://image.runjf.com/mweb/2020-09-19-16004776841057.jpg)
+![-w446](https://image.ponder.work/mweb/2020-09-19-16004775381948.jpg)
+![-w548](https://image.ponder.work/mweb/2020-09-19-16004776841057.jpg)
 
 
 ### 其他注意事项
