@@ -16,8 +16,11 @@ tags: [Web]
 	- js直接读取浏览器的目标域的sessionid、cookie，伪造请求。
     	- 比如，当前站点是恶意站点，它用js请求银行站点，盗取信息。
 	- CSRF，如img标签的src会被访问，利用受害者已认证的身份，在不知情的情况下向受害者认证的站点发起恶意请求。
-	   - 通过在src里构造url，恶意请求目标域。
-	   - 如`<img src="https://bank.com/transfer?amount=1000&to=attackerAccount" style="display:none;">`
+	   - 通过在src里构造url，恶意请求目标域
+	     ```
+	     <img src="https://bank.com/transfer?amount=1000&to=attackerAccount" 
+	           style="display:none;">
+	     ```
 	- XSS跨站脚本(Cross-site scripting)注入，导致用户在信息泄露
 		- 一般是接受了用户构造的输入，输入里包含恶意脚本内容，内容未被转义，又输出在页面上，从而被执行
 		- 其他用户查看了该页面，注入的脚本被执行
