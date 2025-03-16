@@ -47,27 +47,45 @@ cargo add automod
 ```rust
 // src/lib.rs 
 
-const UPDATE: i64 = 0x1742040790;  // trigger rust-analyser recheck
+const CURRENT: &str = "sdfsdfsd.rs";  // trigger rust-analyser recheck
 
 pub mod solutions {
     automod::dir!("src/solutions");
 }
 ```
 
-## vscode 项目设置
+## 触发 rust-analyzer
 用 run-on-save 插件，保存回答时更新 lib.rs，触发 rust-analyzer 重新分析项目，开启新回答的代码补全。
 
-macOS使用 gnused，linux 使用默认 sed 就好。
-
+vscode 项目配置
 ```
     "runOnSave.commands": [
         {
              // use gnu sed update lib.rs when add solutions (macOS)
-            "command": "gsed -i -E \"s/0x([0-9]+);/0x$(date +%s);/\" src/lib.rs",  
+            "command": "sh onsave.sh ${fileBasename}",  
             "runIn": "backend",
             "finishStatusMessage": "touched ${workspaceFolderBasename}"
         },
     ]
+```
+
+
+`onsave.sh`脚本，macOS使用 gnused，linux 使用默认 sed 就好。
+通过切换模块是否为pub来触发 rust-analyzer 识别新回答
+
+```bash
+#!/bin/bash
+
+FILE=$1
+if [[ `grep "$FILE" src/lib.rs | wc -l` -eq 0 ]]; then
+    gsed -i -E "/CURRENT/c\const CURRENT: &str = \"$FILE\";" src/lib.rs
+    if [[ `grep '::dir!(pub' src/lib.rs | wc -l` -eq 1 ]]; then
+        gsed -i "s|::dir!(pub |::dir!(|" src/lib.rs
+    else
+        gsed -i "s|::dir!(|::dir!(pub |" src/lib.rs
+    fi
+fi
+
 ```
 
 ## 编写本地测试用例
