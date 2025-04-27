@@ -24,7 +24,9 @@ tags: [Android, iOS]
 1. 根据 [PCT-patches](https://github.com/lurenJBD/PCT-patches) 文档，给 PCT 打好补丁
 2. 根据 [lineageOS 模板](https://github.com/lurenJBD/PCT-patches/releases/download/lineage/lineage19.1-x86_64-houdini-magisk-gapps.tar.gz)，新建安卓容器，注意去除Unprivileged container的勾选。
 3. 修改 lxc.init.cmd 选项，在后面增加以下参数，调整分辨率和iPad一致。
-`androidboot.redroid_width=1668 androidboot.redroid_height=2388 androidboot.redroid_fps=60`
+    ```
+    androidboot.redroid_width=1668 androidboot.redroid_height=2388 androidboot.redroid_fps=60
+    ```
 
 ps: 安卓容器对宿主机性能似乎有一定要求，J4125 只是勉强够用，流畅度一般。
 
