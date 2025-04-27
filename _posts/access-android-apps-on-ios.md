@@ -50,7 +50,7 @@ scrcpy --audio-codec=aac \
 ## iOS 中使用 scrcpy-mobile
 appstore中安装 [scrcpy-mobile](https://apps.apple.com/cn/app/scrcpy-remote/id1629352527)
 
-由于该应用的用户界面易用性比较差，这里直接使用`快捷指令`打开应用。
+由于该应用的用户界面易用性比较差，表单也不支持有些 scrcpy 参数，这里直接使用`快捷指令`打开应用。
 设置打开 scrcpy-mobile 后，开启`引导式访问`，防止误触。同时可以在 iOS 设置中开启引导式访问的`面容id`，防止频繁输入密码。
 
 ![](https://image.ponder.work/mweb/2025-04-27---17457324901465.jpg)
