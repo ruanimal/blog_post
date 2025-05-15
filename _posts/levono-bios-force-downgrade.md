@@ -17,18 +17,15 @@ tags: [硬件]
 3. 运行 `NEW`，选择仅解压。找到解压目录，应该只有一个 exe 程序，使用 7-zip 或者 bandizip 打开并提取内部文件。
 4. 对 `OLD` 也执行如上操作，如果没有解压选项，可以尝试直接提取。
 5. 将 `OLD` 提取目录中的 .bin 格式固件（GLV3A036.bin、GLV4D031.bin）复制到 `NEW` 提取目录中。
-6. 修改 `NEW` 提取目录中的 `platform.ini` 文件，找到如下内容
+6. 修改 `NEW` 提取目录中的 `platform.ini` 文件，找到如下内容。将其中的 .bin 文件名，修改为 `OLD` 中的 .bin 文件名，保存。有两个 .bin 文件，文件名是和版本中的数字对应的，不要修改错误。
     ```
+    ; 修改前
     [MULTI_FD]
     Flag=1
     FD#01=ID,GLV4D,GLV4D036.bin
     FD#02=PCI,0,1,1,0,FFFFFFFF,FFFFFFFF,GLV3A041.bin
-    ```
     
-    将其中的 .bin 文件名，修改为 `OLD` 中的 .bin 文件名，保存。
-    有两个 .bin 文件，文件名是和版本中的数字对应的，不要修改错误。
-    
-    ```
+    ; 修改后
     [MULTI_FD]
     Flag=1
     FD#01=ID,GLV4D,GLV4D031.bin
