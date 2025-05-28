@@ -169,6 +169,13 @@ def wait_button(image, timeout, interval=10):
     time.sleep(interval/2)
 ```
 
+## 使用感受
+PyAutoGUI 是基于图像而不是图型控件来识别目标，没有确认反馈。
+相比于网页自动化的 Selenium 就感觉落后些了。
+当然，Windows 平台有 `pywinauto` 支持控件识别，但我不咋熟悉。
+总之，PyAutoGUI 就像手枪，虽然比较简陋，但还是很直观的，执行简单的任务也够用了。
+
+
 ## 注意事项
 
 - 自动化代码中不要编码用户名密码相关信息，建议用环境变量传入
