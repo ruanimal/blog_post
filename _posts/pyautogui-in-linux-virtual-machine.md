@@ -71,7 +71,7 @@ exec /usr/bin/gnome-screenshot "$@" >> /tmp/gnome-screenshot.log 2>&1
 
 ### 验证码识别
 
-### pytesseract
+#### pytesseract
 常见的方案是 `pytesseract`， 但是效果不好，识别率比较一般。
 
 安装
@@ -85,7 +85,7 @@ pip install pytesseract
 pytesseract.image_to_string(image, config='--psm 8 -c tessedit_char_whitelist=0123456789')
 ```
 
-### ddddocr
+#### ddddocr
 
 [ddddocr](https://github.com/sml2h3/ddddocr) 是基于机器学习的验证码识别库，识别效果比较好。
 
