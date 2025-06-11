@@ -48,7 +48,7 @@ PyAutoGUI 是 GUI 功能强大自动化方案，但 UI 程序的运行环境选�
 sudo ntpdig -S ntp.aliyun.com
 ```
 
-或者，通过 systemd 的 `/etc/systemd/system-sleep/` 钩子自动触发 
+或者，理论上可以通过虚拟机中的 systemd-suspend hook，或者 pve hookscript 来解决（没试成功）
 
 ## PyAutoGUI 使用技巧
 ### 远程登录调试
