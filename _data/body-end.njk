@@ -1,0 +1,12 @@
+<script>
+  document.addEventListener('pjax:success', () => {
+    if (CONFIG.sidebar.display !== 'remove') {
+      const hasTOC = document.querySelector('.post-toc:not(.placeholder-toc)');
+
+      // 当没有 TOC 且侧边栏正在显示时，隐藏侧边栏
+      if (!hasTOC && document.body.classList.contains('sidebar-active')) {
+        window.dispatchEvent(new Event('sidebar:hide'));
+      }
+    }
+  });
+</script>
