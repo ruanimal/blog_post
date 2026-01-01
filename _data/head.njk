@@ -1,0 +1,23 @@
+{% if page.title === '404 Page Not Found' or page.type === '404' or page.layout === '404' %}
+<script>
+(function() {
+  // 从 Hexo 配置中获取 category_map
+  var categoryMap = {{ config.category_map | dump | safe }};
+  var currentPath = decodeURIComponent(window.location.pathname);
+
+  // 检查路径中是否包含分类映射的key
+  for (var key in categoryMap) {
+    if (currentPath.includes(key)) {
+      var targetCategory = categoryMap[key];
+      var targetPath = currentPath.replace(key, targetCategory);
+
+      // 执行重定向
+      if (currentPath !== targetPath) {
+        window.location.replace(targetPath);
+        return;
+      }
+    }
+  }
+})();
+</script>
+{% endif %}
