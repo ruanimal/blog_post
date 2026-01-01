@@ -1,10 +1,11 @@
+---
 title: redroid “设备未获得play保护机制认证” 问题
-date: 2025-05-07 18:00
+date: 2025-05-07 18:00:00
+updated: 2025-05-08 15:05:34
 categories: 工作生活
 tags: [Android]
 
 ---
-
 使用 redroid 等安卓虚拟环境，可能会发现 google play 用不了的问题。
 虽然系统集成了 gapps，但系统提示 “设备未获得play保护机制认证”，无法登录 play 商店。
 可能的原因比较多，这里大概是因为虚拟机的型号没在google的数据库里。

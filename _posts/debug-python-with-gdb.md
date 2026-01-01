@@ -1,10 +1,11 @@
+---
 title: 使用gdb调试Python程序
-date: 2020-12-29 9:48 AM
+date: 2020-12-29 09:48:00
+updated: 2020-12-30 21:18:00
 categories: 编程
 tags: [Python] 
 
-----
-
+---
 由于Python解释器是由C语言编写，我们可以使用GDB来调试Python进程，对于程序卡死等异常情况调试比较有帮助。
 
 <!--more-->

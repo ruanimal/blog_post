@@ -1,10 +1,11 @@
+---
 title: 在 Linux 虚拟机中使用 PyAutoGUI 做自动化
-date: 2025-05-27 9:48 PM
+date: 2025-05-27 21:48:00
+updated: 2025-06-11 10:11:50
 categories: 编程
 tags: [Python, ]
 
 ---
-
 PyAutoGUI 是 GUI 功能强大自动化方案，但 UI 程序的运行环境选择与配置也是一大难题。
 <!--more-->
 

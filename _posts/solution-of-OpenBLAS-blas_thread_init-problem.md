@@ -1,10 +1,11 @@
+---
 title: OpenBLAS blas_thread_init pthread_creat Resource temporarily unavailable 问题分析与解决
-date: 2020-02-28 9:48 AM
+date: 2020-02-28 09:48:00
+updated: 2020-03-13 15:04:37
 categories: 编程
 tags: [Python, 机器学习] 
 
-----
-
+---
 ## 症状
 最近在在一台服务器上发现, 一个服务的工作进程会异常退出, 但部署有相同代码的其他服务却没有类似的情况.
 

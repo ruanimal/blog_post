@@ -1,10 +1,11 @@
+---
 title: C扩展与gevent共存时的问题
-date: 2019-11-07 9:48 AM
+date: 2019-11-07 09:48:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [Gevent, Python]
 
-----
-
+---
 gevent是一个使用完全同步编程模型的可扩展的异步I/O框架。
 
 通用monkey.patch_all() 所有io操作函数, gevent可以以同步的方式编写异步代码. 在不更改代码的同时就可以使系统并发性能得到指数级提升。

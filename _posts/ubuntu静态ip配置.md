@@ -1,10 +1,11 @@
+---
 title: ubuntu静态ip配置
-date: April 16, 2016 8:52 PM
+date: 2016-04-16 20:52:00
+updated: 2021-03-25 21:41:32
 categories: 编程
 tags: [Ubuntu, Linux]
 
-----
-
+---
 以vmware虚拟机为例
 
 ## 设置IP

@@ -1,10 +1,11 @@
+---
 title: WSL2开启桥接网络
-date: 2021-01-02 15:00
+date: 2021-01-02 15:00:00
+updated: 2024-07-09 22:02:56
 categories: 工作生活
 tags: [Linux, WSL]
 
-----
-
+---
 Windows Subsystem for Linux(WSL)从`Version 1 (WSL1)`升级到`Version 2 (WSL2)` 之后，底层实现方式发生了改变。
 
 由于使用Hyper-V来实现WSL2，使得WSL更像虚拟机，一个能访问本地硬盘的虚拟机。

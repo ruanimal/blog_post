@@ -1,10 +1,11 @@
+---
 title: Python 类型标记(Type Hints) 初探
-date: 2020-03-11 9:48 AM
+date: 2020-03-11 09:48:00
+updated: 2022-10-12 10:21:25
 categories: 编程
 tags: [Python, ]
 
--------
-
+---
 ## 缘起
 Python是一门动态强类型语言, 动态性是它鲜明的特点. 
 

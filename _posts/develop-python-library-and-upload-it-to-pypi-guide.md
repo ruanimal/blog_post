@@ -1,10 +1,11 @@
+---
 title: 开发Python库并发布到PyPI指南
-date: 2020-09-10 8:03 PM
+date: 2020-09-10 20:03:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [PyPI, Python]
 
 ---
-
 ## PyPI
 [PyPI](https://pypi.org/)（英语：Python Package Index，简称PyPI）是一个用于存储Python写成的软件包的软件存储库，我们平时用pip安装的库就是来自于PyPI
 

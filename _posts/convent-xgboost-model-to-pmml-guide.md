@@ -1,10 +1,11 @@
+---
 title: 在Java环境中使用PMML执行xgboost模型 
-date: 2020-04-10 9:48 PM
+date: 2020-04-10 21:48:00
+updated: 2020-07-01 11:41:57
 categories: 编程
 tags: [Python, 机器学习, Java]
 
-----
-
+---
 ## 缘起
 最近有个需求, 在Java环境环境运行xgboost模型, 查询资料后发现PMML可以解决这个问题.
 

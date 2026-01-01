@@ -1,10 +1,11 @@
+---
 title: 在 VSCode 中用 Rust 刷LeetCode
-date: 2025-03-08 8:17 PM
+date: 2025-03-08 20:17:00
+updated: 2025-03-16 15:18:00
 categories: 编程
 tags: [Rust, ]
 
 ---
-
 本文介绍在 VSCode 中配置和使用插件来高效地解决 LeetCode 问题，并使用 Rust 语言编写和测试代码。
 <!--more-->
 

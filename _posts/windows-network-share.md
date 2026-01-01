@@ -1,10 +1,11 @@
+---
 title: Windows 网络共享
-date: 2021-10-10 3:00 PM
+date: 2021-10-10 15:00:00
+updated: 2024-07-09 22:02:56
 categories: 工作生活
 tags: [Windows,]
 
-----
-
+---
 要在不暴露 client 的情况下共享网络，一般就只能使用 nat(Network Address Translation), linux 下可以使用 iptables 很轻松地搞定。
 nat 包含 DNAT 和 SNAT, 要想双向互通，必须两者都实现。
 

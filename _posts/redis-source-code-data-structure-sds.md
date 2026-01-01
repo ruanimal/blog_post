@@ -1,10 +1,11 @@
+---
 title: Redis原理 —— SDS 简单动态字符串
-date: 2021-05-07 7:48 PM
+date: 2021-05-07 19:48:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [Redis, C]
 
-----
-
+---
 Redis没有直接使用C语言传统的字符串表示，而是自己构建了一种名为简单动态字符串SD S(simple dynamic string)的数据结构 ，并将SDS用作Redis的默认字符串表示。
 
 Redis内部所有字符串都由SDS来表示，其本质就是动态字节数组，和python的`bytearray`类似。

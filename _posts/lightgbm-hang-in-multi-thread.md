@@ -1,10 +1,11 @@
+---
 title: Lightgbm多线程卡死问题定位
-date: 2020-01-25 5:03 PM
+date: 2020-01-25 17:03:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [Lightgbm, Python]
 
 ---
-
 ## 症状
 最近在开发的lightgbm树模型，发现服务在处理了一定量请求后会卡死，请求无响应。
 

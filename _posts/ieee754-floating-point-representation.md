@@ -1,11 +1,12 @@
+---
 title: IEEE 754 与浮点数的二进制表示
-date: 2020-08-03 8:17 PM
+date: 2020-08-03 20:17:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [浮点数, ]
 mathjax: true
 
 ---
-
 在计算机科学中，浮点（英语：floating point，缩写为FP）是一种对于实数的近似值数值表现法, 类似于十进制的[科学计数法](https://zh.wikipedia.org/wiki/%E7%A7%91%E5%AD%A6%E8%AE%B0%E6%95%B0%E6%B3%95).
 <!--more-->
 ## 科学记数法

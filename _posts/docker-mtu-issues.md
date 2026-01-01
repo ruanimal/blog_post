@@ -1,10 +1,11 @@
+---
 title: Docker mtu 引发的加班血案
-date: 2021-09-21 18:00
+date: 2021-09-21 18:00:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [Docker, ]
 
 ---
-
 最近在搞 torch 的工程化，基于 brpc 和 libtorch，将两者编译在一起的过程也是坑深，容下次再表。
 
 为了简化部署，brpc 服务在 Docker 容器中运行。本地测试时功能一切正常，上到预发布环境时请求全部超时。

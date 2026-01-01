@@ -1,11 +1,12 @@
+---
 title: Python项目中包的导入
-date: April 25, 2016 9:00 PM
+date: 2016-04-25 21:00:00
+updated: 2020-09-28 10:13:54
 categories: 编程
 tags: [Python]
 
 
-----
-
+---
 ## 例子
 ```
 taskman

@@ -1,10 +1,11 @@
+---
 title: Python asyncio 简易教程
-date: 2020-05-24 9:48 AM
+date: 2020-05-24 09:48:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [Python, 异步]
 
---------
-
+---
 `asyncio`是Python 3.4版本引入的标准库，直接内置了对异步IO的支持。
 
 `asyncio`的编程模型就是一个消息循环。我们从`asyncio`模块中直接获取一个`EventLoop`的引用，然后把需要执行的协程扔到`EventLoop`中执行，就实现了异步IO。

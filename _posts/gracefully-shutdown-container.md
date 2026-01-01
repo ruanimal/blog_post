@@ -1,10 +1,11 @@
+---
 title: 容器内进程优雅退出
-date: 2022-07-10 9:48 PM
+date: 2022-07-10 21:48:00
+updated: 2022-07-11 15:34:10
 categories: 编程
 tags: [Docker, Linux]
 
 ---
-
 在使用 docker 时，常常会碰到进程退出时资源清理的问题，比如保证当前请求处理完成，再退出程序。
 
 当执行 `docker stop xxx` 时，docker会向主进程（pid=1）发送 `SIGTERM` 信号

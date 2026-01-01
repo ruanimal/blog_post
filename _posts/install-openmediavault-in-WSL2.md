@@ -1,10 +1,11 @@
+---
 title: 在WSL2中安装openmediavault(OMV)
-date: 2021-01-02 17:00
+date: 2021-01-02 17:00:00
+updated: 2024-07-09 22:02:56
 categories: 工作生活
 tags: [Linux, WSL, NAS]
 
-----
-
+---
 **本方案存在不可解决的缺点，已被笔者放弃，请移步[最新解决方案](/2021/09/21/openmediavault-on-hyperv/)**
 
 NAS的文件系统一直是我比较纠结的一个点。NAS的系统基本上是基于Linux(Unix)，文件系统不是ntfs，数据迁移不方便，数据恢复工具也没那么全。

@@ -1,10 +1,11 @@
+---
 title: Windows Subsystem for Linux(WSL) 简单指引
-date: 2017-01-08 20:00
+date: 2017-01-08 20:00:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [Linux, WSL]
 
-----
-
+---
 ## 简介
 
 　　`Windows Subsystem for Linux`（简称WSL）是一个为在Windows 10上能够原生运行Linux二进制可执行文件（ELF格式）的兼容层。它是由微软与Canonical公司合作开发，目标是使纯正的Ubuntu 14.04 "Trusty Tahr"映像能下载和解压到用户的本地计算机，并且映像内的工具和实用工具能在此子系统上原生运行。

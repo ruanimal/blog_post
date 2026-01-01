@@ -1,10 +1,11 @@
+---
 title: Git 常用命令备忘录
-date: January 21, 2016 5:03 PM
+date: 2016-01-21 17:03:00
+updated: 2023-02-05 21:22:06
 categories: 编程
 tags: [Git, ]
 
 ---
-
 ## git 简介
 git是一个分散式版本控制软件，最初由林纳斯·托瓦兹（Linus Torvalds）創作，於2005年以GPL釋出。最初目的是为更好地管理Linux内核开发而设计。
 初始版本由Linus大神在两个星期内写出来，之后基本一统文件版本控制的天下。

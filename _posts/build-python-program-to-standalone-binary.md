@@ -1,10 +1,11 @@
+---
 title: 用exxo将Python程序编译成单一可执行文件
-date: 2020-02-29 9:48 AM
+date: 2020-02-29 09:48:00
+updated: 2020-03-01 11:34:31
 categories: 编程
 tags: [Python,] 
 
-----
-
+---
 ## 缘起
 golang将程序编译成一个可执行文件，部署起来特别方便。
 

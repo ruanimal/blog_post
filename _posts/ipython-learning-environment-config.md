@@ -1,10 +1,11 @@
+---
 title: IPython学习环境配置
-date: 2020-07-18 8:17 PM
+date: 2020-07-18 20:17:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [数据分析, Python]
 
 ---
-
 ## IPython简介
 IPython项目起初是Fernando Pérez在2001年的一个用以加强和Python交互的子项目。在随后的16年中，它成为了Python数据栈最重要的工具之一。
 

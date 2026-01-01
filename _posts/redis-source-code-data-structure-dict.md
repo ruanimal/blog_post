@@ -1,10 +1,11 @@
+---
 title: Redis原理 —— dict 字典
-date: 2021-04-17 9:48 AM
+date: 2021-04-17 09:48:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [Redis, C]
 
-----
-
+---
 这是Redis源码阅读系列第一篇文章。
 
 dict 是 redis 最重要的数据结构，db、hash、以及服务器内部需要用到hashmap的场景都是用dict来实现的。学习 dict 的源码，我们可以学到hashmap的原理及实现。

@@ -1,5 +1,7 @@
+---
 title: SQLAlchemy ORM 使用教程
-date: 2019-10-26 8:17 PM
+date: 2019-10-26 20:17:00
+updated: 2021-11-28 15:21:44
 categories: 编程
 tags: [SQLAlchemy, Python, ORM]
 

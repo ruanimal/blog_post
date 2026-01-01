@@ -1,9 +1,10 @@
+---
 title: git-svn：通过git来管理svn代码
 categories: 编程
 date: 2016-09-10 12:00:00
+updated: 2021-03-25 21:41:32
 tags: [Git, SVN]
 ---
-
 ## 简介
 svn和git都是常用的版本管理软件，但是git无论在理念或是功能上都比svn更为先进。但是有的公司是以svn作为中央仓库，这时git与svn代码的同步就可以通过 git-svn这个软件进行，从而用git管理svn代码。最后的效果相当于把svn仓库当作git的一个remote（远程仓库），而你本地的代码都是通过git来管理，只有push到svn时才会把你本地的commit同步到svn。
 

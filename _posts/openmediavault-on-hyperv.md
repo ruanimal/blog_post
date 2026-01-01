@@ -1,10 +1,11 @@
+---
 title: Hyper-V 中安装 openmediavault(OMV) 实现完美 NAS 文件共享
-date: 2021-09-21 17:00
+date: 2021-09-21 17:00:00
+updated: 2024-07-09 22:02:56
 categories: 工作生活
 tags: [Hyper-V, NAS]
 
-----
-
+---
 一直在寻找适合自己的 NAS 存储方案，也做过一些尝试，可总有些不完美的点。
 
 最近终于找到一个接近完美的方案：`Hyper-V + NFS + openmediavault`

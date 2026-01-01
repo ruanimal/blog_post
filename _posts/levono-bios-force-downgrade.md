@@ -1,10 +1,11 @@
+---
 title: 联想笔记本 BIOS 跳过检测强制降级
-date: 2025-05-15 18:00
+date: 2025-05-15 18:00:00
+updated: 2025-05-15 20:37:15
 categories: 工作生活
 tags: [硬件]
 
-----
-
+---
 联想某些版本的 bios 似乎会禁止降级，即使打开 bios 设置里的允许降级选项，依然会提示 "this platform does not support IHISI interface" 的错误，导致降级失败。
 <!--more-->
 

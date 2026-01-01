@@ -1,10 +1,11 @@
+---
 title: Redis主从复制机制
-date: 2021-07-21 10:48 PM
+date: 2021-07-21 22:48:00
+updated: 2024-07-09 22:02:56
 categories: 编程
 tags: [Redis,]
 
-----
-
+---
 Redis作为内存型数据，为了高可用，必须有数据备份，这里采取主从的模式。
 用户可以通过执行 SLAVEOF 命令或者设置 slaveof 选项，让一个服务器去复制 （replicate) 另一个服务器。
 <!--more-->
