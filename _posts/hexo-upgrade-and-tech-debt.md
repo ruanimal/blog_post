@@ -234,6 +234,7 @@ utterances 的登陆跳转是根据 canonical link，我们只要让它和当前
     }
   }
 })();
+</script>
 ```
 
 
