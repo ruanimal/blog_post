@@ -24,7 +24,7 @@
 
 <script>
 (function() {
-  var canonical = document.querySelector('link[rel="canonical"]');
+  var canonical = document.querySelector('head > link[rel="canonical"]');
   if (canonical && canonical.href) {
     try {
       var oldUrl = new URL(canonical.href);

@@ -1,7 +1,7 @@
 ---
 title: Hexo 版本更新与技术债务
 date: 2026-01-02 09:14:19
-updated: 2026-01-02 11:43:07
+updated: 2026-01-02 20:49:29
 categories: 编程
 tags: [Hexo, 随感]
 ---
@@ -189,6 +189,53 @@ source/_data/head.njk
 {% endif %}
 
 ```
+
+#### 更换 gitalk 为 utterances
+原先一直使用 gitalk 作为文章的评论系统。
+gitalk 每个新文章都需要作者登陆触发新建评论 issue，不太方便，所以现在换成 utterances。
+
+utterances 评论插件 next 主题已内置，修改 _config.next.yml 可以开启。
+```yml
+# 注意先关闭 gitalk
+utterances:
+  enable: true
+  repo: ruanimal/ruanimal.github.io # Github repository owner and name
+  # Available values: pathname | url | title | og:title
+  issue_term: title
+```
+
+还需要在 github pages 仓库安装 utterances 应用。
+
+自定义的域名可能不被 utterances 支持，无法登陆跳转
+需要新建 source/utterances.json
+```json
+{
+  "origins": [
+    "https://blog.ponder.work",
+    "https://ruanimal.github.io"
+  ]
+}
+```
+
+如果你和我一样，博客有多个域名，副域名登陆跳转会失效，可以通过注入js修正
+utterances 的登陆跳转是根据 canonical link，我们只要让它和当前url保持一致就行了 
+
+在 source/_data/head.njk 文件添加以下内容
+```js
+<script>
+(function() {
+  var canonical = document.querySelector('head > link[rel="canonical"]');
+  if (canonical && canonical.href) {
+    try {
+      var oldUrl = new URL(canonical.href);
+      canonical.href = window.location.origin + oldUrl.pathname + oldUrl.search + oldUrl.hash;
+    } catch (e) {
+      console.warn('Failed to update canonical link:', e);
+    }
+  }
+})();
+```
+
 
 ## 更换编辑器
 之前一直是用 mac 平台是 mweb 作为 hexo 的文章编辑器，实话说也非常好用。
