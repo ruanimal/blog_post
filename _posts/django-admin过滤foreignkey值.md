@@ -1,11 +1,11 @@
 ---
 title: django-admin过滤foreignkey值
 date: 2015-11-25 20:57:00
-updated: 2020-04-30 22:39:01
+updated: 2016-08-25 18:05:00
 categories: 编程
 tags: [Python, Django]
-
 ---
+
 ## 问题背景
 在用django的admin进行管理的时候，对于指定的用户角色，不希望他看到特定状态的foreignkey，可以采用以下方案。
 

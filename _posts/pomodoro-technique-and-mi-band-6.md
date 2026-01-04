@@ -1,11 +1,11 @@
 ---
 title: 滴答清单与小米手环6 —— 近乎完美的番茄工作法方案
 date: 2021-04-16 12:26:00
-updated: 2024-07-09 22:02:56
+updated: 2021-04-18 15:06:00
 categories: 工作生活
 tags: [番茄工作法, GTD]
-
 ---
+
 <style type="text/css" rel="stylesheet">
 img[alt="-w350"] {
 	width: 350px

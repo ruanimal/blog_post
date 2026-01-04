@@ -1,12 +1,11 @@
 ---
-
 title: variable-precision SWAR 算法详解
 date: 2020-08-01 14:03:00
-updated: 2024-07-09 22:02:56
+updated: 2020-08-01 16:48:00
 categories: 编程
 tags: [算法, ]
-
 ---
+
 在学习redis源码时，发现`BITCOUNT`命令实现用到了variable-precision SWAR 算法。
 
 `BITCOUNT`命令要解决的问题：**统计一个位数组中非0二进制位的数量**。在数学上被称为“计算汉明重量（Hamming Weight)”

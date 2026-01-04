@@ -1,12 +1,11 @@
 ---
-
 title: Python Web开发总结
 date: 2019-09-28 09:48:00
-updated: 2024-07-09 22:02:56
+updated: 2020-05-05 10:54:00
 categories: 编程
 tags: [Web, Python, Django]
-
 ---
+
 ## HTTP协议
 ### HTTP简介
 HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写。

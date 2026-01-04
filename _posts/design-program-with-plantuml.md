@@ -1,12 +1,11 @@
 ---
 title: 使用PlantUML做软件设计
 date: 2019-09-21 09:48:00
-updated: 2024-07-09 22:02:56
+updated: 2022-04-02 18:57:00
 categories: 编程
 tags: [UML, 软件架构]
-
-
 ---
+
 ## Plantuml 是什么？
 首先得说一下UML，**统一建模语言**（英语：Unified Modeling Language，缩写 UML）是非专利的第三代和规约语言。
 

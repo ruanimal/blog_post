@@ -1,11 +1,11 @@
 ---
 title: Python2 与 Python3 区别
 date: 2017-08-30 17:03:00
-updated: 2020-05-11 22:07:34
+updated: 2020-05-11 22:07:00
 categories: 编程
 tags: [Python,]
-
 ---
+
 ## 速查表
 Python2 vs Python3
 

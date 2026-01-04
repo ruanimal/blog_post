@@ -1,11 +1,11 @@
 ---
 title: 用Pytest测试Python代码
 date: 2020-03-12 09:48:00
-updated: 2021-03-25 21:41:32
+updated: 2020-03-12 21:49:00
 categories: 编程
 tags: [Python, Pytest]
-
 ---
+
 ## 简介
 pytest是一个非常成熟的全功能的Python测试框架, 简单灵活, 容易上手, 具有很多第三方插件，并且可以自定义扩展.
 

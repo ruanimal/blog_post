@@ -1,11 +1,11 @@
 ---
 title: 除法在 Python2 和 Python3 中的区别
 date: 2016-01-10 17:03:00
-updated: 2020-04-30 22:39:01
+updated: 2016-08-25 18:05:00
 categories: 编程
-tags: 
-
+tags:
 ---
+
 ## 总结
 1. Python2 中使用`from __future__ import division`就可以使用python3的除法。
 2. Python2 中`/`与操作数有关，`x / y`中x、y都为整型的话，为`floor除法`，否则为`true除法`也是日常的除法。

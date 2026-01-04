@@ -1,11 +1,11 @@
 ---
 title: xubuntu自动登录root账户
 date: 2016-04-16 19:42:00
-updated: 2021-03-25 21:41:32
+updated: 2016-08-25 18:05:00
 categories: 编程
 tags: [Linux, ]
-
 ---
+
 ## 设置root密码
 运行 `sudo passwd`
 根据提示输入root帐户密码。

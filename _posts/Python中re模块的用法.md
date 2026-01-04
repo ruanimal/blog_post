@@ -1,12 +1,11 @@
 ---
 title: Python中re模块的用法
 date: 2016-05-08 21:37:00
-updated: 2020-04-30 22:39:01
+updated: 2016-08-25 18:05:00
 categories: 编程
 tags: [Python, 正则表达式]
-
-
 ---
+
 ## 概述
 re是python中的正则表达式处理模块，本文是为了总结re模块的用法。
 

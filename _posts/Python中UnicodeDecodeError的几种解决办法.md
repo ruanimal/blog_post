@@ -1,12 +1,11 @@
 ---
 title: Python2中UnicodeDecodeError的几种解决办法
 date: 2016-04-16 21:45:00
-updated: 2020-04-30 22:39:01
+updated: 2016-08-25 18:05:00
 categories: 编程
 tags: [Python, 编码]
-
-
 ---
+
 ## 原理
 由于在Python2中字符串有两种类型`str`和`unicode`，他们都是`basestring`的子类。
 

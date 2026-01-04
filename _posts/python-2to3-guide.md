@@ -1,11 +1,11 @@
 ---
 title: Python2迁移Python3指南
 date: 2020-05-11 20:17:00
-updated: 2020-07-08 14:53:43
+updated: 2020-07-08 14:53:00
 categories: 编程
 tags: [2to3, Python]
-
 ---
+
 ## 前置要求
 - 了解Python3和Python2的区别，参考[Python2和Python3区别](/2017/08/30/difference-between-python2-and-python3/)，[Python3新特性](https://github.com/wjo1212/PythonChinaMeetup2020/blob/master/PythonChinaMeetup-20200510-Python3%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D.pdf)
 - 完备的测试用例

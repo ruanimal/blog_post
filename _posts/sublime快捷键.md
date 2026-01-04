@@ -1,11 +1,11 @@
 ---
 title: SublimeText3 快捷键列表
 date: 2016-07-16 15:00:00
-updated: 2020-04-30 22:39:01
+updated: 2016-09-10 12:07:00
 categories: 编程
 tags: [编辑器,]
-
 ---
+
 主力使用SublimeText3编辑器，将一些常用的快捷键总结一下。
 
 ## 通用（General）

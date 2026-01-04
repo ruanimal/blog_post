@@ -1,11 +1,11 @@
 ---
 title: SQLAlchemy ORM 使用教程
 date: 2019-10-26 20:17:00
-updated: 2021-11-28 15:21:44
+updated: 2021-11-28 15:21:00
 categories: 编程
 tags: [SQLAlchemy, Python, ORM]
-
 ---
+
 ORM是指对象关系映射（英语：Object Relational Mapping），是一种程序设计技术，是数据库记录和程序对象之间的映射关系。
 
 使用ORM可以简化数据库的操作，使数据操作更加面向对象，并且程序逻辑和具体数据库解耦。缺点是会有一定的性能损耗。

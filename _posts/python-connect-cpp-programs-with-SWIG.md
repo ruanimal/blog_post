@@ -1,11 +1,11 @@
 ---
 title: 使用SWIG实现Python调用c++
 date: 2020-08-05 20:17:00
-updated: 2024-07-09 22:02:56
+updated: 2020-09-01 14:09:00
 categories: 编程
 tags: [SWIG, Python, C++]
-
 ---
+
  **[SWIG](http://www.swig.org)** (Simplified Wrapper and Interface Generator) 是一个开源工具，用于让C/C++的程序和库可以被其他语言调用。
 
 支持的非常多语言，有Lua, Perl, PHP, Python, R, Ruby, C#, Java, JavaScript, Go, Scheme 等。

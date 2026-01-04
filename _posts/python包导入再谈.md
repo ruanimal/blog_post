@@ -1,11 +1,11 @@
 ---
 title: python包导入再谈
 date: 2016-06-22 19:26:00
-updated: 2023-07-25 10:16:29
+updated: 2023-07-25 10:16:00
 categories: 编程
 tags: [Python, ]
-
 ---
+
 ## python包导入机制
 包是指含有`__init__.py`的文件夹，模块就是一个.py文件。
 

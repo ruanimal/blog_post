@@ -1,11 +1,11 @@
 ---
 title: centos开关机日志分析
 date: 2016-06-22 19:52:00
-updated: 2021-03-25 21:41:32
+updated: 2016-08-25 18:05:00
 categories: 编程
 tags: [Linux, ]
-
 ---
+
 ## 缘起
 在工作中发现有获取linux具体开关机时间和类型的需求，可以通过分析`/var/log/wtmp`日志文件得到。
 通过`last -x -F`可以将`/var/log/wtmp`输出以下格式。

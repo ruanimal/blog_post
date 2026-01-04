@@ -1,11 +1,11 @@
 ---
 title: python赋值语句小坑
 date: 2016-01-10 17:03:00
-updated: 2020-04-30 22:39:01
+updated: 2020-04-30 22:39:00
 categories: 编程
 tags:  [Python, ]
-
 ---
+
 说到python赋值语句，大家想必一个念头——so easy，不是`lz = 'dashabi'`吗。
 确实，easy是easy，里面却有个小坑，虽小，却不易发现。在代码量多的时候，就有点恶心了。
 

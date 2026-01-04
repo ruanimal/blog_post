@@ -1,11 +1,11 @@
 ---
 title: OpenWrt执行自定义CGI脚本
 date: 2020-11-26 20:17:00
-updated: 2021-01-01 16:15:43
+updated: 2021-01-01 16:15:00
 categories: 编程
 tags: [CGI, OpenWrt]
-
 ---
+
 ## 缘起
 我家里的路由器是矿渣newifi3, 刷了OpenWrt系统，可玩性还是非常强的。
 而且路由器作为24小时在线的设备，很适合作为网络设备的控制中心，比如使用[WOL](https://zh.wikipedia.org/wiki/%E7%B6%B2%E8%B7%AF%E5%96%9A%E9%86%92)唤醒其他设备。

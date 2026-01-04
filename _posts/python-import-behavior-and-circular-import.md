@@ -1,11 +1,11 @@
 ---
 title: 循环import导致的模块被多次import
 date: 2020-06-20 09:48:00
-updated: 2020-09-20 15:00:10
+updated: 2020-09-20 15:00:00
 categories: 编程
 tags: [Python, ]
-
 ---
+
 ## 缘起
 循环import是很多Python初学者都会遇到问题，网上有也有很多文章讲解决方法，比如[这篇](https://www.jianshu.com/p/a1e91cc53b07)，不清楚的可以自行查阅，这里就不赘述了。
 

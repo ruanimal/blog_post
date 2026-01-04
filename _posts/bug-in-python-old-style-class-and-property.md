@@ -1,11 +1,11 @@
 ---
 title: Python2 中 旧式类与property引发的bug
 date: 2019-12-01 20:17:00
-updated: 2024-07-09 22:02:56
+updated: 2019-12-02 16:22:00
 categories: 编程
 tags: [Property, Python]
-
 ---
+
 ## 缘起
 话接上回，说是接手了一个82年的~~拉菲~~Python项目，这次又发现了一个新坑
 

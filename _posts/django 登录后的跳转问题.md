@@ -1,11 +1,11 @@
 ---
 title: django 登录后的跳转到之前的页面
 date: 2015-11-25 20:57:00
-updated: 2020-04-30 22:39:01
+updated: 2016-08-25 18:05:00
 categories: 编程
 tags: [Python, Django]
-
 ---
+
 ## 概述
 在开发django网站时发现，用户登录后不能跳转到之前的页面，google了很多答案，讲得也不清楚。
 

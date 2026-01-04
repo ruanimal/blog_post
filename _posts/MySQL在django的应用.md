@@ -1,11 +1,11 @@
 ---
 title: MySQL在django的应用与设置
 date: 2015-09-10 16:32:00
-updated: 2020-04-30 22:39:01
+updated: 2016-08-25 18:05:00
 categories: 编程
 tags: [Python, Django, MySQL]
-
 ---
+
 ## MySQL安装
 - 检查MySQL是否安装 sudo netstat -tap | grep mysql
 - 如果没有 sudo apt-get install mysql-server mysql-client
