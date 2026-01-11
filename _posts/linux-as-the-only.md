@@ -469,3 +469,36 @@ echo disabled | tee /sys/devices/platform/ACPI000E:00/power/wakeup  # AWAC
 # 检查是否生效
 cat /proc/acpi/wakeup | grep enable
 ```
+
+### apt 设置代理
+
+部分 apt ppa 源需要代理，但是国内的镜像源却不需要。
+所以需要给每一个源单独设置代理的功能
+
+有两种设置方式
+- 白名单模式（只给需要的配置）
+- 黑名单模式（先设置默认代理， 不需要的设置直连）
+
+设置语法
+- 设置代理服务器：`Acquire::http::Proxy <proxy-server>`
+- 设置某个域名的代理：`Acquire::http::proxy::<domain> <proxy-server|DIRECT>`
+
+示例
+```
+#  /etc/apt/apt.conf.d/99proxy 
+
+# 给每种协议的源设置代理，一般设置 https::Proxy 就行了
+#Acquire::http::Proxy "http://yourproxyaddress:proxyport";
+#Acquire::https::Proxy "http://yourproxyaddress:proxyport";
+#Acquire::ftp::Proxy "http://yourproxyaddress:proxyport";
+#Acquire::socks::Proxy "http://yourproxyaddress:proxyport";
+
+# 设置具体域名是否走代理
+#Acquire::http::proxy::local.mirror.address "DIRECT";
+#Acquire::http::proxy::HOST_NAME_TO_BE_PROXIED "http://yourproxyaddress:proxyport"
+
+# 黑名单模式示例
+Acquire::https::Proxy "http://localhost:10808";
+Acquire::https::Proxy::"mirrors.aliyun.com" "DIRECT";
+
+```
