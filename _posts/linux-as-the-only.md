@@ -59,7 +59,7 @@ sudo ubuntu-drivers install 580-server-open
 2. 启用睡眠支持[参考](https://download.nvidia.com/XFree86/Linux-x86_64/570.172.08/README/powermanagement.html)
 将显存内容保存，否则唤醒后程序会报错（如CUDA程序）
 ```
-# /etc/modprobe.d/nvidia-power-management.conf 
+# /etc/modprobe.d/nvidia-power-management.conf
 options nvidia NVreg_PreserveVideoMemoryAllocations=1 NVreg_TemporaryFilePath=/tmp
 
 sudo update-initramfs
@@ -109,10 +109,10 @@ sudo su
 cd /
 truncate -s 0 swapfile
 # chattr +C swapfile  # disable COW on btrfs
-fallocate -l 8G swapfile 
-chmod 0600 swapfile 
-mkswap swapfile 
-swapon swapfile 
+fallocate -l 8G swapfile
+chmod 0600 swapfile
+mkswap swapfile
+swapon swapfile
 ```
 
 ### 使用英文用户文件夹
@@ -150,7 +150,7 @@ sudo iw dev wlo1 set power_save off
 
 ```
 # 只睡眠到内存
-# 修改 /etc/systemd/sleep.conf 
+# 修改 /etc/systemd/sleep.conf
 AllowSuspend=yes
 AllowHibernation=no
 AllowSuspendThenHibernate=no
@@ -160,7 +160,7 @@ SuspendState=mem standby
 # 禁用休眠（可选）
 sudo systemctl mask hibernate.target hybrid-sleep.target
 
-# nvida 
+# nvida
 ```
 
 ### intel 核显性能优化
@@ -170,7 +170,7 @@ sudo systemctl mask hibernate.target hybrid-sleep.target
 # cat /etc/modprobe.d/i915.conf
 options i915 enable_fbc=1 enable_guc=2 enable_dc=0
 
-sudo update-initramfs -u  
+sudo update-initramfs -u
 ```
 
 ### RDP 远程桌面
@@ -180,7 +180,7 @@ sudo update-initramfs -u
 其他配置
 ```
 # 双屏只显示其中一个屏幕
-# 修改 ~/.config/systemd/user/plasma-krdp_server.service 
+# 修改 ~/.config/systemd/user/plasma-krdp_server.service
 ExecStart=/usr/bin/krdpserver --monitor 0
 
 # 重启服务
@@ -255,7 +255,7 @@ net.ipv4.conf.br-routed.proxy_arp=1
 
 
 # 创建网桥和路由
-#/etc/systemd/system/bridge-routed.service 
+#/etc/systemd/system/bridge-routed.service
 [Unit]
 Description=Create routed bridge br-routed
 After=network.target
@@ -293,7 +293,7 @@ WantedBy=multi-user.target
 ### dolphin 右键菜单自定义快捷方式
 支持文件和文件夹
 
-chmod +  ~/.local/share/kio/servicemenus/mklink.desktop 
+chmod +  ~/.local/share/kio/servicemenus/mklink.desktop
 ```
 [Desktop Entry]
 Type=Service
@@ -319,7 +319,7 @@ ln -s "$NAME" "$NAME.lnk"
 haruna 是 mpv 播放器的前端，功能比较齐全
 
 
-存在的问题: 
+存在的问题:
 - 视频播放器首次最大化窗口，总是跳到另一个屏幕
     - 关闭另一个屏幕，关闭应用，再打开，再最大化，再重新打开屏幕
 - 无法重命名文件
@@ -328,7 +328,7 @@ haruna 是 mpv 播放器的前端，功能比较齐全
 ### flatpak 使用
 ```
 # 换源
-flatpak remote-modify flathub --url=https://mirrors.ustc.edu.cn/flathub  
+flatpak remote-modify flathub --url=https://mirrors.ustc.edu.cn/flathub
 
 # 目录授权，解决应用无法编辑文件
 flatpak override --user org.kde.haruna --filesystem=/share
@@ -365,7 +365,7 @@ Microsoft Edge 已锁定此用户配置以防止损坏。如果你确定没有�
 
 处理方法，其他 chromium 内核浏览器可能也类似
 ```
-rm ~/.config/microsoft-edge/SingletonLock 
+rm ~/.config/microsoft-edge/SingletonLock
 ```
 
 ### steam 玩游戏卡住
@@ -377,7 +377,7 @@ dmesg 信息
 7月 27 10:53:07 neon kernel: x86/split lock detection: #AC: CPU 1/KVM/88280 took a split_lock trap at address: 0xfffff8010465701c
 ```
 
-解决方法 
+解决方法
 ```
 # 编辑 /etc/default/grub
 GRUB_CMDLINE_LINUX_DEFAULT='quiet splash split_lock_detect=off'
@@ -395,7 +395,7 @@ mount /dev/sda0 /mnt/boot/efi
 for i in {proc,dev/sys}; do
   mount --bind /${i} /mnt/${i}
 done
-    
+
 chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot/efi
 ```
 
@@ -424,7 +424,7 @@ sudo sysctl -p
 比如某些用于文件共享的用户
 
 ```
-# 修改 /etc/sddm.conf 
+# 修改 /etc/sddm.conf
 [Autologin]
 Session=plasma
 
@@ -437,7 +437,7 @@ HideShells=/usr/sbin/nologin,/bin/false
 强制重启后或者系统崩溃后，如果设备不正常，可以尝试重启到 windows 再切回 linux
 
 
-### 应用在启动器里找不到 
+### 应用在启动器里找不到
 
 ```
 rm -f ~/.config/menus/
@@ -452,8 +452,8 @@ kbuildsycoca6 --noincremental
 cat /proc/acpi/wakeup | grep enable
 
 # 查看触发器的设备路径
-for p in /sys/class/wakeup/*/device/power/wakeup; do     
-    dev=$(dirname $(dirname $p));     
+for p in /sys/class/wakeup/*/device/power/wakeup; do
+    dev=$(dirname $(dirname $p));
     dev_path=$(realpath $dev)
     echo ${dev_path}
 done
@@ -485,7 +485,7 @@ cat /proc/acpi/wakeup | grep enable
 
 示例
 ```
-#  /etc/apt/apt.conf.d/99proxy 
+#  /etc/apt/apt.conf.d/99proxy
 
 # 给每种协议的源设置代理，一般设置 https::Proxy 就行了
 #Acquire::http::Proxy "http://yourproxyaddress:proxyport";
@@ -500,5 +500,28 @@ cat /proc/acpi/wakeup | grep enable
 # 黑名单模式示例
 Acquire::https::Proxy "http://localhost:10808";
 Acquire::https::Proxy::"mirrors.aliyun.com" "DIRECT";
+
+```
+
+### 限制硬盘读写速度
+某些nvme硬盘的发热很严重, 如果全速运行会导致系统不稳定.
+所以需要对硬盘速度进行限制
+
+```shell
+# 创建配置目录
+sudo mkdir -p mkdir -p /etc/systemd/system/{user,system}.slice.d/
+
+# 设置用户限制
+sudo tee /etc/systemd/system/user.slice.d/io-limit.conf  > /dev/null <<EOF
+[Slice]
+IOReadBandwidthMax=/dev/nvme0n1 800M
+IOWriteBandwidthMax=/dev/nvme0n1 300M
+IOReadIOPSMax=/dev/nvme0n1 60000
+IOWriteIOPSMax=/dev/nvme0n1 30000
+
+EOF
+
+# 系统也使用同样的限制
+sudo ln -sf /etc/systemd/system/user.slice.d/io-limit.conf /etc/systemd/system/system.slice.d/
 
 ```
