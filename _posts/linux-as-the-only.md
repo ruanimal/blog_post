@@ -1,7 +1,7 @@
 ---
 title: 配置 Linux 作为主力操作系统
 date: 2025-12-21 21:48:00
-updated: 2025-12-22 11:47:07
+updated: 2026-01-15 09:58:50
 categories: 编程
 tags: [Linux, KDE]
 
