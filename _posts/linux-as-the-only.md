@@ -507,6 +507,8 @@ Acquire::https::Proxy::"mirrors.aliyun.com" "DIRECT";
 某些nvme硬盘的发热很严重, 如果全速运行会导致系统不稳定.
 所以需要对硬盘速度进行限制
 
+
+使用 systemd 设置限速
 ```shell
 # 创建配置目录
 sudo mkdir -p mkdir -p /etc/systemd/system/{user,system}.slice.d/
