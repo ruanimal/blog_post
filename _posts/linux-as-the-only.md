@@ -527,3 +527,12 @@ EOF
 sudo ln -sf /etc/systemd/system/user.slice.d/io-limit.conf /etc/systemd/system/system.slice.d/
 
 ```
+
+速度测试
+```shell
+~$ dd if=/dev/zero of=testfile bs=1M count=2048 oflag=direct status=progress && rm  testfile
+2099249152 bytes (2.1 GB, 2.0 GiB) copied, 7 s, 300 MB/s
+2048+0 records in
+2048+0 records out
+2147483648 bytes (2.1 GB, 2.0 GiB) copied, 7.16429 s, 300 MB/s
+```
