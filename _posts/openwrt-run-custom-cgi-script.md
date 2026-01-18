@@ -1,7 +1,7 @@
 ---
 title: OpenWrt执行自定义CGI脚本
 date: 2020-11-26 20:17:00
-updated: 2021-01-01 16:15:00
+updated: 2026-01-18 10:07:37
 categories: 编程
 tags: [CGI, OpenWrt]
 ---
@@ -13,11 +13,14 @@ tags: [CGI, OpenWrt]
 所以就想到了利用路由器默认的uhttpd网页服务器，自己编写CGI脚本来实现相应功能。
 <!--more-->
 
+*本方法做参考即可，现在实际使用可以改用本人的 openwrt 应用 [luci-app-quick-action](https://github.com/ruanimal/luci-app-quick-action)*
+
 ## 实现
 以下操作均需要ssh登陆到路由器后台
 
 ### uhttpd添加lua执行功能
 编辑`/etc/config/uhttpd`文件
+
 在`config uhttpd main`部分添加`list interpreter ".lua=/usr/bin/lua"`， 使uhttpd能够执行lua文件
 
 重启uhttp服务：`/etc/init.d/uhttpd restart`
