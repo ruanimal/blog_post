@@ -100,7 +100,8 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install
 使用形如 `::<后缀>/::ffff:ffff:ffff:ffff` 的掩码
 
 ```
-nmcli con modify <WIFI NAME> ipv6.addr-gen-mode eui64
+nmcli con show
+nmcli con modify <NETWORK NAME> ipv6.addr-gen-mode eui64
 ```
 
 ### 启用休眠文件
@@ -537,4 +538,11 @@ sudo ln -sf /etc/systemd/system/user.slice.d/io-limit.conf \
 2048+0 records in
 2048+0 records out
 2147483648 bytes (2.1 GB, 2.0 GiB) copied, 7.16429 s, 300 MB/s
+```
+
+### archlinux 命令行不能使用回收站
+安装 cachyos 时，trash-cli 不能使用，其他应用也不能删除文件到回收站
+
+```
+sudo pacman -S gvfs 
 ```
