@@ -546,3 +546,16 @@ sudo ln -sf /etc/systemd/system/user.slice.d/io-limit.conf \
 ```
 sudo pacman -S gvfs 
 ```
+
+### 某些软件中输入法不可用
+在使用 fcitx 输入法时，某些软件中无法唤起输入法，无法输入中文（如：微信）
+通常是因为该程序默认加载了 ibus 模块，只要设置 `QT_IM_MODULE=fcitx` 环境变量就能解决问题。
+为了不带来别的影响，仅修改 .desktop 启动文件就行。
+
+```shell
+mkdir -p ~/.local/share/applications
+
+sed 's|Exec=/usr|Exec=env QT_IM_MODULE=fcitx /usr|' \
+/usr/share/applications/wechat.desktop > ~/.local/share/applications/wechat.desktop
+```
+
