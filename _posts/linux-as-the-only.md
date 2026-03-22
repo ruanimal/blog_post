@@ -559,3 +559,28 @@ sed 's|Exec=/usr|Exec=env QT_IM_MODULE=fcitx /usr|' \
 /usr/share/applications/wechat.desktop > ~/.local/share/applications/wechat.desktop
 ```
 
+### WPS 每次登录自动启动
+
+WPS 安装后会在 `/etc/xdg/autostart/` 放置一个 `wps-office-autostart.desktop`，桌面环境每次登录都会扫描该目录并执行。它会启动 `wpsd` 守护进程，预加载 wps、wpp、et 三个组件（即"快速启动"功能）。
+
+这个机制跟 systemd 无关，所以禁用 systemd 服务不会生效。
+
+排查过程
+
+```bash
+# 查看 XDG 自启动项
+ls /etc/xdg/autostart/ | grep wps
+# wps-office-autostart.desktop
+
+# 查看启动内容
+cat /etc/xdg/autostart/wps-office-autostart.desktop
+# Exec=/opt/apps/cn.wps.wps-office-pro/files/bin/quickstartoffice start
+```
+
+解决方法：在用户级别覆盖禁用（不影响其他用户，WPS 更新也不会覆盖）
+
+```bash
+mkdir -p ~/.config/autostart
+cp /etc/xdg/autostart/wps-office-autostart.desktop ~/.config/autostart/
+echo "Hidden=true" >> ~/.config/autostart/wps-office-autostart.desktop
+```
