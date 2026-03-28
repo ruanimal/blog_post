@@ -584,3 +584,7 @@ mkdir -p ~/.config/autostart
 cp /etc/xdg/autostart/wps-office-autostart.desktop ~/.config/autostart/
 echo "Hidden=true" >> ~/.config/autostart/wps-office-autostart.desktop
 ```
+
+### 关于 ntfs
+尽量不要在 linux 下使用 ntfs 硬盘，特别是在大量读写的情况下稳定性一般，可能出现掉盘（即使使用 ntfs3 驱动）
+如果出现 ntfs 硬盘的异常，如掉盘、文件不显示等问题，建议重新启动到 windows 然后运行硬盘的检测修复。
