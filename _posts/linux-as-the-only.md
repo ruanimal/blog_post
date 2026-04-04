@@ -201,14 +201,12 @@ sudo apt install mainline
 
 ## 软件使用
 ### 常见应用替代方案
-- qq: 使用官方linux版本的flatpak打包
-    - flatpak install com.qq.QQ
 - 任务管理器
     - flatpak install io.missioncenter.MissionCenter
 - 词典：使用欧陆词典
     - flatpak install net.eudic.dict
-- 微信
-    - 使用星火应用商店打包的官方linux版本
+- 微信/qq
+    - 官网版本就行了
 - 下载管理器：
     - motrix：普通http下载
     - qbittorrent： bt下载
@@ -218,7 +216,7 @@ sudo apt install mainline
 - 游戏
     - steam：大部分游戏都可以直接运行，性能损耗也不大
 - 视频播放
-    - haruna：使用 flatpak 版本
+    - haruna
 
 ### KVM 虚拟机
 安装
