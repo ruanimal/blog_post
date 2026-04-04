@@ -585,6 +585,16 @@ cp /etc/xdg/autostart/wps-office-autostart.desktop ~/.config/autostart/
 echo "Hidden=true" >> ~/.config/autostart/wps-office-autostart.desktop
 ```
 
+**然而，以上配置并没有效果**
+
+其实是 KDE `会话恢复`机制启动的 wps, KDE 的会话管理基于 X11 的 XSMP（X Session Management Protocol）。
+保存时机是注销/关机时，ksmserver 会向所有注册了 XSMP 的客户端发送 SaveYourself，然后把各客户端返回的 restartCommand 写进 ksmserverrc。
+
+但问题在于 WPS 的行为比较特殊：即使你在关机前关闭了 WPS 的窗口，wpscloudsvr 和 et 等后台进程可能并没有真正退出。
+它们会驻留在后台（类似托盘常驻），所以 ksmserver 在保存会话时检测到它们仍在运行，就记录下来了。
+
+所以：关闭会话恢复（启动为空会话）就行了，我并不需要这个。
+
 ### 关于 ntfs
 尽量不要在 linux 下使用 ntfs 硬盘，特别是在大量读写的情况下稳定性一般，可能出现掉盘（即使使用 ntfs3 驱动）
 如果出现 ntfs 硬盘的异常，如掉盘、文件不显示等问题，建议重新启动到 windows 然后运行硬盘的检测修复。
@@ -613,9 +623,41 @@ vm.dirty_ratio = 4
 ### 修改文件句柄数量限制 
 默认限制是 1024, 文件句柄数量太小会导致应用异常，比如 vscode 无法监控文件变更
 
-修改 /etc/security/limits.conf，在最后追加
+修改 /etc/security/limits.conf，在最后追加，然后重启电脑
 
 ```
 * soft nofile 10240
 * hard nofile 10240
+```
+
+如果没有生效，可能需要修改 systemd 配置文件
+
+编辑 /etc/systemd/system.conf 或者 /etc/systemd/user.conf 文件，找到 DefaultLimitNOFILE 这一行，取消注释并修改：
+
+```
+DefaultLimitNOFILE=10240:10240
+```
+
+```
+# 重载系统配置
+sudo systemctl daemon-reload
+# 重载用户配置
+systemctl --user daemon-reload
+```
+
+### 开启 zram
+在大内存的场景，swapfile 就没啥必要了。
+
+```
+# 安装
+sudo apt install zram-tools
+
+# 编辑 /etc/default/zramswap，添加
+ALGO=zstd
+PERCENT=50
+
+# 重启服务
+sudo systemctl restart zramswap.service
+
+# 关闭 swapfile （可选），从fstab 中注释 swapfile 条目
 ```
