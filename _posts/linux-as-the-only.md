@@ -645,7 +645,7 @@ sudo systemctl daemon-reload
 systemctl --user daemon-reload
 ```
 
-### 开启 zram
+### zram 内存压缩替代 swapfile
 在大内存的场景，swapfile 就没啥必要了。
 
 ```
@@ -659,5 +659,9 @@ PERCENT=50
 # 重启服务
 sudo systemctl restart zramswap.service
 
-# 关闭 swapfile （可选），从fstab 中注释 swapfile 条目
+#（可选）关闭 swapfile ，从fstab 中注释 swapfile 条目
+
+#（可选）内存充足的情况，降低内存压缩的优先级
+# 修改 sysctl.conf, 追加以下配置
+vm.swappiness=10
 ```
