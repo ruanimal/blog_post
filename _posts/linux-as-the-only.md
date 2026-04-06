@@ -652,7 +652,7 @@ sudo apt install zram-tools
 
 # 编辑 /etc/default/zramswap，添加
 ALGO=zstd
-PERCENT=50
+PERCENT=10
 
 # 重启服务
 sudo systemctl restart zramswap.service
