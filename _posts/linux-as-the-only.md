@@ -663,3 +663,22 @@ sudo systemctl restart zramswap.service
 # 修改 sysctl.conf, 追加以下配置
 vm.swappiness=10
 ```
+
+### 使用 pe 后 linux 无法启动
+由于要更换一个硬盘，所有使用了 pe 里面的 diskgenius 对硬盘进行了克隆（非linux所在硬盘）
+重启后无法进入 linux 系统, 启动后卡在 initramfs 的 shell。
+
+进入 pe 的 diskgenius 发现所有 ext4 的分区都提示已损坏。
+
+进入 linux 的 livecd, 使用 gparted 可以看到所有硬盘的 ext4 分区都有红色的叹号
+而且分区无法挂载， 使用 `dumpe2fs /dev/sda1` 会出现以下错误
+```
+dumpe2fs: Superblock checksum does not match superblock while trying to open /dev/sda1
+```
+
+修复方法找到损坏的分区，逐个执行 `e2fsck` 进行修复， 如
+```
+sudo e2fsck -f -y /dev/sda1
+```
+
+具体原因还不太清楚，不确定是 pe 的问题还是 diskgenius 的问题。
