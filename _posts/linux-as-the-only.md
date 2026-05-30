@@ -665,7 +665,7 @@ vm.swappiness=10
 ```
 
 ### 使用 pe 后 linux 无法启动
-由于要更换一个硬盘，所有使用了 pe 里面的 diskgenius 对硬盘进行了克隆（非linux所在硬盘）
+由于要更换一个硬盘，所以使用了 pe 里面的 diskgenius 对硬盘进行了克隆（非linux所在硬盘）
 重启后无法进入 linux 系统, 启动后卡在 initramfs 的 shell。
 
 进入 pe 的 diskgenius 发现所有 ext4 的分区都提示已损坏。
