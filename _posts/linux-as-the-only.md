@@ -42,6 +42,15 @@ Memory: 25.07 GiB / 46.67 GiB (54%)
 Swap: 392.00 KiB / 8.00 GiB (0%)
 ```
 
+### KDE Neon 的不足
+由于 KDE Neon 是基于 Ubuntu LTS 的，所以除 KDE 之外的软件包版本可能比较旧，有时候会碰到软件不兼容的问题。
+
+常见的问题
+1. QT 软件版本问题，Neon 由于是用的最新的 KDE，所以用的 QT 版本也是最新的，可能会导致软件不兼容（如 Deepin 系软件）
+2. 其他系统软件兼容性问题，比如 fcitx 与 KDE 6.7.0 不兼容，见 [BUG](https://bugs.kde.org/show_bug.cgi?id=520566)
+
+这些问题一般用 flatpak 版本的软件都能解决，如果不行就需要看看 KDE 的 bug tracker 看看有没有解决方案。
+
 ## 硬件要求
 1. NVIDIA 显卡在 Linux 下对 Wayland 支持不好，容易出现卡死或者重启的情况，建议显示器连到核显
 2. 有些主板 Linux 兼容性不行，建议使用御三家主板
